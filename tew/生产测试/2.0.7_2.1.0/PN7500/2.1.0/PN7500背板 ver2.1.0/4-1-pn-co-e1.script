@@ -1,0 +1,148 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+
+dropdb
+
+set slot/3/lg type XCTPS
+set slot/4/lg type XCTPS
+set slot/2/lg type SS8P32
+set slot/5/lg type SS8P32
+set slot/6/lg type IP32
+set slot/7/lg type FAN
+
+set slot/3/lg port5 SDH
+set slot/3/lg port6 SDH
+set slot/4/lg port5 SDH
+set slot/4/lg port6 SDH
+
+cr ccc 1 {admin="up"}
+set interfaces/pdh/e1.6.2 admin up
+set interfaces/pdh/e1.6.3 admin up
+cr interfaces/pdh/e1.6.2 service {_='ccc',vpn='ccc/1'}
+cr interfaces/pdh/e1.6.3 service {_='ccc',vpn='ccc/1'}
+
+cr ccc 2 {admin="up"}
+set interfaces/pdh/e1.6.4 admin up
+set interfaces/pdh/e1.6.5 admin up
+cr interfaces/pdh/e1.6.4 service {_='ccc',vpn='ccc/2'}
+cr interfaces/pdh/e1.6.5 service {_='ccc',vpn='ccc/2'}
+
+cr ccc 3 {admin="up"}
+set interfaces/pdh/e1.6.6 admin up
+set interfaces/pdh/e1.6.7 admin up
+cr interfaces/pdh/e1.6.6 service {_='ccc',vpn='ccc/3'}
+cr interfaces/pdh/e1.6.7 service {_='ccc',vpn='ccc/3'}
+
+cr ccc 4 {admin="up"}
+set interfaces/pdh/e1.6.8 admin up
+set interfaces/pdh/e1.6.9 admin up
+cr interfaces/pdh/e1.6.8 service {_='ccc',vpn='ccc/4'}
+cr interfaces/pdh/e1.6.9 service {_='ccc',vpn='ccc/4'}
+
+cr ccc 5 {admin="up"}
+set interfaces/pdh/e1.6.10 admin up
+set interfaces/pdh/e1.6.11 admin up
+cr interfaces/pdh/e1.6.10 service {_='ccc',vpn='ccc/5'}
+cr interfaces/pdh/e1.6.11 service {_='ccc',vpn='ccc/5'}
+
+cr ccc 6 {admin="up"}
+set interfaces/pdh/e1.6.12 admin up
+set interfaces/pdh/e1.6.13 admin up
+cr interfaces/pdh/e1.6.12 service {_='ccc',vpn='ccc/6'}
+cr interfaces/pdh/e1.6.13 service {_='ccc',vpn='ccc/6'}
+
+cr ccc 7 {admin="up"}
+set interfaces/pdh/e1.6.14 admin up
+set interfaces/pdh/e1.6.15 admin up
+cr interfaces/pdh/e1.6.14 service {_='ccc',vpn='ccc/7'}
+cr interfaces/pdh/e1.6.15 service {_='ccc',vpn='ccc/7'}
+
+cr ccc 8 {admin="up"}
+set interfaces/pdh/e1.6.16 admin up
+set interfaces/pdh/e1.6.17 admin up
+cr interfaces/pdh/e1.6.16 service {_='ccc',vpn='ccc/8'}
+cr interfaces/pdh/e1.6.17 service {_='ccc',vpn='ccc/8'}
+
+cr ccc 9 {admin="up"}
+set interfaces/pdh/e1.6.18 admin up
+set interfaces/pdh/e1.6.19 admin up
+cr interfaces/pdh/e1.6.18 service {_='ccc',vpn='ccc/9'}
+cr interfaces/pdh/e1.6.19 service {_='ccc',vpn='ccc/9'}
+
+cr ccc 10 {admin="up"}
+set interfaces/pdh/e1.6.20 admin up
+set interfaces/pdh/e1.6.21 admin up
+cr interfaces/pdh/e1.6.20 service {_='ccc',vpn='ccc/10'}
+cr interfaces/pdh/e1.6.21 service {_='ccc',vpn='ccc/10'}
+
+cr ccc 11 {admin="up"}
+set interfaces/pdh/e1.6.22 admin up
+set interfaces/pdh/e1.6.23 admin up
+cr interfaces/pdh/e1.6.22 service {_='ccc',vpn='ccc/11'}
+cr interfaces/pdh/e1.6.23 service {_='ccc',vpn='ccc/11'}
+
+cr ccc 12 {admin="up"}
+set interfaces/pdh/e1.6.24 admin up
+set interfaces/pdh/e1.6.25 admin up
+cr interfaces/pdh/e1.6.24 service {_='ccc',vpn='ccc/12'}
+cr interfaces/pdh/e1.6.25 service {_='ccc',vpn='ccc/12'}
+
+cr ccc 13 {admin="up"}
+set interfaces/pdh/e1.6.26 admin up
+set interfaces/pdh/e1.6.27 admin up
+cr interfaces/pdh/e1.6.26 service {_='ccc',vpn='ccc/13'}
+cr interfaces/pdh/e1.6.27 service {_='ccc',vpn='ccc/13'}
+
+cr ccc 14 {admin="up"}
+set interfaces/pdh/e1.6.28 admin up
+set interfaces/pdh/e1.6.29 admin up
+cr interfaces/pdh/e1.6.28 service {_='ccc',vpn='ccc/14'}
+cr interfaces/pdh/e1.6.29 service {_='ccc',vpn='ccc/14'}
+
+cr ccc 15 {admin="up"}
+set interfaces/pdh/e1.6.30 admin up
+set interfaces/pdh/e1.6.31 admin up
+cr interfaces/pdh/e1.6.30 service {_='ccc',vpn='ccc/15'}
+cr interfaces/pdh/e1.6.31 service {_='ccc',vpn='ccc/15'}
+
+cr ccc 16 {admin="up"}
+set interfaces/pdh/e1.6.32 admin up
+set interfaces/sdh/stm1.3.1 admin up
+cr interfaces/sdh/stm1.3.1 1.0.1.1.3 {admin="up"}
+cr interfaces/pdh/e1.6.32 service {_='ccc',vpn='ccc/16'}
+cr interfaces/sdh/stm1.3.1/1.0.1.1.3 service {_='ccc',vpn='ccc/16'}
+
+cr ccc 17 {admin="up"}
+set interfaces/sdh/stm1.3.2 admin up
+set interfaces/sdh/stm1.2.2 admin up
+cr interfaces/sdh/stm1.3.2 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.2.2 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.3.2/1.0.1.1.3 service {_='ccc',vpn='ccc/17'}
+cr interfaces/sdh/stm1.2.2/1.0.1.1.3 service {_='ccc',vpn='ccc/17'}
+
+cr ccc 18 {admin="up"}
+set interfaces/pdh/e1.6.1 admin up
+set interfaces/sdh/stm1.2.3 admin up
+cr interfaces/sdh/stm1.2.3 1.0.1.1.3 {admin="up"}
+cr interfaces/pdh/e1.6.1 service {_='ccc',vpn='ccc/18'}
+cr interfaces/sdh/stm1.2.3/1.0.1.1.3 service {_='ccc',vpn='ccc/18'}
+
+set interfaces/sdh/stm1.2.2 checkc2 false 
+set interfaces/sdh/stm1.2.2/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.2.3 checkc2 false 
+set interfaces/sdh/stm1.2.3/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.3.1 checkc2 false 
+set interfaces/sdh/stm1.3.1/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.3.2 checkc2 false 
+set interfaces/sdh/stm1.3.2/1.0.1.1.3 checkv5 false
+
+co
+
+exit
+//module;205e1业务测试;begin; 
+//wait;;e1业务观察5分钟;
+//module;205e1业务测试;end; 

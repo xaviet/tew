@@ -1,0 +1,20 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+#module;125product信息录入(slot10);begin;
+cat proc/cmdline
+##cmp;uboot=;Dec 15 2011-14:29:39;
+cat /etc/buildtime
+##cmp;Wed ;Oct 12 16:60:30 HKT 2011;
+ROOTFS="$_014RootFS2"
+UBOOT="$_013UBoot2"
+SN="$_009SN2$_010PN2"
+echo "return { rootfs=\"$ROOTFS\", uboot=\"$UBOOT\", SN=\"$SN\", }" >/resvdisk/manu.lua
+cat /resvdisk/manu.lua 
+#module;125product信息录入(slot10);end;
+##;#;

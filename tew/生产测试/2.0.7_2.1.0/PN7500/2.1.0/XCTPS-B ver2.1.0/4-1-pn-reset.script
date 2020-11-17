@@ -1,0 +1,5 @@
+#wait;;连上串口线,插入待测xct的debug接口,按reset按钮,并拔出slot9的xct板卡;
+#module;113reset按钮检查;begin;
+##;NAND boot......;
+#module;113reset按钮检查;end;
+#wait;240;start up;

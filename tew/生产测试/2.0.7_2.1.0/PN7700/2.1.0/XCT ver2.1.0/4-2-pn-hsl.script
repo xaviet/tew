@@ -1,0 +1,29 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+call / testmode 1
+////;SUCCESS;
+////;;
+
+show slot/8/phy sub all
+//;#;
+//module;106确认版本;begin;
+//cmp;ver: SW:;2.1.1;1;
+//cmp;CPLD ;3004:04.08;1;
+//cmp;FPGA ;3005:03.0c;1;
+//cmp;PCB:;2;1;1;4;
+//module;106确认版本;end;
+
+d
+hsl c=8,m=hwtest,a=1
+//wait;30;等待XCT指示灯亮;
+hsl c=8,m=hwtest,a=0
+//wait;30;等待XCT指示灯灭,然后按下机架告警灯与ACO按钮;
+hsl c=8,m=hwtest,a=1
+//wait;60;等待XCT指示灯亮;
+
+exit
+#module;301xct系统灯检查;end;
+#module;302机架告警灯检查;end;

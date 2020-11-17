@@ -1,0 +1,62 @@
+dmesg 
+##;#;
+#cmp;grep:XCSB_card;grep:CPLD_ID(\s*)3701(\s*)version(\s*)1.f(\s*)FPGA1_ID(\s*)3801(\s*)version(\s*)2.4(\s*)pcb_version=1(\s*)BkpType:CXT200_A0(\s*)CPLD(\s*)ok(\s*)FPGA1(\s*)ok(\s*)AD9518_1(\s*)ok(\s*)AD9518_2(\s*)ok(\s*)oam(\s*)ddr(\s*)ok(\s*)com1(\s*)OK(\s*)com2(\s*)OK;
+#save;grep:temp(\s*)(\S)(\s*);7;
+#saveconst;30;126;
+#saveconst;70;127;
+#count;126;<;7;
+#count;127;>;7;     
+#cmp;grep:RTC(\s*);ok;1;5; 
+#cmp;grep:FE(\s*)PHY(\s*);LINK;1;8; 
+#cmp;grep:BCM_port;grep:ge1(\s*):(\s*)up(\s*)ge2(\s*):(\s*)up(\s*)ge3(\s*):(\s*)up(\s*)ge4(\s*):(\s*)up(\s*)ge5(\s*):(\s*)up(\s*)ge6(\s*):(\s*)up(\s*)ge7(\s*):(\s*)up(\s*)ge8(\s*):(\s*)up;
+#cmp;grep:BCM_port;grep:ge9(\s*):(\s*)up(\s*)ge10(\s*):(\s*)up(\s*)ge11(\s*):(\s*)up(\s*)ge12(\s*):(\s*)up(\s*)ge13(\s*):(\s*)up(\s*)ge14(\s*):(\s*)up(\s*)ge15(\s*):(\s*)up(\s*)ge16(\s*):(\s*)up;
+#cmp;grep:BCM_port;grep:hg1(\s*):(\s*)up(\s*)hg2(\s*):(\s*)up
+#cmp;grep:BCM_port;grep:GE22(\s*):(\s*)up(\s*)GE23(\s*):(\s*)up;
+#cmp;grep:XCSB(\s*)Interface_por;grep:ge1(\s*):(\s*)sfp(\s*)ge2(\s*):(\s*)sfp(\s*)ge3(\s*):(\s*)sfp(\s*)ge4(\s*):(\s*)sfp(\s*)ge5(\s*):(\s*)sfp(\s*)ge6(\s*):(\s*)sfp(\s*)ge7(\s*):(\s*)sfp(\s*)ge8(\s*):(\s*)sfp;
+#cmp;grep:XCSB(\s*)Interface_por;grep:ge9(\s*):(\s*)sfp(\s*)ge10(\s*):(\s*)sfp(\s*)ge11(\s*):(\s*)sfp(\s*)ge12(\s*):(\s*)sfp(\s*)ge13(\s*):(\s*)sfp(\s*)ge14(\s*):(\s*)sfp(\s*)ge15(\s*):(\s*)sfp(\s*)ge16(\s*):(\s*)sfp;
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+dmesg 
+##;#;
+#cmp;grep:XCSB_card;grep:CPLD_ID(\s*)3701(\s*)version(\s*)1.f(\s*)FPGA1_ID(\s*)3801(\s*)version(\s*)2.4(\s*)pcb_version=1(\s*)BkpType:CXT200_A0(\s*)CPLD(\s*)ok(\s*)FPGA1(\s*)ok(\s*)AD9518_1(\s*)ok(\s*)AD9518_2(\s*)ok(\s*)oam(\s*)ddr(\s*)ok(\s*)com1(\s*)OK(\s*)com2(\s*)OK;
+#save;grep:temp(\s*)(\S)(\s*);7;
+#saveconst;30;126;
+#saveconst;70;127;
+#count;126;<;7;
+#count;127;>;7;     
+#cmp;grep:RTC(\s*);ok;1;5; 
+#cmp;grep:FE(\s*)PHY(\s*);LINK;1;8; 
+#cmp;grep:BCM_port;grep:ge1(\s*):(\s*)up(\s*)ge2(\s*):(\s*)up(\s*)ge3(\s*):(\s*)up(\s*)ge4(\s*):(\s*)up(\s*)ge5(\s*):(\s*)up(\s*)ge6(\s*):(\s*)up(\s*)ge7(\s*):(\s*)up(\s*)ge8(\s*):(\s*)up;
+#cmp;grep:BCM_port;grep:ge9(\s*):(\s*)up(\s*)ge10(\s*):(\s*)up(\s*)ge11(\s*):(\s*)up(\s*)ge12(\s*):(\s*)up(\s*)ge13(\s*):(\s*)up(\s*)ge14(\s*):(\s*)up(\s*)ge15(\s*):(\s*)up(\s*)ge16(\s*):(\s*)up;
+#cmp;grep:BCM_port;grep:hg1(\s*):(\s*)up(\s*)hg2(\s*):(\s*)up
+#cmp;grep:BCM_port;grep:GE22(\s*):(\s*)up(\s*)GE23(\s*):(\s*)up;
+#cmp;grep:XCSB(\s*)Interface_por;grep:ge1(\s*):(\s*)sfp(\s*)ge2(\s*):(\s*)sfp(\s*)ge3(\s*):(\s*)sfp(\s*)ge4(\s*):(\s*)sfp(\s*)ge5(\s*):(\s*)sfp(\s*)ge6(\s*):(\s*)sfp(\s*)ge7(\s*):(\s*)sfp(\s*)ge8(\s*):(\s*)sfp;
+#cmp;grep:XCSB(\s*)Interface_por;grep:ge9(\s*):(\s*)sfp(\s*)ge10(\s*):(\s*)sfp(\s*)ge11(\s*):(\s*)sfp(\s*)ge12(\s*):(\s*)sfp(\s*)ge13(\s*):(\s*)sfp(\s*)ge14(\s*):(\s*)sfp(\s*)ge15(\s*):(\s*)sfp(\s*)ge16(\s*):(\s*)sfp;
+
+exit
+##;$;
+exit
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+manu sysclear
+
+manu sysclear
+##;#;

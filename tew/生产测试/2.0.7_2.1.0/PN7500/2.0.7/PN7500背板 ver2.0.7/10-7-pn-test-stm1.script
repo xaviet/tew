@@ -1,0 +1,16 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+//module;201stm1业务测试;end; 
+co
+
+//module;203stm1 msp1:1倒换测试;end; 
+//module;204stm1 交换模块倒换测试;begin; 
+//wait;;点击确定后2秒进行交换模块切换,准备观察stm1业务瞬断并且能够恢复;
+//sleep;2;交换模块切换;
+set cfp/2 apscmd manualswitch::work
+co
+//wait;;观察stm1业务瞬断并且能够恢复;
+
+exit

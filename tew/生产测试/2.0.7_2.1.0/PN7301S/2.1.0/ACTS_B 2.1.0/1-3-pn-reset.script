@@ -1,0 +1,5 @@
+#wait;;连上slot1串口线,按reset按钮;
+##;stop key:< >;
+
+boot
+#sleep;300;连接slot1网线,断开计算机串口连接,等待重启完成;

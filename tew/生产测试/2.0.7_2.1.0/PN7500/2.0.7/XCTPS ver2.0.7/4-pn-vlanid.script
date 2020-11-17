@@ -1,0 +1,169 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+egress set port=ge1 modid=6 pbmp=ge0,ge2-ge24,xe,hg
+##;BCM.0> ;
+egress set port=ge2 modid=6 pbmp=ge0-ge1,ge3-ge24,xe,hg
+##;BCM.0> ;
+egress set port=ge3 modid=6 pbmp=ge0-ge2,ge4-ge24,xe,hg
+##;BCM.0> ;
+egress set port=ge4 modid=6 pbmp=ge0-ge3,ge5-ge24,xe,hg
+##;BCM.0> ;
+egress set port=ge5 modid=6 pbmp=ge0-ge4,ge6-ge24,xe,hg
+##;BCM.0> ;
+egress set port=ge6 modid=6 pbmp=ge0-ge5,ge7-ge24,xe,hg
+##;BCM.0> ;
+egress set port=xe0 modid=6 pbmp=ge0-ge24,hg
+##;BCM.0> ;
+exit
+
+telnet 192.168.100.16
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+egress set port=ge3 modid=2 pbmp=ge0-ge2,ge4-ge24,xe,hg
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+telnet 192.168.100.8
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+egress set port=ge3 modid=4 pbmp=ge0-ge2,ge4-ge24,xe,hg
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+egress set port=ge1 modid=8 pbmp=ge0,ge2-ge24,xe,hg
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+telnet 192.168.100.24
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+egress set port=ge3 modid=10 pbmp=ge0-ge2,ge4-ge24,xe,hg
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+
+telnet 192.168.100.4
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+egress set port=ge3 modid=12 pbmp=ge0-ge2,ge4-ge24,xe,hg
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+exit
+##;$;
+exit
+##;;
+#module;104GE业务跑5分钟;begin;
+#wait;;GE业务跑5分钟;
+#module;104GE业务跑5分钟;end;

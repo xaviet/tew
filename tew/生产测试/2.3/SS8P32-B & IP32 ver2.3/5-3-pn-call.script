@@ -1,0 +1,34 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+
+#label;slave1;
+
+#cmpn;;SLAVE;;;10;
+#goto;slave1;10;NG;
+
+#label;noready1;
+show / all
+#save;readycfg:;10;
+#goto;noready1;10;false;
+
+call / showmanu 14
+#;SUCCESS!;
+#cmp;mac: ;macformat$_006EthMac1;1;
+#cmp;sn: ;$_003SN1;1;
+#cmp;pn: ;$_004PN1;1;
+#cmp;boot: ;$_015boot;1; 
+#;#;
+
+call / showmanu 15
+#;SUCCESS!;
+#cmp;mac: ;macformat$_012EthMac2;1;
+#cmp;sn: ;$_009SN2;1; 
+#cmp;pn: ;$_010PN2;1; 
+#cmp;boot: ;$_015boot;1;
+#;#;
+
+quit

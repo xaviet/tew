@@ -1,0 +1,18 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+set interfaces/eth/xg.7.1 xgwan false
+set interfaces/eth/xg.7.2 xgwan false
+set interfaces/eth/xg.10.1 xgwan false
+set interfaces/eth/xg.10.2 xgwan false
+co
+
+
+exit
+//module;110wan->lan以太网业务测试;begin;
+//wait;;wan->lan 业务测试1分钟;
+//module;110wan->lan以太网业务测试;end;
+//module;106业务测试;end;

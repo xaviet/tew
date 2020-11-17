@@ -1,0 +1,17 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+#module;112productÐÅÏ¢Â¼Èë;begin;
+ROOTFS="$_008RootFS1"
+UBOOT="$_007UBoot1"
+SN="$_003SN1$_004PN1"
+echo "return { rootfs=\"$ROOTFS\", uboot=\"$UBOOT\", SN=\"$SN\", }" >/resvdisk/manu.lua
+cat /resvdisk/manu.lua 
+##;/ #;
+
+ifconfig

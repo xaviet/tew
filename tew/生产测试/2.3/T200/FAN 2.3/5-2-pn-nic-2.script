@@ -1,0 +1,3 @@
+ifconfig eth0
+#save;Hwaddr;101;
+#count;100;!=;101;

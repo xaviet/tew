@@ -1,0 +1,11 @@
+#module;100”≤º˛–≈œ¢≤‚ ‘;begin;
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+dmesg -c
+exit

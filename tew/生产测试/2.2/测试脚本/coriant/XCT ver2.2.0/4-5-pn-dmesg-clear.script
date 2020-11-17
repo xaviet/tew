@@ -1,0 +1,13 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+manu sysclear
+
+exit
+##;$;

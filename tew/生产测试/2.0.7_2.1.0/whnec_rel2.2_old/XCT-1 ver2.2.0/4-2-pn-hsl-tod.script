@@ -1,0 +1,21 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+show slot/8/phy sub all
+//;#;
+//cmp;ver: SW:;2.2.0;1;
+//cmp;CPLD ;3007:04.08;1;
+//cmp;FPGA ;3006:03.0c;1;
+//cmp;PCB:;0;1;1;4;
+call / testmode 1
+////;SUCCESS;
+
+d
+hsl c=8,m=hwtest,a=0
+//wait;;等待XCT指示灯灭;
+hsl c=8,m=hwtest,a=1
+//wait;;别按一下机架告警测试电缆上的按钮和面板的ACO按钮，点亮XCT-1的所有灯，查看面板指示灯状态及红绿位置及机架告警测试电缆灯，面板指示灯为左绿右红，机架告警测试电缆灯要全亮;
+
+exit

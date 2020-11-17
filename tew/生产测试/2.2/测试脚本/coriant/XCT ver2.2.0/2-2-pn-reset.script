@@ -1,0 +1,8 @@
+#wait;;点击确定后连上slot8串口线,按reset按钮;
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+boot
+#sleep;360;等待重启完成.;
+#wait;;连上slot8 debug口,并拔插slot9 xct-1,然后点击确定;

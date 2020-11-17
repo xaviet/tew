@@ -1,0 +1,249 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+show slot/1/phy all sub
+#cmp;ver: ;SW:2.6.0_p7,CPLD 3403:01.07;
+
+call / testmode 1
+
+debug
+
+hsl c=1,m=hwtest,a=1
+#sleep;10;...;
+#wait;;检查各指示灯的颜色位置是否正确。另外RJ45的灯是左边黄，右边绿色。面板左侧的告警指示灯颜色为：DBALM:R,DBSTA:G,PWR:G,CALM:R,CSTA:G,XALM:R,XSTA:G,（G:绿色,R:红色）。GE为：下绿上红,同时治具设备的LED必须全亮。;200;
+
+exit
+
+quit
+
+tail -100 /appdisk/hal.stdout
+#cmp;hwtest;grep:board(\s*)type(\s*)ACPS_C(\s*)ACPS_C(\s*)led(\s*)on(\s*)CPLD_ID(\s*)3403(\s*)version(\s*)1.7(\s*)date(\s*)2016-0713(\s*)ddr_cap(\s*)2-Gbits(\s*)ddr_num(\s*)2(\s*)pcb(\s*)version(\s*)(\d+)(\s*)board_type(\s*)8(\s*)Card(\s*)temp:(\d+)(\s*)Bcm(\s*)temp:(\d+)(\s*)reset_status(\s*)ok(\s*)lock_status(\s*)ok(\s*)hw_dog(\s*)ok(\s*)oam(\s*)ddr(\s*)ok(\s*)broad(\s*)sync(\s*)ok(\s*)RTC(\s*)ok(\s*)861(\s*)ok(\s*)oam(\s*)rgmii(\s*)ok(\s*)---GE(\s*)port(\s*)sfp(\s*)check---(\s*)ge1:sfp(\s*)ge2:sfp(\s*)ge3:sfp(\s*)ge4:sfp(\s*)ge5:sfp(\s*)ge6:sfp(\s*)---BCM(\s*)port(\s*)status(\s*)check---(\s*)gee1:up(\s*)gee2:up(\s*)gee3:up(\s*)gee4:up(\s*)gee5:up(\s*)gee6:up(\s*)gee7:up(\s*)gee8:up(\s*)ge1:up(\s*)ge2:up(\s*)ge3:up(\s*)ge4:up(\s*)ge5:up(\s*)ge6:up(\s*);;;201;
+#save;grep:Card(\s*)temp:;7;
+#save;grep:Bcm(\s*)temp:;8;
+#saveconst;10;126;
+#saveconst;70;127;
+#count;126;<;7;202;
+#count;127;>;7; 203;
+#count;126;<;8;204;
+#count;127;>;8; 205;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=1,m=hwtest,a=0
+#sleep;10;...;
+#wait;;观察所有的LED（除了电源灯），包括RJ45（除了NMS口），是否都已关闭。同时治具设备的LED必须全灭。;206;
+
+exit
+
+quit
+
+tail -100 /appdisk/hal.stdout
+#cmp;hwtest;grep:board(\s*)type(\s*)ACPS_C(\s*)ACPS_C(\s*)led(\s*)off;;;207;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=1,m=hwtest,a=1
+#wait;;观察治具设备的LED是全亮;208;
+
+exit
+
+quit
+
+#goto;fault1;200;NG;
+#goto;fault1;201;NG;
+#goto;fault1;202;NG;
+#goto;fault1;203;NG;
+#goto;fault1;204;NG;
+#goto;fault1;205;NG;
+#goto;fault1;206;NG;
+#goto;fault1;207;NG;
+#goto;fault1;208;NG;
+
+#saveconst;allok;10;
+#goto;allok;10;allok;
+
+#label;fault1;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+show slot/1/phy all sub
+#cmp;ver: ;SW:2.6.0_p7,CPLD 3403:01.07;
+
+call / testmode 1
+
+debug
+
+hsl c=1,m=hwtest,a=1
+#sleep;10;...;
+#wait;;检查各指示灯的颜色位置是否正确。另外RJ45的灯是左边黄，右边绿色。面板左侧的告警指示灯颜色为：DBALM:R,DBSTA:G,PWR:G,CALM:R,CSTA:G,XALM:R,XSTA:G,（G:绿色,R:红色）。GE为：下绿上红,同时治具设备的LED必须全亮。;200;
+
+exit
+
+quit
+
+tail -100 /appdisk/hal.stdout
+#cmp;hwtest;grep:board(\s*)type(\s*)ACPS_C(\s*)ACPS_C(\s*)led(\s*)on(\s*)CPLD_ID(\s*)3403(\s*)version(\s*)1.7(\s*)date(\s*)2016-0713(\s*)ddr_cap(\s*)2-Gbits(\s*)ddr_num(\s*)2(\s*)pcb(\s*)version(\s*)(\d+)(\s*)board_type(\s*)8(\s*)Card(\s*)temp:(\d+)(\s*)Bcm(\s*)temp:(\d+)(\s*)reset_status(\s*)ok(\s*)lock_status(\s*)ok(\s*)hw_dog(\s*)ok(\s*)oam(\s*)ddr(\s*)ok(\s*)broad(\s*)sync(\s*)ok(\s*)RTC(\s*)ok(\s*)861(\s*)ok(\s*)oam(\s*)rgmii(\s*)ok(\s*)---GE(\s*)port(\s*)sfp(\s*)check---(\s*)ge1:sfp(\s*)ge2:sfp(\s*)ge3:sfp(\s*)ge4:sfp(\s*)ge5:sfp(\s*)ge6:sfp(\s*)---BCM(\s*)port(\s*)status(\s*)check---(\s*)gee1:up(\s*)gee2:up(\s*)gee3:up(\s*)gee4:up(\s*)gee5:up(\s*)gee6:up(\s*)gee7:up(\s*)gee8:up(\s*)ge1:up(\s*)ge2:up(\s*)ge3:up(\s*)ge4:up(\s*)ge5:up(\s*)ge6:up(\s*);;;201;
+#save;grep:Card(\s*)temp:;7;
+#save;grep:Bcm(\s*)temp:;8;
+#saveconst;10;126;
+#saveconst;70;127;
+#count;126;<;7;202;
+#count;127;>;7; 203;
+#count;126;<;8;204;
+#count;127;>;8; 205;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=1,m=hwtest,a=0
+#sleep;10;...;
+#wait;;观察所有的LED（除了电源灯），包括RJ45（除了NMS口），是否都已关闭。同时治具设备的LED必须全灭。;206;
+
+exit
+
+quit
+
+tail -100 /appdisk/hal.stdout
+#cmp;hwtest;grep:board(\s*)type(\s*)ACPS_C(\s*)ACPS_C(\s*)led(\s*)off;;;207;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=1,m=hwtest,a=1
+#wait;;观察治具设备的LED是全亮;208;
+
+exit
+
+quit
+
+#goto;fault2;200;NG;
+#goto;fault2;201;NG;
+#goto;fault2;202;NG;
+#goto;fault2;203;NG;
+#goto;fault2;204;NG;
+#goto;fault2;205;NG;
+#goto;fault2;206;NG;
+#goto;fault2;207;NG;
+#goto;fault2;208;NG;
+
+#saveconst;allok;10;
+#goto;allok;10;allok;
+
+#label;fault2;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+show slot/1/phy all sub
+#cmp;ver: ;SW:2.6.0_p7,CPLD 3403:01.07;
+
+call / testmode 1
+
+debug
+
+hsl c=1,m=hwtest,a=1
+#sleep;10;...;
+#wait;;检查各指示灯的颜色位置是否正确。另外RJ45的灯是左边黄，右边绿色。面板左侧的告警指示灯颜色为：DBALM:R,DBSTA:G,PWR:G,CALM:R,CSTA:G,XALM:R,XSTA:G,（G:绿色,R:红色）。GE为：下绿上红,同时治具设备的LED必须全亮。;200;
+
+exit
+
+quit
+
+tail -100 /appdisk/hal.stdout
+#cmp;hwtest;grep:board(\s*)type(\s*)ACPS_C(\s*)ACPS_C(\s*)led(\s*)on(\s*)CPLD_ID(\s*)3403(\s*)version(\s*)1.7(\s*)date(\s*)2016-0713(\s*)ddr_cap(\s*)2-Gbits(\s*)ddr_num(\s*)2(\s*)pcb(\s*)version(\s*)(\d+)(\s*)board_type(\s*)8(\s*)Card(\s*)temp:(\d+)(\s*)Bcm(\s*)temp:(\d+)(\s*)reset_status(\s*)ok(\s*)lock_status(\s*)ok(\s*)hw_dog(\s*)ok(\s*)oam(\s*)ddr(\s*)ok(\s*)broad(\s*)sync(\s*)ok(\s*)RTC(\s*)ok(\s*)861(\s*)ok(\s*)oam(\s*)rgmii(\s*)ok(\s*)---GE(\s*)port(\s*)sfp(\s*)check---(\s*)ge1:sfp(\s*)ge2:sfp(\s*)ge3:sfp(\s*)ge4:sfp(\s*)ge5:sfp(\s*)ge6:sfp(\s*)---BCM(\s*)port(\s*)status(\s*)check---(\s*)gee1:up(\s*)gee2:up(\s*)gee3:up(\s*)gee4:up(\s*)gee5:up(\s*)gee6:up(\s*)gee7:up(\s*)gee8:up(\s*)ge1:up(\s*)ge2:up(\s*)ge3:up(\s*)ge4:up(\s*)ge5:up(\s*)ge6:up(\s*);;;201;
+#save;grep:Card(\s*)temp:;7;
+#save;grep:Bcm(\s*)temp:;8;
+#saveconst;10;126;
+#saveconst;70;127;
+#count;126;<;7;202;
+#count;127;>;7; 203;
+#count;126;<;8;204;
+#count;127;>;8; 205;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=1,m=hwtest,a=0
+#sleep;10;...;
+#wait;;观察所有的LED（除了电源灯），包括RJ45（除了NMS口），是否都已关闭。同时治具设备的LED必须全灭。;206;
+
+exit
+
+quit
+
+tail -100 /appdisk/hal.stdout
+#cmp;hwtest;grep:board(\s*)type(\s*)ACPS_C(\s*)ACPS_C(\s*)led(\s*)off;;;207;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=1,m=hwtest,a=1
+#wait;;观察治具设备的LED是全亮;208;
+
+exit
+
+quit
+
+#goto;pkgfault;200;NG;
+#goto;pkgfault;201;NG;
+#goto;pkgfault;202;NG;
+#goto;pkgfault;203;NG;
+#goto;pkgfault;204;NG;
+#goto;pkgfault;205;NG;
+#goto;pkgfault;206;NG;
+#goto;pkgfault;207;NG;
+#goto;pkgfault;208;NG;
+
+#saveconst;allok;10;
+#goto;allok;10;allok;
+
+#label;pkgfault;
+
+#wait;;故障板卡,请停止测试!;
+#sleep;2;故障板卡,请停止测试!;
+
+#label;allok;
+
+date

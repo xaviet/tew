@@ -1,0 +1,138 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+config
+
+dr
+
+//label;noready1;
+show / all
+//save;readycfg:;10;
+//goto;noready1;10;false;
+
+co
+
+set slot/8/lg type XCT
+set slot/9/lg type XCT
+set slot/17/lg type PSU
+set slot/18/lg type FAN
+set slot/19/lg type PSU
+set slot/2/lg type SX2G20
+set slot/3/lg type SX2G20
+set slot/4/lg type SX2G20
+set slot/5/lg type SX2G20
+set slot/6/lg type SX2G20
+set slot/7/lg type SX2G20
+set slot/10/lg type SX2G20
+set slot/11/lg type SX2G20
+set slot/12/lg type SX2G20
+set slot/14/lg type SX2G20
+set slot/15/lg type SX2G20
+
+co
+
+//label;noready2;
+show / all
+//save;readycfg:;10;
+//goto;noready2;10;false;
+
+co
+
+cr pmap/ethac l21 {default={cos='be',eir=1000000}}
+
+mset interfaces/eth ge.4.1 {role="uni", admin="up"}
+mset interfaces/eth ge.4.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.5.1 {role="uni", admin="up"}
+mset interfaces/eth ge.5.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.6.1 {role="uni", admin="up"}
+mset interfaces/eth ge.6.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.7.1 {role="uni", admin="up"}
+mset interfaces/eth ge.7.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.10.1 {role="uni", admin="up"}
+mset interfaces/eth ge.10.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.11.1 {role="uni", admin="up"}
+mset interfaces/eth ge.11.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.12.1 {role="uni", admin="up"}
+mset interfaces/eth ge.12.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.2.1 {role="uni", admin="up"}
+mset interfaces/eth ge.2.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.3.1 {role="uni", admin="up"}
+mset interfaces/eth ge.3.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.14.1 {role="uni", admin="up"}
+mset interfaces/eth ge.14.2 {role="uni", admin="up"}
+
+mset interfaces/eth ge.15.1 {role="uni", admin="up"}
+mset interfaces/eth ge.15.2 {role="uni", admin="up"}
+
+co
+
+cr ccc 1 {admin='up'}
+cr ccc 2 {admin='up'}
+cr ccc 3 {admin='up'}
+cr ccc 4 {admin='up'}
+cr ccc 5 {admin='up'}
+cr ccc 6 {admin='up'}
+cr ccc 7 {admin='up'}
+cr ccc 8 {admin='up'}
+cr ccc 9 {admin='up'}
+cr ccc 10 {admin='up'}
+cr ccc 11 {admin='up'}
+
+cr interfaces/eth/ge.4.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/1'}}
+cr interfaces/eth/ge.5.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/1'}}
+
+cr interfaces/eth/ge.6.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/2'}}
+cr interfaces/eth/ge.7.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/2'}}
+
+cr interfaces/eth/ge.10.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/3'}}
+cr interfaces/eth/ge.11.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/3'}}
+
+cr interfaces/eth/ge.12.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/4'}}
+cr interfaces/eth/ge.2.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/4'}}
+
+cr interfaces/eth/ge.3.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/5'}}
+cr interfaces/eth/ge.14.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/5'}}
+
+cr interfaces/eth/ge.15.1 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/6'}}
+cr interfaces/eth/ge.4.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/6'}}
+
+cr interfaces/eth/ge.5.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/7'}}
+cr interfaces/eth/ge.6.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/7'}}
+
+cr interfaces/eth/ge.7.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/8'}}
+cr interfaces/eth/ge.10.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/8'}}
+
+
+cr interfaces/eth/ge.11.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/9'}}
+cr interfaces/eth/ge.2.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/9'}}
+
+cr interfaces/eth/ge.3.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/10'}}
+cr interfaces/eth/ge.14.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/10'}}
+
+cr interfaces/eth/ge.15.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/11'}}
+cr interfaces/eth/ge.12.2 1 {admin='up',mode='port', qos='l21',service={_='ccc',vpn='ccc/11'}}
+
+set interfaces/extclk/8.1 admin up
+set interfaces/tod/8.1 admin up
+set interfaces/tod/8.2 admin up
+co
+set interfaces/extclk/9.1 admin up
+set interfaces/tod/9.1 admin up
+set interfaces/tod/9.2 admin up
+
+co
+////;#;
+//cmpn;;ERROR;
+
+exit

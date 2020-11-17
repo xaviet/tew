@@ -1,0 +1,28 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+manu sysclear
+
+#module;112product–≈œ¢¬º»Î;begin;
+manu clear
+manu set mac macformat$_006EthMac1
+manu set sn $_003SN1$_004PN1
+
+cat proc/cmdline
+#cmp;uboot=;Jun 07 2013-09:07:20;
+cat /etc/buildtime
+#cmp;2013-05-27; 14:41:38;
+
+manu set boot $_015boot
+manu set vendor $_016vendor
+
+manu check
+#cmp;manu;all ok;
+
+exit

@@ -1,0 +1,21 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+#module;108ver查询;begin;
+show slot/3/phy all sub
+//cmp;ver: ;SW:2.0.7,CPLD 3202:04.06,FPGA 3201:02.11,3204:01.05,PCB:2;
+//cmp;type: ;XCTPS;
+#module;108ver查询;end;
+call / testmode 1
+////;SUCCESS;
+////;;
+
+d
+//wait;;按下aco及机架告警灯上按钮;
+hsl c=3,m=hwtest,a=1
+
+exit
+
+#module;107硬件信息查询;begin;

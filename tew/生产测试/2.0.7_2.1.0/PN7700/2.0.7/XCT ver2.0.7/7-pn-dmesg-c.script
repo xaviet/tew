@@ -1,0 +1,12 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+#module;109xct系统灯检查;begin;
+#module;110机架告警灯检查;begin;
+dmesg -c
+exit

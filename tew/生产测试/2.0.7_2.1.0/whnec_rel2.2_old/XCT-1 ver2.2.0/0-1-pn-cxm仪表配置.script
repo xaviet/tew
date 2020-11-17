@@ -1,0 +1,88 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+option page off
+secu
+idletime admin 9999999
+exit
+co
+top
+edit /interfaces/$_020EthetnetInstrumentPort1
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send
+set / bw_cnt 18432
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/cstream
+set / bw_cnt 18432
+set / bw_percent 900000000
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/pstream
+set / framesize_base 1280
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/pstream/protocol
+set / da_value 1792
+set / sa_mode 2
+set / sa_value 1536
+set / sa_repeat 16
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/pstream/protocol/vlan
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/pstream/udf
+co
+top
+call / config_send $_020EthetnetInstrumentPort1  
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send
+top
+edit /interfaces/$_021EthetnetInstrumentPort2
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/cstream
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/pstream
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/pstream/protocol
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/pstream/protocol/vlan
+top
+edit /interfaces/$_020EthetnetInstrumentPort1/send/stream1/pstream/udf
+co
+top
+call / config_send $_020EthetnetInstrumentPort1  
+top
+edit /interfaces/$_021EthetnetInstrumentPort2/send
+top
+edit /interfaces/$_021EthetnetInstrumentPort2/send
+set / bw_cnt 18432
+top
+edit /interfaces/$_021EthetnetInstrumentPort2/send/stream1
+top
+edit /interfaces/$_021EthetnetInstrumentPort2/send/stream1/cstream
+set / bw_cnt 18432
+set / bw_percent 900000000
+top
+edit /interfaces/$_021EthetnetInstrumentPort2/send/stream1/pstream
+set / framesize_base 1280
+top
+edit /interfaces/$_021EthetnetInstrumentPort2/send/stream1/pstream/protocol
+set / da_value 1792
+set / sa_mode 2
+set / sa_value 1536
+set / sa_repeat 16
+top
+edit /interfaces/$_021EthetnetInstrumentPort2/send/stream1/pstream/protocol/vlan
+top
+edit /interfaces/$_021EthetnetInstrumentPort2/send/stream1/pstream/udf
+co
+top
+call / config_send $_021EthetnetInstrumentPort2  
+
+//sleep;1;...;

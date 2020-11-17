@@ -1,0 +1,6 @@
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+boot
+#sleep;360;等待重启完成;

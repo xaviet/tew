@@ -1,0 +1,2 @@
+#wait;;安装slot7的fan，并连接slot3xctps的debug口至电脑网口,注意如果测试异常中断,则需要手动输入hsl c=3,m=setfan,a=0;
+#module;fan测试;begin;

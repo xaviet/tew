@@ -1,0 +1,23 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+call / testmode 1
+////;SUCCESS;
+////;;
+d
+hsl c=1,m=hwtest,a=1
+//wait;5;等待slot1所有灯亮起;
+hsl c=1,m=hwtest,a=0
+//wait;5;等待slot1所有灯熄灭;
+hsl c=1,m=hwtest,a=1
+//wait;5;等待slot1所有灯亮起;
+hsl c=2,m=hwtest,a=1
+//wait;5;等待slot2所有灯亮起;
+hsl c=2,m=hwtest,a=0
+//wait;5;等待slot2所有灯熄灭;
+hsl c=2,m=hwtest,a=1
+//wait;5;等待slot2所有灯亮起;
+//wait;2;...;;
+exit

@@ -1,0 +1,43 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+//msg;chkclr;slot2ledbegin;
+
+dmesg 
+##;/ #;
+#cmpn;;fail;
+#cmpn;;error;
+#cmpn;;down;
+#buffcut;*********************hwtest******************;; 
+#cmp;board type ;SGSP-A;1;8;1;
+#cmp;CPLD_ID ;3003     version  4.d;
+#save;temp : ;7;0;5;
+#saveconst;29;125;
+#saveconst;71;126;
+#count;125;<;7;
+#count;126;>;7;
+#cmp;FPGA1_ID  ;3001   version  2.7;
+#cmp;FPGA2_ID  ;3002   version  3.2;
+
+//msg;add;slot2ledend;
+
+dmesg -c
+
+//msg;chkclr;slot2ledbegin;
+
+dmesg 
+##;/ #;
+#cmp;;grep:FE\sTo\sslot\s[8-9]\sOK[^.][^.]FE\sTo\sslot\s[8-9]\sOK[^.][^.]FE\sTo\sslot\s[8-9]\sOK[^.][^.]FE\sTo\sslot\s[8-9]\sOK;
+
+//msg;add;slot2ledend;
+
+manu sysclear
+
+exit
+##;$;

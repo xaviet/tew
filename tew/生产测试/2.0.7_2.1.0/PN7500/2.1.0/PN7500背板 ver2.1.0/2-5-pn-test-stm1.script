@@ -1,0 +1,9 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+//module;201stm1业务测试;end; 
+co
+
+exit
+//wait;;拔出stm1.3.5和stm1.3.6光纤，观察stm1业务瞬断并且能够恢复,测试1分钟;

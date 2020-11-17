@@ -1,0 +1,15 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+
+//sleep;5;...;
+set cfp/1 apscmd clear
+set cfp/2 apscmd clear
+co
+
+//sleep;2;...;
+
+exit

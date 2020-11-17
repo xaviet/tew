@@ -1,0 +1,70 @@
+
+TPSU
+----------------TPSU_card1---------------
+TPSU1_CPLD_ID 3702      version=1.4
+BkpType:CXT200_A0
+board_type=0
+pcb version=1
+Tpsu cpld ok
+com1 OK
+com2 OK
+com3 OK
+IDT3380_board1_check OK 
+power a online   TMOV a ok
+EXT_CLK_bit ok
+1pps ok 
+clock output ok
+----------------TPSU_card2---------------
+TPSU1_CPLD_ID 3702      version=1.4
+BkpType:CXT200_A0
+board_type=0
+pcb version=1
+Tpsu cpld ok
+com1 OK
+com2 OK
+com3 OK
+IDT3380_board2_check OK 
+power a offline   TMOV a fail
+EXT_CLK_bit fail
+1pps ok 
+clock output ok
+------------------------------------------------
+
+IX02
+--------------------------subchss2--------------------------- 
+--------------------------subchss2--------------------------- 
+type: IX02 
+key ok
+xg1 :sfp+       xg2 :sfp   
+clock fail
+-----------------------------------------------------------
+
+IG08
+--------------------------subchss2--------------------------- 
+type: IG08 
+key ok
+ge1 :sfp        ge2 :sfp        ge3 :sfp        ge4 :sfp  
+ge5 :sfp   ge6 :sfp     ge7 :sfp        ge8 :sfp  
+
+--------------------------subchss3--------------------------- 
+type: IG06S02
+key ok
+ge1 :sfp        ge2 :sfp        ge3 :sfp        ge4 :sfp  
+ge5 :sfp   ge6 :sfp     stm1:sfp        stm2:sfp  
+-------------------------------------------------------------
+
+
+
+IP16
+--------------------------subchss1--------------------------- 
+type: IP16
+key ok
+
+--------------------------subchss2--------------------------- 
+type: IP16 
+key ok
+
+--------------------------subchss3--------------------------- 
+type: IP16
+key ok
+-------------------------------------------------------------

@@ -1,0 +1,13 @@
+
+luacmd.lua
+##;> ;
+pga._progsubcpld(1,0,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt80_62g/fpga/cxt3702v010e.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot;
+##;> ;
+#ctrld;
+
+echo -n $_022appname > /appdisk/nepkg/active
+
+#sleep;120;startup;

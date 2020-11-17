@@ -1,0 +1,5 @@
+dmesg -c
+
+#wait;;在SUB-SLOT1插IX02和SUB-SLOT2插IX02，在SUB-SLOT3插IG06S02子卡;
+
+exit

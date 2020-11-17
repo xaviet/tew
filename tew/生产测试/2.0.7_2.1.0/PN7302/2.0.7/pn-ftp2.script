@@ -1,0 +1,24 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+##;/ #;
+#systemcmd;ftp -n;open 192.168.100.3;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\生产测试版本\V2.0.7\cxt20cv2.0.7.tar.gz;ls -la;bye;
+
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/cxt20cv2.0.7.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(0,"/appdisk/nepkg/cxt20cv2.0.7/soft_ptn64/cxt20c/fpga/cxt3303v010e.bin")
+#cmp;cpu test is e0000000;the cpld download is start;
+##;> ;
+#ctrld;
+echo -n cxt20cv2.0.7 > /appdisk/nepkg/active
+reboot
+#module;101mac设置及CPLD加载;end;
+##;/ #;
+#wait;;等待单板启动,将网线换到slot1;

@@ -1,0 +1,11 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+#wait;;¸ü»»slot6ÎªIP32°å¿¨;
+dmesg -c
+exit

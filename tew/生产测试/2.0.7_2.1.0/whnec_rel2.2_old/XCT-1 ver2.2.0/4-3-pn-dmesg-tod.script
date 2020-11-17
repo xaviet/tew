@@ -1,0 +1,70 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#wait;20;等待20s时间;
+dmesg
+##;/ #;
+#buffcut;*********************hwtest******************;; 
+#cmp;board type ;XCTE-480G;1;16;1;
+#cmp;CPLD_ID 3007     version  ;4.8;1;4;4;
+#cmp;FPGA1_ID  3006   version  ;3.c;1;3;4;
+#cmp;pcb_version=;0;1;1;5;
+#cmp;BkpType:;CXT500_A0;1;9;6;
+#cmp;CPLD            ;ok;1;2;
+#cmp;FPGA1 ;ok;1;2;
+#cmp;IDT3380 ;ok;1;2;
+#cmp;AD9518  ;ok;1;2;
+#cmp;oam ddr ;ok;1;2;
+#cmp;alm test ;ok;1;2;
+#save;Card temp : ;7;1;2;
+#saveconst;19;126;
+#saveconst;71;127;
+#count;126;<;7;
+#count;127;>;7;
+#save;BCM average current temperature is  ;7;1;2;
+#saveconst;39;126;
+#saveconst;75;127;
+#count;126;<;7;
+#count;127;>;7;
+#cmp;FAN_IIC_RW ;ok;1;2;
+#cmp;RTC ;ok;1;2;
+#cmp;slot 17 PSU online ;ok;1;2;
+#cmp;slot 19 PSU online ;ok;1;2;
+#cmp;Power1 ;OK;1;2;
+#cmp;Power2 ;OK;1;2;
+#cmp;slot  1:;fe:ok           com:ok          hg 0:up;
+#cmp;slot  2:;fe:ok           com:ok          hg 1:up;
+#cmp;slot  3:;fe:ok           com:ok          hg 2:up;
+#cmp;slot  4:;fe:ok           com:ok          hg 3:up;
+#cmp;slot  5:;fe:ok           com:ok          hg 4:up;
+#cmp;slot  6:;fe:ok           com:ok          hg 5:up;
+#cmp;slot  7:;fe:ok           com:ok          hg 6:up;
+#cmp;slot 10:;fe:ok           com:ok          hg 7:up;
+#cmp;slot 11:;fe:ok           com:ok          hg 8:up;
+#cmp;slot 12:;fe:ok           com:ok          hg 9:up;
+#cmp;slot 13:;fe:ok           com:ok          hg 10:up;
+#cmp;slot 14:;fe:ok           com:ok          hg 11:up;
+#cmp;slot 15:;fe:ok           com:ok          hg 12:up;
+#cmp;slot 16:;fe:ok           com:ok          hg 13:up; 
+#cmp;MATE  :;      fe:ok           com:ok;1;32;
+#cmp;Debug fe:;ok;1;2;
+#cmp;RACK_ACO_0 ;ok;1;2;  
+#cmp;ACO_1 ;ok;1;2;
+#cmp;1st EXT_CLK_hz ;ok;1;2;
+#cmp;1st EXT_CLK_bit ;ok;1;2;
+#cmp;1pps ;ok;1;2;
+#cmp;tod  ;ok;1;2;
+#cmp;IDT3380 IN3 ;ok  IDT3380 IN4 ok;
+#cmp;IDT3380 IN6 ;ok  IDT3380 IN7 ok;
+#cmp;IDT3380 IN8 ;ok  IDT3380 IN9 ok;
+call / testmode 0
+
+exit
+##;$;
+//wait;240;将XCT-1单板上的拨码开关 S21的1&2&3拨置OFF位置,插回slot8槽位;

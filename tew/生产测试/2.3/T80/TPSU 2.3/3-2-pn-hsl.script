@@ -1,0 +1,19 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 1
+
+debug
+
+hsl c=1,m=hwtest,a=0
+#sleep;20;...;
+#wait;;等待slot1所有灯熄灭;
+
+hsl c=1,m=hwtest,a=1
+#sleep;20;...;
+#wait;;等待slot1所有灯亮起,红绿灯位置正确，PWR:G；CALM:R；CSTA:G；XALM:R；XSTA:G；DBALM:R；DBSTA:G；（G:绿色；R：红色）。FX和GE灯为：左绿右红;
+
+exit

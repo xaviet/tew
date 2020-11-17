@@ -1,0 +1,36 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+##;/ #;
+#module;102安装软件包并加载cpld;begin;
+#systemcmd;ftp -n;open  $_host;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\生产测试版本\V2.1.0\t500v2.1.1.tar.gz;ls -la;bye;
+
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/t500v2.1.1.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/t500v2.1.1/soft_ptn64/cxt500/fpga/cxt3004v0408.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;> ;
+#ctrld;
+#module;102安装软件包并加载cpld;end;
+
+#module;103确认mac地址($_006EthMac1);begin;
+ifconfig eth0
+#cmp;eth0;$_006EthMac1;
+#module;103确认mac地址($_006EthMac1);end;
+#module;105确认nms地址(192.168.1.201);begin;
+ifconfig eth0
+#cmp;eth0;192.168.1.201;
+#module;105确认nms地址(192.168.1.201);end;
+echo -n t500v2.1.1 > /appdisk/nepkg/active
+#;/ #;
+#module;100底层写入;end;
+#wait;;将网线连至待测xct的debug接口,系统断电重启;
+#sleep;240;重启...;

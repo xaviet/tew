@@ -1,0 +1,11 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+dmesg -c
+exit
+##;$;

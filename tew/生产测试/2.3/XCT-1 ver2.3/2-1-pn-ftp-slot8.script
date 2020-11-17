@@ -1,0 +1,20 @@
+mkdir /appdisk/nepkg
+
+#sftp;tx;D:\生产测试版本\V2.3.0\$_022appname.tar.gz;/appdisk/nepkg/$_022appname.tar.gz;
+##;;
+
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/$_022appname.tar.gz
+##;#;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt500e/fpga/cxt3007v0107.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+echo -n $_022appname > /appdisk/nepkg/active
+reboot
+#sleep;120;...;
+#wait;;1.用直连网线连接XCT-1面板的ALM_IN和ALM_OUT,2.在clk接口插上时钟自环水晶头,3.用直连网线连接XCT-1面板的tod_in和clk/tod,4.将特制机架告警测试指示灯（或是机架告警板）接到LAMP口,5.用网线连接电脑网口和debug口,然后点击确定，等待系统重启;

@@ -1,0 +1,80 @@
+dmesg -c
+##;#;
+#cmp;grep:FAN_IIC(\s+);ok;1;5;
+#cmp;grep:alm(\s+)test(\s+);ok;1;5;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=1,m=setfan,a=6
+sleep;10;...;
+hsl c=1,m=readfan,a=6
+
+exit
+
+quit
+
+dmesg -c
+##;#;
+#save;speed:;11;1;4
+#save;speed:;12;6;4
+#save;speed:;13;11;4
+#saveconst;3000;121;
+#saveconst;9999;122;
+#saveconst;6000;123;
+#saveconst;9999;124;
+#count;121;<;11;
+#count;122;>;11;     
+#count;123;<;12;
+#count;124;>;12;   
+#count;123;<;13;
+#count;124;>;13;   
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=1,m=setfan,a=1
+sleep;10;...;
+hsl c=1,m=readfan,a=1
+
+exit
+
+quit
+
+dmesg -c
+##;#;
+#save;speed:;11;1;4
+#save;speed:;12;6;4
+#save;speed:;13;11;4
+#saveconst;100;121;
+#saveconst;9999;122;
+#saveconst;1000;123;
+#saveconst;9999;124;
+#count;121;<;11;
+#count;122;>;11;     
+#count;123;<;12;
+#count;124;>;12;   
+#count;123;<;13;
+#count;124;>;13;   
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+exit

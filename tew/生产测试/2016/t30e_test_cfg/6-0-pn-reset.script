@@ -1,0 +1,7 @@
+#wait;;单击确定,按下设备的复位按钮;
+##;Hit any key to stop autoboot;
+
+##;u-boot>;
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+##;u-boot>;

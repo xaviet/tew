@@ -1,0 +1,35 @@
+dmesg 
+##;#;
+#cmp;grep:subchss2;grep:type:(\s+)IG08(\s+)key(\s+)ok(\s+)(\s+)ge1(\s+):sfp(\s+)ge2(\s+):sfp(\s+)ge3(\s+):sfp(\s+)ge4(\s+):sfp(\s+)ge5(\s+):sfp(\s+)ge6(\s+):sfp(\s+)ge7(\s+):sfp(\s+)ge8(\s+):sfp;
+#cmp;grep:subchss3;grep:type:(\s+)IG06S02(\s+)key(\s+)ok(\s+)(\s+)ge1(\s+):sfp(\s+)ge2(\s+):sfp(\s+)ge3(\s+):sfp(\s+)ge4(\s+):sfp(\s+)ge5(\s+):sfp(\s+)ge6(\s+):sfp(\s+)stm1(\s*):sfp(\s+)stm2(\s*):sfp;
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+dmesg 
+##;#;
+#cmp;grep:subchss2;grep:type:(\s+)IG08(\s+)key(\s+)ok(\s+)(\s+)ge1(\s+):sfp(\s+)ge2(\s+):sfp(\s+)ge3(\s+):sfp(\s+)ge4(\s+):sfp(\s+)ge5(\s+):sfp(\s+)ge6(\s+):sfp(\s+)ge7(\s+):sfp(\s+)ge8(\s+):sfp;
+#cmp;grep:subchss3;grep:type:(\s+)IG06S02(\s+)key(\s+)ok(\s+)(\s+)ge1(\s+):sfp(\s+)ge2(\s+):sfp(\s+)ge3(\s+):sfp(\s+)ge4(\s+):sfp(\s+)ge5(\s+):sfp(\s+)ge6(\s+):sfp(\s+)stm1(\s*):sfp(\s+)stm2(\s*):sfp;
+
+exit
+
+exit
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+exit

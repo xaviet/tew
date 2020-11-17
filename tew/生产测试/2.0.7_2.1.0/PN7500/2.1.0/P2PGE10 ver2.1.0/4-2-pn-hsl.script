@@ -1,0 +1,22 @@
+//module;111指示灯检查;begin;
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+debug
+
+hsl c=2,m=hwtest,a=0
+//wait;30;slot2灯是否全灭?;
+hsl c=2,m=hwtest,a=1
+//wait;30;slot2灯是否全亮?且安装正确;
+
+hsl c=5,m=hwtest,a=0
+//wait;30;slot5灯是否全灭?;
+hsl c=5,m=hwtest,a=1
+//wait;30;slot5灯是否全亮?且安装正确;
+
+exit
+//module;111指示灯检查;end;
+//module;112硬件信息查询;begin;
+//sleep;5;...;

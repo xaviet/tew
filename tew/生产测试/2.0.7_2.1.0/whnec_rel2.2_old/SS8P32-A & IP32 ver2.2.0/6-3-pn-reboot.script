@@ -1,0 +1,16 @@
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#msg;chkclr;slot14ready;
+#msg;chkclr;slot15ready;
+
+call / reboot 14 comm 
+call / setreadycfg true
+call / reboot 15 comm
+
+#msg;add;slot14reboot;
+#msg;add;slot15reboot;
+
+quit

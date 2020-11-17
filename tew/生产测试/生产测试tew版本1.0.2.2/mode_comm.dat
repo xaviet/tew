@@ -1,0 +1,115 @@
+//[keytype;host;port]
+//comment=#;
+//initreturn=0;
+//autologin=0;
+//displayuser=login:;
+//displaypwd=Password:;
+//user=a;
+//pwd=a;
+//prompt=#;
+//displayback=0;
+//reflectkey={"key1";action1}{"key2";action2};
+//exitaction=exit;
+//delaytime=0;
+//endofline=\r\n;
+//headflag=00;
+//tailflag=00;
+//heartmsg=00;
+//heartintv=1000;
+//BaudRate=9600;
+//ByteSize=8;
+//Parity=0;
+//#define NOPARITY            0;
+//#define ODDPARITY           1;
+//#define EVENPARITY          2;
+//#define MARKPARITY          3;
+//#define SPACEPARITY         4;
+//StopBits=0;
+//#define ONESTOPBIT          0;
+//#define ONE5STOPBITS        1;
+//#define TWOSTOPBITS         2;
+[pn;;23;]
+	comment=#;
+	initreturn=0;
+	autologin=0;
+	displayuser=login:;
+	displaypwd=Password:;
+	user=a;
+	pwd=a;
+	prompt=#;
+[pn;;22;]
+	comment=#;
+	initreturn=0;
+	autologin=0;
+	displayuser=login:;
+	displaypwd=Password:;
+	user=root;
+	pwd=root;
+	prompt=#;
+	endofline=\r;
+[pn;;3000;]
+	comment=//;
+	initreturn=0;
+	autologin=0;
+	displayuser=User:;
+	displaypwd=Password:;
+	user=admin;
+	pwd=cMPC_pxn;
+	prompt=#;
+	exitaction=exit
+[pn;com;;]
+	comment=#;
+	initreturn=1;
+	autologin=0;
+	prompt==>;
+	reflectkey={"stop key:<";};
+	endofline=\r;
+	BaudRate=115200;
+	ByteSize=8;
+	Parity=0;
+	StopBits=0;
+[ixia;;23;]
+	comment=#;
+	prompt=Ixia>;
+	endofline=\n;
+[1570;gpib;;]
+	prompt=;
+	comment=#;
+	displayback=1;
+	delaytime=1000;
+	endofline=\n;
+[37718;gpib;;]
+	prompt=;
+	comment=#;
+	displayback=1;
+	delaytime=1000;
+	endofline=\n;
+[37718;com;;]
+	comment=#;
+	initreturn=1;
+	autologin=0;
+	prompt=37718>;
+	displayback=0;
+	BaudRate=9600;
+	ByteSize=7;
+	Parity=1;
+	StopBits=0;
+[37718;;5001;]
+	comment=#;
+	initreturn=0;
+	autologin=0;
+	prompt=37718>;
+[directtcp;;1024;]
+	prompt=;
+	comment=#;
+	delaytime=2000;
+	endofline=\n;
+	headflag=0a0a0a0a0b0b;
+	tailflag=0b0b0a0a0a0a;
+	heartmsg=e0;
+	heartintv=3000;
+[tew;;60013;]
+	comment=//;
+	initreturn=0;
+	autologin=0;
+	prompt=> ;

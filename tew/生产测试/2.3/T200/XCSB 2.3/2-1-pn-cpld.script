@@ -1,0 +1,43 @@
+#wait;;注意：在XCSB单板（两个槽位）的3个子卡槽位都插IP16子卡;
+#sleep;10;load;
+luacmd.lua
+##;> ;
+pga._progsucard(1,4,"/appdisk/nepkg/7090_80Mv2.3.0_p30-CHT/soft_ptn64/cxt200_50g/fpga/cxt3703v0100.jed")
+#sleep;2;delay 2s;
+#cmp;*****;the cpld download is start;
+##;now reboot;
+##;> ;
+pga._progsucard(1,5,"/appdisk/nepkg/7090_80Mv2.3.0_p30-CHT/soft_ptn64/cxt200_50g/fpga/cxt3703v0100.jed")
+#sleep;2;delay 2s;
+#cmp;*****;the cpld download is start;
+##;now reboot;
+##;> ;
+#ctrld;
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+luacmd.lua
+##;> ;
+pga._progsucard(1,4,"/appdisk/nepkg/7090_80Mv2.3.0_p30-CHT/soft_ptn64/cxt200_50g/fpga/cxt3703v0100.jed")
+#sleep;2;delay 2s;
+#cmp;*****;the cpld download is start;
+##;now reboot;
+##;> ;
+pga._progsucard(1,5,"/appdisk/nepkg/7090_80Mv2.3.0_p30-CHT/soft_ptn64/cxt200_50g/fpga/cxt3703v0100.jed")
+#sleep;2;delay 2s;
+#cmp;*****;the cpld download is start;
+##;now reboot;
+##;> ;
+#ctrld;
+
+exit
+##;$;
+exit

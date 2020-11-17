@@ -1,0 +1,110 @@
+set slot/8/lg type XCTE
+set slot/9/lg type XCTE
+
+set slot/1/lg type SX2G20E
+set slot/2/lg type SX2G20E
+set slot/3/lg type SX2G20E
+set slot/4/lg type SX2G20E
+set slot/5/lg type SX2G20E
+set slot/6/lg type SX2G20E
+set slot/7/lg type SX2G20E
+set slot/10/lg type SX2G20E
+set slot/11/lg type SX2G20E
+set slot/12/lg type SX2G20E
+set slot/13/lg type SX2G20E
+set slot/14/lg type SX2G20E
+set slot/15/lg type SX2G20E
+set slot/16/lg type SX2G20E
+
+cr pmap/ethac l2ac1 {admin="up",default={cos='af1',cir=998400}}
+
+set interfaces/eth/ge.1.1 admin up
+set interfaces/eth/ge.2.1 admin up
+set interfaces/eth/ge.3.1 admin up
+set interfaces/eth/ge.4.1 admin up
+set interfaces/eth/ge.5.1 admin up
+set interfaces/eth/ge.6.1 admin up
+set interfaces/eth/ge.7.1 admin up
+set interfaces/eth/ge.10.1 admin up
+set interfaces/eth/ge.11.1 admin up
+set interfaces/eth/ge.12.1 admin up
+set interfaces/eth/ge.13.1 admin up
+set interfaces/eth/ge.14.1 admin up
+set interfaces/eth/ge.15.1 admin up
+set interfaces/eth/ge.16.1 admin up
+
+
+set interfaces/eth/ge.1.1/af1 cir 1000000
+set interfaces/eth/ge.2.1/af1 cir 1000000
+set interfaces/eth/ge.3.1/af1 cir 1000000
+set interfaces/eth/ge.4.1/af1 cir 1000000
+set interfaces/eth/ge.5.1/af1 cir 1000000
+set interfaces/eth/ge.6.1/af1 cir 1000000
+set interfaces/eth/ge.7.1/af1 cir 1000000
+set interfaces/eth/ge.10.1/af1 cir 1000000
+set interfaces/eth/ge.11.1/af1 cir 1000000
+set interfaces/eth/ge.12.1/af1 cir 1000000
+set interfaces/eth/ge.13.1/af1 cir 1000000
+set interfaces/eth/ge.14.1/af1 cir 1000000
+set interfaces/eth/ge.15.1/af1 cir 1000000
+set interfaces/eth/ge.16.1/af1 cir 1000000
+
+set interfaces/eth/ge.1.1 role uni
+set interfaces/eth/ge.2.1 role uni
+set interfaces/eth/ge.3.1 role uni
+set interfaces/eth/ge.4.1 role uni
+set interfaces/eth/ge.5.1 role uni
+set interfaces/eth/ge.6.1 role uni
+set interfaces/eth/ge.7.1 role uni
+set interfaces/eth/ge.10.1 role uni
+set interfaces/eth/ge.11.1 role uni
+set interfaces/eth/ge.12.1 role uni
+set interfaces/eth/ge.13.1 role uni
+set interfaces/eth/ge.14.1 role uni
+set interfaces/eth/ge.15.1 role uni
+set interfaces/eth/ge.16.1 role uni
+
+
+cr interfaces/eth/ge.1.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.2.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.3.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.4.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.5.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.6.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.7.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.10.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.11.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.12.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.13.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.14.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.15.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.16.1 1 {admin="up",qos='l2ac1',mode='port'}
+
+
+cr l2vpn/elan 1  {admin="up"}
+cr l2vpn/elan 2  {admin="up"}
+cr l2vpn/elan 3  {admin="up"}
+cr l2vpn/elan 4  {admin="up"}
+cr l2vpn/elan 5  {admin="up"}
+cr l2vpn/elan 6  {admin="up"}
+cr l2vpn/elan 7  {admin="up"}
+cr l2vpn/elan 8  {admin="up"}
+cr l2vpn/elan 9  {admin="up"}
+
+cr interfaces/eth/ge.1.1/1 service {_='elan',vpn='elan/1'}
+cr interfaces/eth/ge.2.1/1 service {_='elan',vpn='elan/1'}
+cr interfaces/eth/ge.3.1/1 service {_='elan',vpn='elan/2'}
+cr interfaces/eth/ge.4.1/1 service {_='elan',vpn='elan/2'}
+cr interfaces/eth/ge.5.1/1 service {_='elan',vpn='elan/3'}
+cr interfaces/eth/ge.6.1/1 service {_='elan',vpn='elan/3'}
+cr interfaces/eth/ge.7.1/1 service {_='elan',vpn='elan/4'}
+cr interfaces/eth/ge.10.1/1 service {_='elan',vpn='elan/4'}
+cr interfaces/eth/ge.11.1/1 service {_='elan',vpn='elan/5'}
+cr interfaces/eth/ge.12.1/1 service {_='elan',vpn='elan/5'}
+cr interfaces/eth/ge.13.1/1 service {_='elan',vpn='elan/6'}
+cr interfaces/eth/ge.14.1/1 service {_='elan',vpn='elan/6'}
+cr interfaces/eth/ge.15.1/1 service {_='elan',vpn='elan/7'}
+cr interfaces/eth/ge.16.1/1 service {_='elan',vpn='elan/7'}
+
+comm
+

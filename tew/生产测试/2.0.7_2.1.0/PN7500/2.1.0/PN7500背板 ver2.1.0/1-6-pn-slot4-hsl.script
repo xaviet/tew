@@ -1,0 +1,15 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+//sleep;30;...;
+show cfp/1 all sub
+show cfp/2 all sub
+
+debug
+
+hsl c=4,m=hwtest,a=1
+//;SUCCESS;
+
+exit

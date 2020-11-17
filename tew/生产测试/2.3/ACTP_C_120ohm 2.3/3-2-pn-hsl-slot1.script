@@ -1,0 +1,20 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+show slot/1/phy sub all
+#cmp;ver: ;2.2.2,CPLD 3303:01.10,FPGA 3302:0b.0b,PCB:2;
+show slot/2/phy sub all
+#cmp;ver: ;2.2.2,CPLD 3303:01.10,FPGA 3302:0b.0b,PCB:2;
+
+debug
+hsl c=1,m=hwtest,a=0
+#sleep;20;..;
+#wait;;等待slot1所有灯熄灭;
+hsl c=1,m=hwtest,a=1
+#sleep;20;..;
+#wait;;等待slot1所有灯亮起,红绿灯位置正确;
+
+exit

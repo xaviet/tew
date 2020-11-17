@@ -1,0 +1,20 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+set cfp/1 apscmd clear
+set cfp/2 apscmd clear
+co
+//sleep;5;...;
+set cfp/1 apscmd manualswitch::protection
+set cfp/2 apscmd manualswitch::protection
+co
+//sleep;50;...;
+show cfp/1 all sub
+show cfp/2 all sub
+exit
+//sleep;2;...;
+////;(SLAVE);
+//module;100”≤º˛–≈œ¢≤‚ ‘;end;

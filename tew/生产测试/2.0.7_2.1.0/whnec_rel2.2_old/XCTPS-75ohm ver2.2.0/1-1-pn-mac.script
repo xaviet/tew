@@ -1,0 +1,20 @@
+#wait;;连上串口线,插入待测XCTPS电源;
+##;stop key:< >;
+
+print
+set ethaddr $_006EthMac1
+nand erase 0x2600000 0xd800000
+save
+#;done;
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+
+reset
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+boot
+#;;
+#sleep;30;等待单盘启动;
+#wait;;先连入待测XCTPS nms,然后点击确定;

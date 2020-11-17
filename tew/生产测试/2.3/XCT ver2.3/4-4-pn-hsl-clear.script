@@ -1,0 +1,10 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+##;SUCCESS;
+
+exit

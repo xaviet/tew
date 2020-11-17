@@ -1,0 +1,25 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+##;/ #;
+#systemcmd;ftp -n;open 192.168.100.1;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\Éú²ú²âÊÔ°æ±¾\cxt20cv2.0.7.tar.gz;ls -la;bye;
+
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/cxt20cv2.0.7.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(0,"/appdisk/nepkg/cxt20cv2.0.7/soft_ptn64/cxt20c/fpga/cxt3303v010e.bin")
+#cmp;cpu test is e0000000;the cpld download is start;
+##;> ;
+#ctrld;
+
+echo -n cxt20cv2.0.7 > /appdisk/nepkg/active
+
+reboot
+##;/ #;
+#wait;240;start up;

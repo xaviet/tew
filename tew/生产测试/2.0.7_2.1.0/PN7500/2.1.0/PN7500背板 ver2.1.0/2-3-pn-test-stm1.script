@@ -1,0 +1,10 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+//module;201stm1业务测试;end; 
+co
+//module;202stm1 msp1+1倒换测试;begin; 
+
+exit
+//wait;;拔出stm1.2.2和stm1.2.3光纤，观察stm1业务瞬断并且能够恢复,测试1分钟;

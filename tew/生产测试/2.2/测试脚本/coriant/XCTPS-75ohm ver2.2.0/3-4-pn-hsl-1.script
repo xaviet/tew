@@ -1,0 +1,14 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+call / testmode 1
+////;SUCCESS;
+////;;
+
+d
+hsl c=3,m=hwtest,a=1
+//sleep;30;...;
+
+exit

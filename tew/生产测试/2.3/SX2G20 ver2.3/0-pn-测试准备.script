@@ -1,0 +1,3 @@
+#module;SX2G20_test;begin;
+#wait;;将串口线连接SX2G20插入slot7、10,并确认slot8xct处于主用.slot9xct处于备用;
+#sleep;30;startup;

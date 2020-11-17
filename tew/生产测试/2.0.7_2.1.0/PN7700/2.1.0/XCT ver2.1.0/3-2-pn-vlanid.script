@@ -1,0 +1,202 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+telnet 192.168.100.24
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+telnet 192.168.100.4
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+telnet 192.168.100.20
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+telnet 192.168.100.12
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+telnet 192.168.100.2
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+
+telnet 192.168.100.18
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+telnet 192.168.100.10
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+exit
+##;$;
+exit
+##;;
+#wait;;SDH业务GE业务各跑10分钟,并且插入slot9的xct板卡;
+#module;201ge业务测试;end;
+#module;202stm1业务测试;end;
+#module;200业务测试;end;

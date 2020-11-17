@@ -1,0 +1,30 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#sleep;5;等待5s时间;
+dmesg
+##;/ #;
+#buffcut;*********************hwtest******************;; 
+#module;101slot3-bkptype(CXT100_A0);begin;
+#cmp;BkpType:;CXT100_A0;1;10;1;
+#module;101slot3-bkptype(CXT100_A0);end;
+#module;102slot3其它项;begin;
+#cmp;FAN_ONLINE;ok;1;5;   
+#cmp;IO_ONLINE;fail;1;5;   
+#cmp;CARD_ONLINE;ok;1;5; 
+#cmp;FAN_IIC_RW;ok;1;5; 
+#cmp;slot  1:        ;com:ok          fe:ok   HG0:up;  
+#cmp;slot  2:        ;com:ok          fe:ok   HG2:up;  
+#cmp;slot  5:        ;com:ok          fe:ok   HG1:up;  
+#cmp;slot  6:        ;com:ok          fe:ok   HG4:up;  
+#cmp;MATE   :        ;com:ok          fe:ok   HG3:up;  
+#module;102slot3其它项;end;
+
+exit
+##;$;

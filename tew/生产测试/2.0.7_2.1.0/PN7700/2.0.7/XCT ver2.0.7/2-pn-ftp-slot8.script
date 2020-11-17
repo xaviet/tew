@@ -1,0 +1,34 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+##;/ #;
+#module;102安装软件包并加载cpld;begin;
+#systemcmd;ftp -n;open 192.168.100.1;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\生产测试版本\V2.0.7\cxt500v2.0.7.tar.gz;ls -la;bye;
+
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/cxt500v2.0.7.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/cxt500v2.0.7/soft_ptn64/cxt500/fpga/cxt3004v0406.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;> ;
+#ctrld;
+#module;102安装软件包并加载cpld;end;
+#module;103确认mac地址($_006EthMac1);begin;
+ifconfig eth0
+#cmp;eth0;$_006EthMac1;
+#module;103确认mac地址($_006EthMac1);end;
+#module;105确认nms地址(192.168.1.201);begin;
+ifconfig eth0
+#cmp;eth0;192.168.1.201;
+#module;105确认nms地址(192.168.1.201);end;
+echo -n cxt500v2.0.7 > /appdisk/nepkg/active
+reboot
+##;/ #;
+#wait;240;延迟60秒插入slot9 xct,waiting start...;

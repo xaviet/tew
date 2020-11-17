@@ -1,0 +1,11 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+#module;106指示灯及aco键检查;begin;
+dmesg -c
+exit

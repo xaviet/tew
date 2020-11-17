@@ -1,0 +1,9 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+call / testmode 0
+////;SUCCESS;
+
+exit

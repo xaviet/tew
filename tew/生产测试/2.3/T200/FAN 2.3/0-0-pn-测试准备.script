@@ -1,0 +1,2 @@
+#module;T200_FAN_Test;begin;
+#wait;60;单板插在slot5槽位，单板上电;

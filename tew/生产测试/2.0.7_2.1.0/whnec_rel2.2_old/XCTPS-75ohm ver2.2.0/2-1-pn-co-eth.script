@@ -1,0 +1,138 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+config
+
+dr
+
+//label;noready1;
+show / all
+//save;readycfg:;10;
+//goto;noready1;10;false;
+
+co
+
+set slot/3/lg type XCTPS
+set slot/4/lg type XCTPS
+set slot/1/lg type SX2G20
+set slot/2/lg type SX2G20
+set slot/5/lg type SX2G20
+set slot/6/lg type SX2G20
+
+cr pmap/ethac l2ac1 {admin="up",default={cos='af1',cir=1000000}}
+
+set interfaces/eth/ge.6.1 admin up
+set interfaces/eth/ge.5.1 admin up
+set interfaces/eth/ge.6.1/af1 cir 1000000
+set interfaces/eth/ge.5.1/af1 cir 1000000
+set interfaces/eth/ge.6.1 role uni
+set interfaces/eth/ge.5.1 role uni
+cr interfaces/eth/ge.6.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.5.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 1 {admin="up"}
+cr interfaces/eth/ge.6.1/1 service {_='elan',vpn='elan/1'}
+cr interfaces/eth/ge.5.1/1 service {_='elan',vpn='elan/1'}
+
+set interfaces/eth/ge.4.1 admin up
+set interfaces/eth/ge.2.1 admin up
+set interfaces/eth/ge.4.1/af1 cir 1000000
+set interfaces/eth/ge.2.1/af1 cir 1000000
+set interfaces/eth/ge.4.1 role uni
+set interfaces/eth/ge.2.1 role uni
+cr interfaces/eth/ge.4.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.2.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 2 {admin="up"}
+cr interfaces/eth/ge.4.1/1 service {_='elan',vpn='elan/2'}
+cr interfaces/eth/ge.2.1/1 service {_='elan',vpn='elan/2'}
+
+set interfaces/eth/ge.1.1 admin up
+set interfaces/eth/ge.3.1 admin up
+set interfaces/eth/ge.1.1/af1 cir 1000000
+set interfaces/eth/ge.3.1/af1 cir 1000000
+set interfaces/eth/ge.1.1 role uni
+set interfaces/eth/ge.3.1 role uni
+cr interfaces/eth/ge.1.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.3.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 3 {admin="up"}
+cr interfaces/eth/ge.1.1/1 service {_='elan',vpn='elan/3'}
+cr interfaces/eth/ge.3.1/1 service {_='elan',vpn='elan/3'}
+
+set interfaces/eth/ge.3.2 admin up
+set interfaces/eth/ge.3.3 admin up
+set interfaces/eth/ge.3.2/af1 cir 1000000
+set interfaces/eth/ge.3.3/af1 cir 1000000
+set interfaces/eth/ge.3.2 role uni
+set interfaces/eth/ge.3.3 role uni
+cr interfaces/eth/ge.3.2 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.3.3 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 4 {admin="up"}
+cr interfaces/eth/ge.3.2/1 service {_='elan',vpn='elan/4'}
+cr interfaces/eth/ge.3.3/1 service {_='elan',vpn='elan/4'}
+
+set interfaces/eth/ge.3.4 admin up
+set interfaces/eth/ge.3.5 admin up
+set interfaces/eth/ge.3.4/af1 cir 1000000
+set interfaces/eth/ge.3.5/af1 cir 1000000
+set interfaces/eth/ge.3.4 role uni
+set interfaces/eth/ge.3.5 role uni
+cr interfaces/eth/ge.3.4 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.3.5 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 5 {admin="up"}
+cr interfaces/eth/ge.3.4/1 service {_='elan',vpn='elan/5'}
+cr interfaces/eth/ge.3.5/1 service {_='elan',vpn='elan/5'}
+
+set interfaces/eth/ge.3.6 admin up
+set interfaces/eth/xg.3.1 admin up
+set interfaces/eth/ge.3.6/af1 cir 1000000
+set interfaces/eth/xg.3.1/af1 cir 1000000
+set interfaces/eth/ge.3.6 role uni
+set interfaces/eth/xg.3.1 role uni
+cr interfaces/eth/ge.3.6 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/xg.3.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 6 {admin="up"}
+cr interfaces/eth/ge.3.6/1 service {_='elan',vpn='elan/6'}
+cr interfaces/eth/xg.3.1/1 service {_='elan',vpn='elan/6'}
+
+set interfaces/eth/ge.1.1 permitpktloop false
+set interfaces/eth/ge.2.1 permitpktloop false
+set interfaces/eth/ge.3.1 permitpktloop false
+set interfaces/eth/ge.3.2 permitpktloop false
+set interfaces/eth/ge.3.3 permitpktloop false
+set interfaces/eth/ge.3.4 permitpktloop false
+set interfaces/eth/ge.3.5 permitpktloop false
+set interfaces/eth/ge.3.6 permitpktloop false
+set interfaces/eth/ge.4.1 permitpktloop false
+set interfaces/eth/ge.5.1 permitpktloop false
+set interfaces/eth/ge.6.1 permitpktloop false
+
+cr interfaces/eth/ge.3.1 clock
+cr interfaces/eth/ge.3.2 clock
+cr interfaces/eth/xg.3.1 clock
+
+co
+////;#;
+//cmpn;;ERROR;
+
+exit
+//sleep;5;确认ber仪表工作在2Mbit;
+
+//msg;add;lantestbegin;
+
+//msg;chkclr;lantestend;
+
+//msg;chkclr;lan2wantestbegin;
+
+//label;noready2;
+show / all
+//save;readycfg:;10;
+//goto;noready2;10;false;
+
+set interfaces/eth/xg.3.1 xgwan true
+co
+
+//msg;chkclr;lan2wantestend;
+
+exit
+quit

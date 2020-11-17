@@ -1,0 +1,26 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+##;/ #;
+#module;102ftp上传及cpld加载;begin;
+#systemcmd;ftp -n;open 192.168.100.1;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\生产测试版本\V2.0.7\cxt100v2.0.7.tar.gz;ls -la;bye;
+
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/cxt100v2.0.7.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/cxt100v2.0.7/soft_ptn64/cxt100/fpga/cxt3202v0406.bin")
+#;> ;
+#cmp;cpu test is e0000000;the cpld download is start;
+#ctrld;
+echo -n cxt100v2.0.7 > /appdisk/nepkg/active
+reboot
+##;/ #;
+#module;102ftp上传及cpld加载;end;
+#module;100单板信息;end;
+#wait;;延迟60秒插入slot4 XCTPS并将网线换到debug口,waiting start...;

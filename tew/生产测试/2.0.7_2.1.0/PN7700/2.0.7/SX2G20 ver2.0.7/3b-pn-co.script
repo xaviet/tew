@@ -1,0 +1,11 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+//module;107主xct以太网业务测试;begin;
+//wait;;等待业务下发,主xct测试5分钟，备用槽xct测试完请倒回主槽位;
+//module;107主xc以太网业务测试;end;
+//module;108备xct以太网业务测试;begin;
+//wait;;拔主xct,使用备xct测试5分钟，备用槽xct测试完成后请倒回主槽位;
+//module;108备xct以太网业务测试;end;

@@ -1,0 +1,24 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+//module;206e1业务cfp测试;begin; 
+show cfp/3 all sub
+//cmp;sel: ;3;1;1;
+//wait;;点击确定后2秒进行e1模块切换,准备观察e1业务瞬断并且能够恢复;
+//sleep;2;e1模块切换;
+set cfp/3 apscmd manualswitch::work
+co
+//wait;;观察e1业务瞬断并且能够恢复;
+//module;206e1业务cfp测试;end; 
+//module;200业务测试;end; 
+set cfp/3 apscmd manualswitch::protection
+co
+//sleep;10;
+//module;207dropdb(ok);begin; 
+dropdb
+//module;207dropdb(ok);end; 
+//sleep;10;dropdb;
+exit

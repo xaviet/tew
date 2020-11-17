@@ -1,0 +1,31 @@
+//module;111指示灯检查;begin;
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+//module;128slot16类型(IP32);begin;
+show slot/16/phy sub all
+//cmp;type: ;IP32;
+//cmp;online: ;true;
+//module;128slot16类型(IP32);end;
+
+d
+hsl c=8,m=hwtest,a=1
+hsl c=9,m=hwtest,a=1
+hsl c=14,m=hwtest,a=1
+//wait;30;slot14灯是否全亮?;
+hsl c=14,m=hwtest,a=0
+//wait;30;slot14灯是否全灭?;
+hsl c=14,m=hwtest,a=1
+//sleep;1;...;
+hsl c=15,m=hwtest,a=1
+//wait;30;slot15灯是否全亮?;
+hsl c=15,m=hwtest,a=0
+//wait;30;slot15灯是否全灭?;
+hsl c=15,m=hwtest,a=1
+//sleep;1;...;
+exit
+//module;111指示灯检查;end;
+//module;112硬件信息查询;begin;
+//sleep;30;...;

@@ -1,0 +1,61 @@
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#sleep;10;µÈ´ý10sÊ±¼ä;
+dmesg 
+##;#;
+#buffcut;*********************hwtest******************;; 
+#cmp;board type ;ACTPE_D_100ohm;1;15;
+#cmp;Led ;on;1;5;
+#cmp;CPLD_ID 3305     version  ;1.7;1;5;
+#cmp;FPGA1_ID  3307   version  ;1.15;1;5;
+#cmp;FPGA2_ID  3306   version  ;1.d;1;5;
+#cmp;pcb_version=;0;1;5;   
+#cmp;BkpType:;CXT20C_A0;1;10;
+#cmp;CPLD     ;ok;1;5; 
+#cmp;FPGA1 ;ok;1;5;
+#cmp;FPGA2 ;ok;1;5;
+#cmp;IDT3380 ;ok;1;5;     
+#cmp;IDT3380 IN3 ;ok        IDT3380 IN4 ok;
+#cmp;IDT3380 IN6 ;ok        IDT3380 IN7 ok;
+#cmp;IDT3380 IN8 ;ok        IDT3380 IN9 ok;
+#cmp;LIU_1 ;ok        LIU_2 ok;             
+#cmp;oam ddr ;ok;1;5;
+#cmp;FE PHY ;LINK;1;5;
+#cmp;alm ;ok;1;5;
+#save;Card temp : ;7;1;2;
+#saveconst;29;126;
+#saveconst;71;127;
+#count;126;<;7;
+#count;127;>;7;      
+#cmp;RTC ;ok;1;5;
+#cmp;Power1 ;ok;1;5;
+#cmp;FREQ recover:     ;ge[0,1]:ok,ok     fx0[0~3]:ok,ok,ok,ok     e1:ok;
+#cmp;online ;ok;1;5;
+#cmp;com ;ok;1;5;
+#cmp;EXT_CLK ;ok;1;5;
+#cmp;1PPS_TOD ;ok;1;5;
+#cmp;FAN1 ;OK;1;5;
+#cmp;FAN2 ;OK;1;5;
+#cmp;FAN3 ;OK;1;5;
+#cmp;fe 0   :;up      fe 1   :up      fe 2   :up      fe 3   :up;      
+#cmp;fe 4   :;up      fe 5   :up      fe 6   :up      fe 7   :up;      
+#cmp;fe 8   :;up      fe 9   :up      fe10   :up      fe11   :up;      
+#cmp;fe12   :;up      fe13   :up      fe14   :up      fe15   :up;  
+#cmp;fe16   :;up      fe17   : up     fe18   : up     fe19   : up;    
+#cmp;fe20   :;up      fe21   : up     fe22   : up     fe23   : up;        
+#cmp;ge 0   :;up      ge 1   :up      hg 0   :up      xe 0   :up;    
+#cmp;ge[1] :;sfp    ge[2] :sfp    ge[3] :sfp;                   
+#cmp;fx[1] :;sfp    fx[2] :sfp    fx[3] :sfp    fx[4] :sfp;
+
+manu sysclear
+
+ 
+exit

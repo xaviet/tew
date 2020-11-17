@@ -1,0 +1,15 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+call / showmanu 1
+//;SUCCESS!;
+//cmp;mac: ;macformat$_006EthMac1;1;
+//cmp;sn: ;$_003SN1;1;
+//cmp;pn: ;$_004PN1;1;
+//cmp;boot: ;$_015boot;1;
+//cmp;vendor;CORIANT;
+//;#;
+
+quit

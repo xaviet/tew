@@ -1,0 +1,21 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+
+set slot/8/lg type XCT
+set slot/9/lg type XCT
+co
+
+//sleep;10;config;
+set cfp/1 apscmd manualswitch::work
+set cfp/2 apscmd manualswitch::work
+co
+
+//sleep;10;init;
+
+//sleep;20;xct switch;
+
+exit

@@ -1,0 +1,98 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+config
+
+dr
+//module;103ge“µŒÒ≤‚ ‘;begin;
+set slot/3/lg type XCTPS
+set slot/4/lg type XCTPS
+set slot/1/lg type SX2G20
+set slot/2/lg type SX2G20
+set slot/5/lg type SX2G20
+set slot/6/lg type SX2G20
+
+set slot/3/lg port5 ETH
+set slot/3/lg port6 ETH
+
+cr pmap/ethac l2ac1 {admin="up",default={cos='af1',cir=1000000}}
+
+
+set interfaces/eth/ge.6.1 admin up
+set interfaces/eth/ge.5.1 admin up
+set interfaces/eth/ge.6.1/af1 cir 1000000
+set interfaces/eth/ge.5.1/af1 cir 1000000
+set interfaces/eth/ge.6.1 role uni
+set interfaces/eth/ge.5.1 role uni
+cr interfaces/eth/ge.6.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.5.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 1 {admin="up"}
+cr interfaces/eth/ge.6.1/1 service {_='elan',vpn='elan/1'}
+cr interfaces/eth/ge.5.1/1 service {_='elan',vpn='elan/1'}
+
+set interfaces/eth/ge.4.1 admin up
+set interfaces/eth/ge.2.1 admin up
+set interfaces/eth/ge.4.1/af1 cir 1000000
+set interfaces/eth/ge.2.1/af1 cir 1000000
+set interfaces/eth/ge.4.1 role uni
+set interfaces/eth/ge.2.1 role uni
+cr interfaces/eth/ge.4.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.2.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 2 {admin="up"}
+cr interfaces/eth/ge.4.1/1 service {_='elan',vpn='elan/2'}
+cr interfaces/eth/ge.2.1/1 service {_='elan',vpn='elan/2'}
+
+set interfaces/eth/ge.1.1 admin up
+set interfaces/eth/ge.3.1 admin up
+set interfaces/eth/ge.1.1/af1 cir 1000000
+set interfaces/eth/ge.3.1/af1 cir 1000000
+set interfaces/eth/ge.1.1 role uni
+set interfaces/eth/ge.3.1 role uni
+cr interfaces/eth/ge.1.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.3.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 3 {admin="up"}
+cr interfaces/eth/ge.1.1/1 service {_='elan',vpn='elan/3'}
+cr interfaces/eth/ge.3.1/1 service {_='elan',vpn='elan/3'}
+
+set interfaces/eth/ge.3.2 admin up
+set interfaces/eth/ge.3.3 admin up
+set interfaces/eth/ge.3.2/af1 cir 1000000
+set interfaces/eth/ge.3.3/af1 cir 1000000
+set interfaces/eth/ge.3.2 role uni
+set interfaces/eth/ge.3.3 role uni
+cr interfaces/eth/ge.3.2 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.3.3 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 4 {admin="up"}
+cr interfaces/eth/ge.3.2/1 service {_='elan',vpn='elan/4'}
+cr interfaces/eth/ge.3.3/1 service {_='elan',vpn='elan/4'}
+
+set interfaces/eth/ge.3.4 admin up
+set interfaces/eth/ge.3.5 admin up
+set interfaces/eth/ge.3.4/af1 cir 1000000
+set interfaces/eth/ge.3.5/af1 cir 1000000
+set interfaces/eth/ge.3.4 role uni
+set interfaces/eth/ge.3.5 role uni
+cr interfaces/eth/ge.3.4 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/ge.3.5 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 5 {admin="up"}
+cr interfaces/eth/ge.3.4/1 service {_='elan',vpn='elan/5'}
+cr interfaces/eth/ge.3.5/1 service {_='elan',vpn='elan/5'}
+
+set interfaces/eth/ge.3.6 admin up
+set interfaces/eth/xg.3.1 admin up
+set interfaces/eth/ge.3.6/af1 cir 1000000
+set interfaces/eth/xg.3.1/af1 cir 1000000
+set interfaces/eth/ge.3.6 role uni
+set interfaces/eth/xg.3.1 role uni
+cr interfaces/eth/ge.3.6 1 {admin="up",qos='l2ac1',mode='port'}
+cr interfaces/eth/xg.3.1 1 {admin="up",qos='l2ac1',mode='port'}
+cr l2vpn/elan 6 {admin="up"}
+cr interfaces/eth/ge.3.6/1 service {_='elan',vpn='elan/6'}
+cr interfaces/eth/xg.3.1/1 service {_='elan',vpn='elan/6'}
+
+
+co
+
+exit

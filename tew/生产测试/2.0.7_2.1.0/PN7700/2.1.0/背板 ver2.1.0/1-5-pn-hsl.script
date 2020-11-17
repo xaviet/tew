@@ -1,0 +1,11 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+//sleep;10;sleep;
+d
+hsl c=9,m=hwtest,a=1
+
+//sleep;10;run;
+exit

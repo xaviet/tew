@@ -1,0 +1,2 @@
+#module;ACTP_C_Test;begin;
+#wait;60;将被测的ACTP_C单板插在1、2号槽位,串口线连接到slot1 的ACTP_C单板的NMS口,BER设置为E1方式,接好测试线路与仪表,设备断电;

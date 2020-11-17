@@ -1,0 +1,15 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+set interfaces/eth/xg.3.1 xgwan true
+co
+
+exit
+//module;105ge业务wan方式测试;begin;
+//wait;30;GE业务是否瞬断;
+//module;105ge业务wan方式测试;end;
+////;;
+//module;103ge业务测试;end;

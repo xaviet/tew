@@ -1,0 +1,40 @@
+luacmd.lua
+##;> ;
+pga._progsucard(1,2,"/appdisk/nepkg/7090_80Mv2.3.1soft_ptn64/cxt200_50g/fpga/cxt3703v0100.jed")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+pga._progsucard(1,3,"/appdisk/nepkg/7090_80Mv2.3.1/soft_ptn64/cxt200_50g/fpga/cxt3703v0100.jed")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+luacmd.lua
+##;> ;
+pga._progsucard(1,2,"/appdisk/nepkg/7090_80Mv2.3.1soft_ptn64/cxt200_50g/fpga/cxt3703v0100.jed")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+pga._progsucard(1,3,"/appdisk/nepkg/7090_80Mv2.3.1/soft_ptn64/cxt200_50g/fpga/cxt3703v0100.jed")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+exit
+exit

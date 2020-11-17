@@ -1,0 +1,59 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call slot/1/1/phy setmanu {sn="$_003SN1",vendor="$_016vendor"}
+
+call slot/1/1/phy getmanu 
+#;SUCCESS!;
+#cmp;sn=;$_003SN1;1;
+#cmp;vendor= ;$_016vendor;1; 
+#;#;
+
+call slot/1/2/phy setmanu {sn="$_009SN2",vendor="$_016vendor"}
+
+call slot/1/2/phy getmanu 
+#;SUCCESS!;
+#cmp;sn=;$_009SN2;1;
+#cmp;vendor= ;$_016vendor;1; 
+#;#;
+
+call slot/1/3/phy setmanu {sn="$_024SN3",vendor="$_016vendor"}
+
+call slot/1/3/phy getmanu 
+#;SUCCESS!;
+#cmp;sn=;$_024SN3;1;
+#cmp;vendor= ;$_016vendor;1; 
+#;#;
+
+call slot/2/1/phy setmanu {sn="$_025SN4",vendor="$_016vendor"}
+
+call slot/2/1/phy getmanu 
+#;SUCCESS!;
+#cmp;sn=;$_025SN4;1;
+#cmp;vendor= ;$_016vendor;1; 
+#;#;
+
+call slot/2/2/phy setmanu {sn="$_026SN5",vendor="$_016vendor"}
+
+call slot/2/2/phy getmanu 
+#;SUCCESS!;
+#cmp;sn=;$_026SN5;1;
+#cmp;vendor= ;$_016vendor;1; 
+#;#;
+
+call slot/3/3/phy setmanu {sn="$_027SN6",vendor="$_016vendor"}
+
+call slot/3/3/phy getmanu 
+#;SUCCESS!;
+#cmp;sn=;$_027SN6;1;
+#cmp;vendor= ;$_016vendor;1; 
+#;#;
+
+quit
+
+rm /appdisk/nepkg/ active
+
+exit

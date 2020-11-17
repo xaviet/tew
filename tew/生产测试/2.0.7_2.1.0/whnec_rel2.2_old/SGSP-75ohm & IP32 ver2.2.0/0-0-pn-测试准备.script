@@ -1,0 +1,1 @@
+#wait;;将串口线连接SGSP插入slot3,并确认slot8xct处于主用.slot9xct处于备用,仪表配置75ohm接口;

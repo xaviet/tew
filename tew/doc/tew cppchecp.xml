@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.59"/>
+    <errors>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="dlgdutmsg.cpp" line="57"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="dlgdutmsg.cpp" line="105"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="dlgdutmsg.cpp" line="256"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="dlgproductresult.cpp" line="50"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="dlgproductresult.cpp" line="64"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="dlgsystemcmd.cpp" line="177"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;cnodepropertydlg::m_pappdlg&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;cnodepropertydlg::m_pappdlg&amp;#039; is not initialized in the constructor.">
+            <location file="nodepropertydlg.cpp" line="14"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_istart&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_istart&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="scripteditdlg.cpp" line="189"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_iend&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_iend&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="scripteditdlg.cpp" line="189"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;t_bRet&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;t_bRet&amp;#039; is assigned a value that is never used.">
+            <location file="tcpserver.cpp" line="201"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="201"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="257"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="258"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="289"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="330"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="339"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="358"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="363"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="383"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="400"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="468"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="599"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="600"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="668"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="671"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="760"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1030"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1215"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1221"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1241"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1301"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1320"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1901"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1912"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="1913"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2058"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2087"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2108"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2308"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2311"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2318"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2321"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2452"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2497"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2501"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2505"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2511"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2521"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2571"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2613"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2638"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2774"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2782"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2835"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2842"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="2883"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="3125"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="3266"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="3290"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="3304"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="3319"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="3443"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="3488"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="tewDlg.cpp" line="3569"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_pres&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_pres&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="612"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_rec&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_rec&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="613"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_errnotewdlg&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_errnotewdlg&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="616"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_j&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_j&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="934"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_ptemp&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_ptemp&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="1211"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_ivmsh&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_ivmsh&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="1583"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_ivmsl&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_ivmsl&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="1583"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_ivlsh&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_ivlsh&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="1583"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_ivlsl&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_ivlsl&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="1583"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_i&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_i&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="1622"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_pWnd&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_pWnd&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="1830"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_exitflag&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_exitflag&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="2763"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_pid&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_pid&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="2765"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_nResponse&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_nResponse&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="3120"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_i&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_i&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="tewDlg.cpp" line="3509"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;t_runstatus&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;t_runstatus&amp;#039; is assigned a value that is never used.">
+            <location file="tewDlg.cpp" line="2764"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;CtewDlg::m_configflag&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;CtewDlg::m_configflag&amp;#039; is not initialized in the constructor.">
+            <location file="tewDlg.cpp" line="28"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;CtewDlg::m_dlocalver&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;CtewDlg::m_dlocalver&amp;#039; is not initialized in the constructor.">
+            <location file="tewDlg.cpp" line="28"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;CtewDlg::m_ctrlpositionarray&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;CtewDlg::m_ctrlpositionarray&amp;#039; is not initialized in the constructor.">
+            <location file="tewDlg.cpp" line="28"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;CtewDlg::m_ptrmtabpageitemdataarray&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;CtewDlg::m_ptrmtabpageitemdataarray&amp;#039; is not initialized in the constructor.">
+            <location file="tewDlg.cpp" line="28"/>
+        </error>
+        <error id="mismatchAllocDealloc" severity="error" msg="Mismatching allocation and deallocation: t_pbuffer" verbose="Mismatching allocation and deallocation: t_pbuffer">
+            <location file="tewDlg.cpp" line="1601"/>
+        </error>
+        <error id="incorrectLogicOperator" severity="warning" msg="Logical disjunction always evaluates to true: m_modctrlscaleflag != 1 || m_modctrlscaleflag != 2." verbose="Logical disjunction always evaluates to true: m_modctrlscaleflag != 1 || m_modctrlscaleflag != 2. Are these conditions necessary? Did you intend to use &amp;amp;&amp;amp; instead? Are the numbers correct? Are you comparing the correct variables?">
+            <location file="tewDlg.cpp" line="2926"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="trmdlg.cpp" line="347"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="trmdlg.cpp" line="348"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="trmdlg.cpp" line="349"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting">
+            <location file="trmdlg.cpp" line="351"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;ctrmdlg::m_trmmode&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;ctrmdlg::m_trmmode&amp;#039; is not initialized in the constructor.">
+            <location file="trmdlg.cpp" line="14"/>
+        </error>
+        <error id="duplicateBranch" severity="style" msg="Found duplicate branches for &amp;#039;if&amp;#039; and &amp;#039;else&amp;#039;." verbose="Finding the same code in an &amp;#039;if&amp;#039; and related &amp;#039;else&amp;#039; branch is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct.">
+            <location file="trmthread.cpp" line="1659"/>
+            <location file="trmthread.cpp" line="1655"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_i&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_i&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="trmthread.cpp" line="1137"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;t_result&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;t_result&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="trmthread.cpp" line="1308"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;t_bRet&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;t_bRet&amp;#039; is assigned a value that is never used.">
+            <location file="udp.cpp" line="199"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;cudp::m_ptewdlg&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;cudp::m_ptewdlg&amp;#039; is not initialized in the constructor.">
+            <location file="udp.cpp" line="13"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;cudp::m_dlocalver&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;cudp::m_dlocalver&amp;#039; is not initialized in the constructor.">
+            <location file="udp.cpp" line="13"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;cudp::m_dnewestver&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;cudp::m_dnewestver&amp;#039; is not initialized in the constructor.">
+            <location file="udp.cpp" line="13"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;cudp::m_txudp&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;cudp::m_txudp&amp;#039; is not initialized in the constructor.">
+            <location file="udp.cpp" line="13"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;cudp::m_rxudp&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;cudp::m_rxudp&amp;#039; is not initialized in the constructor.">
+            <location file="udp.cpp" line="13"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;cudp::m_tewudp&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;cudp::m_tewudp&amp;#039; is not initialized in the constructor.">
+            <location file="udp.cpp" line="13"/>
+        </error>
+    </errors>
+</results>

@@ -1,0 +1,14 @@
+ping -c 1 192.168.100.6
+#cmp;ping statistics;0% packet loss;
+
+#msg;add;slot14ready;
+
+#msg;chkclr;slot14reboot;
+ping -c 1 192.168.100.6
+#cmp;ping statistics;100% packet loss;
+
+#sleep;40;...;
+ping -c 1 192.168.100.6
+#cmp;ping statistics;0% packet loss;
+
+exit

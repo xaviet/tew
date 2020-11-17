@@ -1,0 +1,35 @@
+set slot/1/lg type XCSB
+set slot/2/lg type XCSB
+
+set slot/1/2/lg type IX02
+set slot/2/2/lg type IX02
+
+roset slot/1/lg hgtrunkpsc lbn 
+roset slot/2/lg hgtrunkpsc lbn 
+roset interfaces/eth/xg.1.2.1 lbn 1
+roset interfaces/eth/xg.1.2.2 lbn 2
+roset interfaces/eth/xg.2.2.2 lbn 2
+roset interfaces/eth/xg.2.2.1 lbn 1
+
+mse interfaces/eth xg.1.2.1 {admin='up',role='uni'}
+mse interfaces/eth xg.1.2.2 {admin='up',role='uni'}
+
+mse interfaces/eth xg.2.2.1 {admin='up',role='uni'}
+mse interfaces/eth xg.2.2.2 {admin='up',role='uni'}
+
+cr pmap/ethac l2acbe {default={cos='be',eir=10000000}}
+
+cr ccc 1 {admin='up'}
+cr ccc 2 {admin='up'}
+
+cr interfaces/eth/xg.1.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/1'}}
+cr interfaces/eth/xg.2.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/1'}}
+cr interfaces/eth/xg.1.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/2'}}
+cr interfaces/eth/xg.2.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/2'}}
+
+cr interfaces/eth/xg.1.2.1 clock
+cr interfaces/eth/xg.1.2.2 clock
+cr interfaces/eth/xg.2.2.1 clock
+cr interfaces/eth/xg.2.2.2 clock
+
+co

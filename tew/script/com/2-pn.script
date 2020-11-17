@@ -1,0 +1,9 @@
+##;;
+AT+CIPSTATUS
+#sleep;2;...;
+##;;
+AT+CIPSEND=0,6
+#sleep;2;...;
+##;>;
+hello!
+waitting

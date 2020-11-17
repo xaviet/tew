@@ -1,0 +1,16 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+//module;201stm1业务测试;end; 
+co
+
+//module;204stm1 交换模块倒换测试;end; 
+set cfp/2 apscmd manualswitch::protection
+co
+
+set cfp/2 apscmd clear
+co
+
+//sleep;10;
+exit

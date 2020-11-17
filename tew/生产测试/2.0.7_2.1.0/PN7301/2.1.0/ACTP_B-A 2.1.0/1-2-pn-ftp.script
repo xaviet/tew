@@ -1,0 +1,25 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#module;102ftp上传及cpld加载;begin;
+#systemcmd;ftp -n;open $_host;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\生产测试版本\V2.1.0\t20bv2.1.1.tar.gz;ls -la;bye;
+
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/t20bv2.1.1.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(0,"/appdisk/nepkg/t20bv2.1.1/soft_ptn64/cxt20b/fpga/cxt3303v0110.bin")
+#;> ;
+#cmp;cpu test is e0000000;the cpld download is start;
+#ctrld;
+echo -n t20bv2.1.1 > /appdisk/nepkg/active
+
+reboot
+#sleep;30;startup;
+#module;102ftp上传及cpld加载;end;

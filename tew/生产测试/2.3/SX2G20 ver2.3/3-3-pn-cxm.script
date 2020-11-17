@@ -1,0 +1,119 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+option page off
+secu
+idletime admin 9999999
+exit
+
+call / stop_send $_020EthetnetInstrumentPort1
+call / stop_send $_021EthetnetInstrumentPort2  
+
+call / clear_statis $_020EthetnetInstrumentPort1  
+call / clear_statis $_021EthetnetInstrumentPort2  
+
+//sleep;3;wait...;
+
+call / start_send $_020EthetnetInstrumentPort1
+call / start_send $_021EthetnetInstrumentPort2  
+
+//sleep;300;testing...È·ÈÏ¶Ë¿ÚLED×´Ì¬Õı³££¨ºìµÆÃğ£¬ÂÌµÆÁÁ£©;
+//wait;;È·ÈÏ¶Ë¿ÚLED×´Ì¬Õı³££¨ºìµÆÃğ£¬ÂÌµÆÁÁ£©;
+
+call / stop_send $_020EthetnetInstrumentPort1
+call / stop_send $_021EthetnetInstrumentPort2  
+
+//sleep;3;wait...;
+
+call / statistics_show $_020EthetnetInstrumentPort1
+////;#;
+//buffcut;name: Packets Sent;
+//save;count:;11;
+//buffcut;name: Right Packets;
+//save;count:;12;
+call / statistics_show $_021EthetnetInstrumentPort2  
+////;#;
+//buffcut;name: Packets Sent;
+//save;count:;21;
+//buffcut;name: Right Packets;
+//save;count:;22;
+//count;11;=;22;
+//count;12;=;21;
+//saveconst;;0;30;
+//count;11;!=;30;
+//count;12;!=;30;
+
+//msg;add;test1over;
+
+call / clear_statis $_020EthetnetInstrumentPort1  
+call / clear_statis $_021EthetnetInstrumentPort2  
+
+//sleep;3;wait...;
+
+call / start_send $_020EthetnetInstrumentPort1
+call / start_send $_021EthetnetInstrumentPort2  
+
+//sleep;3;wait...;
+
+//msg;add;xctswitch;
+
+//msg;chkclr;xctswitchdone;
+
+call / stop_send $_020EthetnetInstrumentPort1
+call / stop_send $_021EthetnetInstrumentPort2  
+
+//sleep;3;wait...;
+
+call / statistics_show $_020EthetnetInstrumentPort1
+////;#;
+//buffcut;name: Packets Sent;
+//save;count:;11;
+//buffcut;name: Right Packets;
+//save;count:;12;
+call / statistics_show $_021EthetnetInstrumentPort2  
+////;#;
+//buffcut;name: Packets Sent;
+//save;count:;21;
+//buffcut;name: Right Packets;
+//save;count:;22;
+//count;11;>;22;
+//count;12;<;21;
+
+call / clear_statis $_020EthetnetInstrumentPort1  
+call / clear_statis $_021EthetnetInstrumentPort2  
+
+//sleep;3;wait...;
+
+call / start_send $_020EthetnetInstrumentPort1
+call / start_send $_021EthetnetInstrumentPort2  
+
+//sleep;300;testing...È·ÈÏ¶Ë¿ÚLED×´Ì¬Õı³££¨ºìµÆÃğ£¬ÂÌµÆÁÁ£©;
+//wait;;È·ÈÏ¶Ë¿ÚLED×´Ì¬Õı³££¨ºìµÆÃğ£¬ÂÌµÆÁÁ£©;
+
+call / stop_send $_020EthetnetInstrumentPort1
+call / stop_send $_021EthetnetInstrumentPort2  
+
+//sleep;3;wait...;
+
+call / statistics_show $_020EthetnetInstrumentPort1
+////;#;
+//buffcut;name: Packets Sent;
+//save;count:;11;
+//buffcut;name: Right Packets;
+//save;count:;12;
+call / statistics_show $_021EthetnetInstrumentPort2  
+////;#;
+//buffcut;name: Packets Sent;
+//save;count:;21;
+//buffcut;name: Right Packets;
+//save;count:;22;
+//count;11;=;22;
+//count;12;=;21;
+//saveconst;;0;30;
+//count;11;!=;30;
+//count;12;!=;30;
+
+//msg;add;xctreswitch;
+
+exit

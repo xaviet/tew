@@ -1,0 +1,16 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+set cfp/1 apscmd manualswitch::protection
+set cfp/2 apscmd manualswitch::protection
+co
+
+//sleep;10;init;
+
+//sleep;20;xct switch;
+
+
+exit

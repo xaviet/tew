@@ -1,0 +1,3 @@
+#module;SS8P32_test;begin;
+#wait;;将串口线连接SS8P32插入slot14、15,IP32插入slot16,并确认slot8xct处于主用.slot9xct处于备用,仪表配置75ohm接口;
+#sleep;30;startup;

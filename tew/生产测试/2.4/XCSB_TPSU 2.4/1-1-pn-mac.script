@@ -1,0 +1,18 @@
+#wait;1;连上串口线,注意单击确定后掉电重启;
+##;stop key:< >;
+
+print
+
+set ethaddr $_006EthMac1
+
+nand erase 0x2600000 0xd800000
+
+save
+#;done;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+
+boot
+#;;
+#sleep;32;等待单盘启动；

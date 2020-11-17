@@ -1,0 +1,25 @@
+dmesg 
+##;#;
+#cmp;grep:XCSB_card;grep:CPLD_ID(\s+)3701(\s+)version(\s+)1.d(\s+)FPGA1_ID(\s+)3801(\s+)version(\s+)2.1(\s+)pcb_version=1(\s+)BkpType:CXT80_A0(\s+)CPLD(\s+)ok(\s+)FPGA1(\s+)ok(\s+)AD9518_(\s+)ok(\s+)oam(\s+)ddr(\s+)ok(\s+)com1(\s+)OK;1;;
+#save;grep:temp(\s*)(\S)(\s+);7;
+#saveconst;30;126;
+#saveconst;70;127;
+#count;126;<;7;
+#count;127;>;7;     
+#cmp;grep:RTC(\s+);ok;1;5; 
+#cmp;grep:BCM_port;grep:ge1(\s+):up(\s+)ge2(\s+):up(\s+)ge3(\s+):up(\s+)ge4(\s+):up(\s+)ge5(\s+):up(\s+)ge6(\s+):up(\s+)ge7(\s+):up(\s+)ge8(\s+):up(\s+)ge9(\s+):up(\s+)ge10:up(\s+)ge11:up(\s+)ge12:up(\s+)ge13:up(\s+)ge14:up(\s+)ge15:up(\s+)ge16:up(\s+)Subchss 1 IX02:(\s+)xg1 :up(\s+)xg2 :up(\s+)Subchss(\s+)2(\s+)IX02:(\s+)xg1 :up(\s+)xg2 :up(\s+)Subchss(\s+)3(\s+)IG06S02:(\s+)ge.3.1 :up(\s+)ge.3.2 :up(\s+)ge.3.3 :up(\s+)ge.3.4 :up(\s+)ge.3.5 :up(\s+)ge.3.6 :up(\s+)GE22:up(\s+)GE23:up;1;;
+#cmp;grep:XCSB Interface_por;grep:ge1(\s+):sfp(\s+)ge2(\s+):sfp(\s+)ge3(\s+):sfp(\s+)ge4(\s+):sfp(\s+)ge5(\s+):sfp(\s+)ge6(\s+):sfp(\s+)ge7(\s+):sfp(\s+)ge8(\s+):sfp(\s+)ge9(\s+):sfp(\s+)ge10:sfp(\s+)ge11:sfp(\s+)ge12:sfp(\s+)ge13:sfp(\s+)ge14:sfp(\s+)ge15:sfp(\s+)ge16:sfp;1;;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+manu sysclear
+
+exit

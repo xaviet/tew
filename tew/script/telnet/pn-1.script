@@ -1,0 +1,15 @@
+ls -la /appdisk/nepkg/
+
+df -k
+////;#;
+//sftp;tx;d:\a.pdf;/appdisk/nepkg/a.pdf;
+
+ls -la /appdisk/nepkg/
+
+df -k
+////;#;
+//sftp;rx;d:\a.pdf;/appdisk/nepkg/a.pdf;
+
+ls -la /appdisk/nepkg/
+
+ps

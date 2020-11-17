@@ -1,0 +1,7 @@
+:SENS:MEAS:STAR
+#wait;300;²âÊÔÎå·ÖÖÓ;
+:SENS:MEAS:STOP
+
+CALC_S
+
+

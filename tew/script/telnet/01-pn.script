@@ -1,0 +1,3 @@
+//systemcmd;ftp -n;open 172.28.71.201 21;user root root;dir;ls;dir;bye;
+////;User:;
+show $_019EthetnetInstrumentPort1 123

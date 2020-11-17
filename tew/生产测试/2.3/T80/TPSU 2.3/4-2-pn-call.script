@@ -1,0 +1,19 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call slot/3/phy setmanu {sn="$_003SN1",vendor="$_016vendor"}
+
+call slot/3/phy getmanu 
+#;SUCCESS!;
+#cmp;sn=;$_003SN1;1;
+#cmp;vendor= ;$_016vendor;1; 
+#;#;
+
+quit
+
+rm /appdisk/nepkg/active
+
+exit

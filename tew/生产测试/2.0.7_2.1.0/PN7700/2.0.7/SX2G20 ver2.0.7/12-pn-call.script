@@ -1,0 +1,18 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+#module;126product信息检查(slot7);begin;
+call / showmanu 7
+//cmp;rootfs: ;$_008RootFS1;1;10;59;
+//cmp;SN: ;$_003SN1$_004PN1;1;24;60;
+//cmp;uboot: ;$_007UBoot1;1;10;61;
+#module;126product信息检查(slot7);end;
+#module;127product信息检查(slot10);begin;
+call / showmanu 10
+//cmp;rootfs: ;$_014RootFS2;1;10;62;
+//cmp;SN: ;$_009SN2$_010PN2;1;24;63;
+//cmp;uboot: ;$_013UBoot2;1;10;64;
+#module;127product信息检查(slot10);end;
+////;#;
+//module;123product信息录入;end;

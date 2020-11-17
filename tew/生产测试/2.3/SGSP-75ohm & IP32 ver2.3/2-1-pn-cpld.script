@@ -1,0 +1,18 @@
+#sleep;120;startup;
+
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/cardpkg/$_022appname/soft_ptn64/cxt500/fpga/cxt3003v040d.bin") 
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+##;# ;
+
+ifconfig eth0
+#cmp;HWaddr ;00:00:00:00:00:10;
+ifconfig eth0
+#cmp;inet addr:;192.168.100.16;
+reboot
+##;#;

@@ -1,0 +1,49 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+dmesg 
+##;/ #;
+#buffcut;*********************hwtest******************;; 
+#module;118boardtype(slot5-P2PGE10);begin;
+#cmp;board type ;P2PGE10;1;8;1;
+#module;118boardtype(slot5-P2PGE10);end;
+#cmp;pcb version ;1;0;4;1;
+#module;119cpld(slot5-cpld/fpga);begin;
+#cmp;CPLD_ID ;2003     version  201f,2001;
+#cmp;FPGA1_ID ;2004    version  25.0;
+#cmp;CPLD ;ok  FPGA1 ok;
+#module;119cpld(slot5-cpld/fpga);end;
+#module;120boardonline(slot5-ok);begin;
+#cmp;board online;ok;1;5;2;
+#module;120boardonline(slot5-ok);end;
+#module;121temp(slot2-ok);begin;
+#save;temp : ;7;0;5;
+#saveconst;29;125;
+#saveconst;71;126;
+#count;125;<;7;
+#count;126;>;7;
+#module;121temp(slot5-ok);end;
+#module;122pon(slot5-ok);begin;
+#cmp;pon0 : ;sfp;1;5;
+#cmp;pon1 : ;sfp;1;5;
+#cmp;pon2 : ;sfp;1;5;
+#cmp;pon3 : ;sfp;1;5;
+#cmp;pon4 : ;sfp;1;5;
+#cmp;pon5 : ;sfp;1;5;
+#cmp;pon6 : ;sfp;1;5;
+#cmp;pon7 : ;sfp;1;5;
+#cmp;pon8 : ;sfp;1;5;
+#cmp;pon9 : ;sfp;1;5;
+#cmp;AD9518_1 ;ok;1;5;
+#cmp;slot 3:; com:ok;1;5;         
+#cmp;slot 4:; com: ok;1;5;
+#module;122pon(slot5-ok);end;
+rm –r /appdisk/*
+exit
+##;$;
+#module;112硬件信息查询;end;

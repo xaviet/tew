@@ -1,0 +1,49 @@
+#sleep;10;...;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#label;noready;
+show / all
+#save;readycfg:;10;
+#goto;noready;10;false;
+
+config
+
+dr
+co
+
+set slot/1/lg type XCSB
+
+set slot/1/1/lg type IX02
+set slot/1/2/lg type IX02
+
+
+mse interfaces/eth xg.1.1.1 {admin='up',role='uni'}
+mse interfaces/eth xg.1.1.2 {admin='up',role='uni'}
+
+mse interfaces/eth xg.1.2.1 {admin='up',role='uni'}
+mse interfaces/eth xg.1.2.2 {admin='up',role='uni'}
+
+cr pmap/ethac l2acbe {default={cos='be',eir=10000000}}
+
+cr ccc 1 {admin='up'}
+cr ccc 2 {admin='up'}
+
+cr interfaces/eth/xg.1.1.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/1'}}
+cr interfaces/eth/xg.1.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/1'}}
+cr interfaces/eth/xg.1.1.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/2'}}
+cr interfaces/eth/xg.1.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/2'}}
+
+cr interfaces/eth/xg.1.1.1 clock
+cr interfaces/eth/xg.1.1.2 clock
+
+co
+##;#;
+#cmpn;;ERROR;
+
+quit
+#sleep;16;...;

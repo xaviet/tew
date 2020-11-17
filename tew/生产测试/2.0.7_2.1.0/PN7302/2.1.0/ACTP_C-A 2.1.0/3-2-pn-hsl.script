@@ -1,0 +1,22 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+show slot/1/phy sub all
+//cmp;ver: ;SW:2.1.1,CPLD 3303:01.10,FPGA 3301:02.12,PCB:2;
+
+show slot/2/phy sub all
+//cmp;ver: ;SW:2.1.1,CPLD 3303:01.10,FPGA 3301:02.12,PCB:2;
+
+debug
+hsl c=1,m=hwtest,a=0
+//wait;30;等待slot1所有灯熄灭;
+hsl c=1,m=hwtest,a=1
+//wait;30;等待slot1所有灯亮起,红绿灯位置正确;
+hsl c=2,m=hwtest,a=0
+//wait;30;等待slot2所有灯熄灭;
+hsl c=2,m=hwtest,a=1
+//wait;30;等待slot2所有灯亮起,红绿灯位置正确;
+
+exit

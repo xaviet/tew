@@ -1,0 +1,27 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#systemcmd;ftp -n;open  $_host;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\生产测试版本\V2.2.0\$_022appname.tar.gz;ls -la;bye;
+##;;
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/$_022appname.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(0,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt20b/fpga/cxt3305v0107.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+echo -n $_022appname > /appdisk/nepkg/active
+
+reboot
+#sleep;120;startup;
+#wait;;请点击确定后，按reset按钮;

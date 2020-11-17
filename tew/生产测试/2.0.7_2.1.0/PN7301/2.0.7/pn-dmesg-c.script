@@ -1,0 +1,12 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+#module;103点灯及硬件信息查询;begin;
+dmesg -c
+#;/ #;
+exit

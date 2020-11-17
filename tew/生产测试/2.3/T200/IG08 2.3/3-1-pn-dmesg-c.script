@@ -1,0 +1,17 @@
+dmesg -c
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+dmesg -c
+
+exit
+
+exit

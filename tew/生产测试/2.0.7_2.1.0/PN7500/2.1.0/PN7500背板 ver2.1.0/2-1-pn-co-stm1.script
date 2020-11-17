@@ -1,0 +1,88 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+//module;200业务测试;begin; 
+co
+
+dropdb
+
+set slot/3/lg type XCTPS
+set slot/4/lg type XCTPS
+set slot/1/lg type SS8P32
+set slot/2/lg type SS8P32
+set slot/5/lg type SS8P32
+set slot/6/lg type SS8P32
+set slot/7/lg type FAN
+
+set slot/3/lg port5 SDH
+set slot/3/lg port6 SDH
+set slot/4/lg port5 SDH
+set slot/4/lg port6 SDH
+
+cr ccc 1 {admin="up"}
+set interfaces/sdh/stm1.6.1 admin up
+set interfaces/sdh/stm1.5.1 admin up
+cr interfaces/sdh/stm1.6.1 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.5.1 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.6.1/1.0.1.1.3 service {_='ccc',vpn='ccc/1'}
+cr interfaces/sdh/stm1.5.1/1.0.1.1.3 service {_='ccc',vpn='ccc/1'}
+
+cr ccc 2 {admin="up"}
+set interfaces/sdh/stm1.2.1 admin up
+set interfaces/sdh/stm1.2.2 admin up
+cr interfaces/sdh/stm1.2.1 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.2.2 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.2.1/1.0.1.1.3 service {_='ccc',vpn='ccc/2'}
+cr interfaces/sdh/stm1.2.2/1.0.1.1.3 service {_='ccc',vpn='ccc/2'}
+
+cr ccc 3 {admin="up"}
+set interfaces/sdh/stm1.2.3 admin up
+set interfaces/sdh/stm1.3.1 admin up
+cr interfaces/sdh/stm1.2.3 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.3.1 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.2.3/1.0.1.1.3 service {_='ccc',vpn='ccc/3'}
+cr interfaces/sdh/stm1.3.1/1.0.1.1.3 service {_='ccc',vpn='ccc/3'}
+
+cr ccc 4 {admin="up"}
+set interfaces/sdh/stm1.3.2 admin up
+set interfaces/sdh/stm1.1.1 admin up
+cr interfaces/sdh/stm1.3.2 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.1.1 1.0.1.1.3 {admin="up"}
+cr interfaces/sdh/stm1.3.2/1.0.1.1.3 service {_='ccc',vpn='ccc/4'}
+cr interfaces/sdh/stm1.1.1/1.0.1.1.3 service {_='ccc',vpn='ccc/4'}
+
+set interfaces/sdh/stm1.1.1 checkc2 false 
+set interfaces/sdh/stm1.1.1/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.2.1 checkc2 false 
+set interfaces/sdh/stm1.2.1/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.2.2 checkc2 false 
+set interfaces/sdh/stm1.2.2/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.2.3 checkc2 false 
+set interfaces/sdh/stm1.2.3/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.3.1 checkc2 false 
+set interfaces/sdh/stm1.3.1/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.3.2 checkc2 false 
+set interfaces/sdh/stm1.3.2/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.5.1 checkc2 false 
+set interfaces/sdh/stm1.5.1/1.0.1.1.3 checkv5 false
+
+set interfaces/sdh/stm1.4.1 admin up
+set interfaces/sdh/stm1.4.2 admin up
+cr protocols/msp 1 {type=0,prtport="stm1.4.1",workport="stm1.3.1",wtrtime=0}
+set protocols/msp/1  enaps true
+cr protocols/msp 2 {type=0,prtport="stm1.4.2",workport="stm1.3.2",wtrtime=0}
+set protocols/msp/2  enaps true
+
+set interfaces/sdh/stm1.5.2 admin up
+set interfaces/sdh/stm1.5.3 admin up
+cr protocols/msp 3 {type=0,prtport="stm1.5.2",workport="stm1.2.2",wtrtime=0}
+set protocols/msp/3  enaps true
+cr protocols/msp 4 {type=0,prtport="stm1.5.3",workport="stm1.2.3",wtrtime=0}
+set protocols/msp/4  enaps true
+
+co
+
+exit
+//module;201stm1业务测试;begin; 
+//wait;;设置SDH仪表，配成STM1的第一个时隙,期望结果：STM1业务无误码，测试5分钟。;

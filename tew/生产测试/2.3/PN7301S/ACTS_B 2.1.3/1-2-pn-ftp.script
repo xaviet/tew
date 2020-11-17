@@ -1,0 +1,18 @@
+#module;102ftp上传及cpld加载;begin;
+mkdir /appdisk/nepkg/
+
+#sftp;tx;D:\生产测试版本\V2.1.0\$_022appname.tar.gz;;/appdisk/nepkg/$_022appname.tar.gz;
+##;;
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/$_022appname.tar.gz
+##;#;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt21a/fpga/cxt3502.bin")
+#;> ;
+#cmp;cpu test is e0000000;the cpld download is start;
+#ctrld;
+echo -n $_022appname > /appdisk/nepkg/active
+
+reboot
+#sleep;50;startup;
+#module;102ftp上传及cpld加载;end;

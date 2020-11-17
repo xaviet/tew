@@ -1,0 +1,17 @@
+manu clear
+manu set mac macformat$_006EthMac1
+manu set sn $_003SN1
+manu set pn $_004PN1
+
+cat /proc/cmdline
+#cmp;uboot=;Oct 28 2013-19:01:47;
+#cmp;;mem=0x3e000000 reserve=0x3e000000,0x2000000 errcode=0x0;
+
+cat /etc/buildtime
+#cmp;;2013-10-15 11:27:5;
+
+manu set boot $_015boot
+
+manu check
+#cmp;manu;all ok;
+

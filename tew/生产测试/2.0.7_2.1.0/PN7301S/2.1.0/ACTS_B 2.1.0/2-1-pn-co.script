@@ -1,0 +1,121 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+config
+
+dr
+
+//module;103业务测试;begin;
+set / id 20.0.0.6
+set slot/1/lg type ACTS_B
+
+set interfaces/eth/ge.1.1 admin up
+set interfaces/eth/ge.1.1 role nni
+set interfaces/eth/ge.1.1/ef cir 989952
+
+set interfaces/eth/ge.1.2 admin up
+set interfaces/eth/ge.1.2 role nni
+set interfaces/eth/ge.1.2/ef cir 989952
+co
+
+set interfaces/pdh/e1.1.1 admin up
+set interfaces/pdh/e1.1.2 admin up
+set interfaces/pdh/e1.1.3 admin up
+set interfaces/pdh/e1.1.4 admin up
+
+cr ces 1 {admin='up'}
+cr ces 2 {admin='up'}
+cr ces 3 {admin='up'}
+cr ces 4 {admin='up'}
+
+cr interfaces/pdh/e1.1.1 service {_='ces',vpn='ces/1'}
+cr interfaces/pwpdh 1 {carrierif='ge.1.1',cos='ef',inlabel=102,outlabel=201,peer='20.0.0.5',admin='up'}
+cr interfaces/pwpdh/1 service {_='ces',vpn='ces/1'}
+co
+
+cr interfaces/pdh/e1.1.3 service {_='ces',vpn='ces/2'}
+cr interfaces/pwpdh 2 {carrierif='ge.1.2',cos='ef',inlabel=201,outlabel=102,peer='20.0.0.5',admin='up'}
+cr interfaces/pwpdh/2 service {_='ces',vpn='ces/2'}
+co
+
+cr interfaces/pdh/e1.1.2 service {_='ces',vpn='ces/3'}
+cr interfaces/pwpdh 3 {carrierif='ge.1.1',cos='ef',inlabel=112,outlabel=211,peer='20.0.0.5',admin='up'}
+cr interfaces/pwpdh/3 service {_='ces',vpn='ces/3'}
+co
+
+cr interfaces/pdh/e1.1.4 service {_='ces',vpn='ces/4'}
+cr interfaces/pwpdh 4 {carrierif='ge.1.2',cos='ef',inlabel=211,outlabel=112,peer='20.0.0.5',admin='up'}
+cr interfaces/pwpdh/4 service {_='ces',vpn='ces/4'}
+co
+
+set interfaces/eth/fe.1.1 admin up
+set interfaces/eth/fe.1.1 role uni
+set interfaces/eth/fe.1.1/ef cir 89984
+
+set interfaces/eth/fe.1.2 admin up
+set interfaces/eth/fe.1.2 role uni
+set interfaces/eth/fe.1.2/ef cir 89984
+
+set interfaces/eth/fe.1.3 admin up
+set interfaces/eth/fe.1.3 role uni
+set interfaces/eth/fe.1.3/ef cir 89984
+
+set interfaces/eth/fe.1.4 admin up
+set interfaces/eth/fe.1.4 role uni
+set interfaces/eth/fe.1.4/ef cir 89984
+co
+
+cr pmap/ethac vlanpri1 {default={cos='ef',cir=89984}}
+cr pmap/mpls llsppw1 {cos="ef",ocir=89984,icir=89984} 
+
+cr  l2vpn/eline 1
+set l2vpn/eline/1 admin up
+             
+cr  l2vpn/eline 2         
+set l2vpn/eline/2 admin up
+
+cr  l2vpn/eline 3         
+set l2vpn/eline/3 admin up
+
+cr  l2vpn/eline 4         
+set l2vpn/eline/4 admin up
+co
+
+cr interfaces/eth/fe.1.1 1 {mode="port",qos="vlanpri1",admin="up"}
+cr interfaces/eth/fe.1.1/1 service {_="eline",vpn="eline/1"}
+
+cr  interfaces/pweth 1 {carrierif="ge.1.1",inlabel=301,outlabel=103,peer="20.0.0.5",qos="llsppw1"}
+set interfaces/pweth/1 admin up
+cr  interfaces/pweth/1 service {_="eline",vpn="eline/1"}
+co
+
+cr interfaces/eth/fe.1.2 1 {mode="port",qos="vlanpri1",admin="up"}
+cr interfaces/eth/fe.1.2/1 service {_="eline",vpn="eline/2"}
+
+cr  interfaces/pweth 2 {carrierif="ge.1.2",inlabel=103,outlabel=301,peer="20.0.0.5",qos="llsppw1"}
+set interfaces/pweth/2 admin up
+cr  interfaces/pweth/2 service {_="eline",vpn="eline/2"}
+co
+
+cr interfaces/eth/fe.1.3 1 {mode="port",qos="vlanpri1",admin="up"}
+cr interfaces/eth/fe.1.3/1 service {_="eline",vpn="eline/3"}
+
+cr  interfaces/pweth 3 {carrierif="ge.1.1",inlabel=311,outlabel=113,peer="20.0.0.5",qos="llsppw1"}
+
+set interfaces/pweth/3 admin up
+cr  interfaces/pweth/3 service {_="eline",vpn="eline/3"}
+co
+
+cr interfaces/eth/fe.1.4 1 {mode="port",qos="vlanpri1",admin="up"}
+cr interfaces/eth/fe.1.4/1 service {_="eline",vpn="eline/4"}
+
+cr  interfaces/pweth 4 {carrierif="ge.1.2",inlabel=113,outlabel=311,peer="20.0.0.5",qos="llsppw1"}
+set interfaces/pweth/4 admin up
+cr  interfaces/pweth/4 service {_="eline",vpn="eline/4"}
+co
+
+exit
+//wait;;业务测试5分钟,并断开计算机串口连接;
+//module;103业务测试;end;

@@ -1,0 +1,16 @@
+#module;101Mac地址设置;begin;
+#wait;0;拔插串口线所连板卡;
+##;stop key:< >;
+#sleep;0;...;
+
+print
+set ethaddr 00:00:00:00:00:00
+set bootargs root=/dev/mtdblock3 rw rootfstype=jffs2 console=$consoledev,$baudrate $othbootargs uboot=$ubootver
+set bootcmd nand read \$loadaddr 0x200000 0x200000\;nand read \$fdtaddr 0x100000 0x100000\;bootm \$loadaddr - \$fdtaddr
+nand erase 0x2600000 0xd800000
+save
+print
+#cmp;ethaddr=;00:00:00:00:00:00;1;17;
+reset
+##;;
+#wait;0;将写好板卡插到slot7，新板卡插到slot10并连接串口线;

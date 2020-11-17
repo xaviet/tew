@@ -1,0 +1,16 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+#module;111IO_ONLINE״̬;begin;
+dmesg 
+##;/ #;
+#buffcut;*********************hwtest******************;; 
+#cmp;IO_ONLINE ;ok;1; 
+#module;111IO_ONLINE״̬;end; 
+exit
+##;$;

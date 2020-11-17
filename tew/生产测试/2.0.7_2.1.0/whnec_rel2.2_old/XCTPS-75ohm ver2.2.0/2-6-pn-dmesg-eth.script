@@ -1,0 +1,66 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+ifconfig eth0
+#cmp;HWaddr ;$_006EthMac1;
+#cmp;inet addr:;192.168.1.201;
+ifconfig eth1
+#cmp;HWaddr ;00:00:00:00:00:01;
+#cmp;inet addr:;192.168.100.1;
+
+#sleep;10;µÈ´ý10sÊ±¼ä;
+
+dmesg 
+##;/ #;
+#buffcut;*********************hwtest******************;; 
+#cmp;board type ;XCTPS-A;1;7;1;
+#cmp;CPLD_ID 3202     version  ;4.a;1;4;2;
+#cmp;FPGA1_ID  3201   version  ;4.e;1;4;3;
+#cmp;FPGA2_ID  3204   version  ;1.6;1;4;4;   
+#cmp;pcb_version=;2;1;2;5;
+#cmp;BkpType:;CXT100_A0;1;9;6;
+#cmp;CPLD     ;ok;1;2;
+#cmp;FPGA1 ;ok        FPGA2 ok;
+#cmp;IDT3380 ;ok;1;2;      
+#cmp;AD9518_1 ;ok     AD9518_2 ok;
+#cmp;LIU_1 ;ok        LIU_2 ok        LIU_3 ok        LIU_4 ok        LIU_5 ok;        
+#cmp;oam ddr ;ok;1;2;
+#cmp;alm test ;ok;1;2;
+#save;Card temp : ;7;1;2;
+#saveconst;29;126;
+#saveconst;71;127;
+#count;126;<;7;
+#count;127;>;7;
+#cmp;RTC ;ok;1;2;
+#cmp;FAN_ONLINE ;ok   IO_ONLINE fail  CARD_ONLINE ok;
+#cmp;FAN_IIC ;ok;1;2;
+#cmp;Power1 ;ok      Power2 ok;
+#cmp;FREQ recover:     ;xg:ok     ge[0,1]:ok,ok     e1:ok;    
+#cmp;slot  1:;        com:ok          fe:ok   HG0:up;
+#cmp;slot  2:;        com:ok          fe:ok   HG2:up;
+#cmp;slot  5:;        com:ok          fe:ok   HG1:up;
+#cmp;slot  6:;        com:ok          fe:ok   HG4:up;
+#cmp;MATE   :;        com:ok          fe:ok   HG3:up;
+#cmp;Debug fe:;ok;1;2;
+#cmp;EXT_CLK_hz ;ok;1;2;
+#cmp;EXT_CLK_bit ;ok;1;2;
+#cmp;1pps ;ok;1;2;
+#cmp;ACO_0 ;ok;1;2;  
+#cmp;ACO_1 ;ok;1;2;
+#cmp;tod  ;ok;1;2;
+#cmp;1588 ;ok;1;2;
+#cmp;IDT3380 IN3 ;ok  IDT3380 IN4 ok;
+#cmp;IDT3380 IN6 ;ok  IDT3380 IN7 ok;
+#cmp;IDT3380 IN8 ;ok  IDT3380 IN9 ok;
+#cmp;xe  :;xfp       ge1 :sfp       ge2 :sfp       ge3 :sfp       ge4 :sfp       ge5 :sfp       ge6 :sfp; 
+#cmp;xe  :;up       ge1 :up       ge2 :up       ge3 :up       ge4 :up       ge5 :up       ge6 :up;       
+#cmp;inp1:;up         inp2:up;    
+
+exit
+##;$;

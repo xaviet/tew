@@ -1,0 +1,23 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+//module;126product信息检查(slot2);begin;
+call / showmanu 2
+//;SUCCESS;
+//cmp;mac: ;macformat$_006EthMac1;1;
+//cmp;sn: ;$_003SN1$_004PN1;1;
+//cmp;boot: ;$_015boot;1; 
+//cmp;vendor: ;$_016vendor;1;
+//module;126product信息检查(slot2);end;
+//;#;
+
+//module;127product信息检查(slot3);begin;
+call / showmanu 3
+//;SUCCESS;
+//cmp;mac: ;macformat$_012EthMac2;1;
+//cmp;sn: ;$_009SN2$_010PN2;1; 
+//cmp;boot: ;$_015boot;1;
+//cmp;vendor: ;$_016vendor;1;
+//module;127product信息检查(slot3);end;
+//;#;

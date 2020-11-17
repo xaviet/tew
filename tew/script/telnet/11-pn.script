@@ -1,0 +1,20 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+;
+show / all
+//sleep;2;test;
+show / all
+show / all
+show / all
+//sleep;2;test;
+show / all
+//msg;check;test2;
+show / all
+show / all
+show / all
+show / all
+//module;1;end;
+//module;3;begin;
+//sleep;30;30;

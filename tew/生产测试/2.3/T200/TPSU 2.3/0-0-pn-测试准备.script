@@ -1,0 +1,2 @@
+#module;T200_TPSU_Test;begin;
+#wait;60;将单板插在分别插在SLOT3和SLOT4上，插好单板后，网元上电。两个电源接口上都接-48V电源;

@@ -1,0 +1,363 @@
+set slot/1/lg type ACTP_C
+set slot/2/lg type ACTP_C
+
+//-----------------------E1接口测试--------------------------------
+
+set interfaces/pdh/e1.1.1 admin up
+set interfaces/pdh/e1.1.2 admin up
+set interfaces/pdh/e1.1.3 admin up
+set interfaces/pdh/e1.1.4 admin up
+set interfaces/pdh/e1.1.5 admin up
+set interfaces/pdh/e1.1.6 admin up
+set interfaces/pdh/e1.1.7 admin up
+set interfaces/pdh/e1.1.8 admin up
+set interfaces/pdh/e1.1.9 admin up
+set interfaces/pdh/e1.1.10 admin up
+set interfaces/pdh/e1.1.11 admin up
+set interfaces/pdh/e1.1.12 admin up
+set interfaces/pdh/e1.1.13 admin up
+set interfaces/pdh/e1.1.14 admin up
+set interfaces/pdh/e1.1.15 admin up
+set interfaces/pdh/e1.1.16 admin up
+
+set interfaces/pdh/e1.2.1 admin up
+set interfaces/pdh/e1.2.2 admin up
+set interfaces/pdh/e1.2.3 admin up
+set interfaces/pdh/e1.2.4 admin up
+set interfaces/pdh/e1.2.5 admin up
+set interfaces/pdh/e1.2.6 admin up
+set interfaces/pdh/e1.2.7 admin up
+set interfaces/pdh/e1.2.8 admin up
+set interfaces/pdh/e1.2.9 admin up
+set interfaces/pdh/e1.2.10 admin up
+set interfaces/pdh/e1.2.11 admin up
+set interfaces/pdh/e1.2.12 admin up
+set interfaces/pdh/e1.2.13 admin up
+set interfaces/pdh/e1.2.14 admin up
+set interfaces/pdh/e1.2.15 admin up
+set interfaces/pdh/e1.2.16 admin up
+set interfaces/sdh/stm1.1.1 admin up
+set interfaces/sdh/stm1.2.1 admin up
+
+
+cr ccc 1 {admin='up'}
+cr ccc 2 {admin='up'}
+cr ccc 3 {admin='up'}
+cr ccc 4 {admin='up'}
+cr ccc 5 {admin='up'}
+cr ccc 6 {admin='up'}
+cr ccc 7 {admin='up'}
+
+cr ccc 11 {admin='up'}
+cr ccc 12 {admin='up'}
+cr ccc 13 {admin='up'}
+cr ccc 14 {admin='up'}
+cr ccc 15 {admin='up'}
+cr ccc 16 {admin='up'}
+cr ccc 17 {admin='up'}
+cr ccc 18 {admin='up'}
+cr ccc 19 {admin='up'}
+
+cr ccc 20 {admin='up'} 
+cr ccc 21 {admin='up'} 
+cr ccc 22 {admin='up'} 
+cr ccc 23 {admin='up'} 
+cr ccc 24 {admin='up'} 
+cr ccc 25 {admin='up'} 
+cr ccc 26 {admin='up'} 
+cr ccc 27 {admin='up'} 
+cr ccc 28 {admin='up'} 
+cr ccc 29 {admin='up'} 
+cr ccc 30 {admin='up'} 
+cr ccc 31 {admin='up'} 
+cr ccc 32 {admin='up'} 
+cr ccc 33 {admin='up'} 
+cr ccc 34 {admin='up'} 
+cr ccc 35 {admin='up'} 
+cr ccc 36 {admin='up'} 
+cr ccc 37 {admin='up'} 
+cr ccc 38 {admin='up'} 
+cr ccc 39 {admin='up'} 
+cr ccc 40 {admin='up'} 
+cr ccc 41 {admin='up'} 
+cr ccc 42 {admin='up'} 
+cr ccc 43 {admin='up'} 
+cr ccc 44 {admin='up'} 
+cr ccc 45 {admin='up'} 
+cr ccc 46 {admin='up'} 
+cr ccc 47 {admin='up'} 
+cr ccc 48 {admin='up'}                
+cr ccc 49 {admin='up'} 
+cr ccc 50 {admin='up'} 
+cr ccc 51 {admin='up'} 
+cr ccc 52 {admin='up'} 
+cr ccc 53 {admin='up'} 
+cr ccc 54 {admin='up'} 
+cr ccc 55 {admin='up'} 
+cr ccc 56 {admin='up'} 
+cr ccc 57 {admin='up'} 
+cr ccc 58 {admin='up'} 
+cr ccc 59 {admin='up'} 
+cr ccc 60 {admin='up'} 
+cr ccc 61 {admin='up'} 
+cr ccc 62 {admin='up'} 
+cr ccc 63 {admin='up'} 
+cr ccc 64 {admin='up'} 
+cr ccc 65 {admin='up'} 
+cr ccc 66 {admin='up'} 
+cr ccc 67 {admin='up'} 
+cr ccc 68 {admin='up'} 
+cr ccc 69 {admin='up'} 
+cr ccc 70 {admin='up'} 
+cr ccc 71 {admin='up'} 
+cr ccc 72 {admin='up'} 
+cr ccc 73 {admin='up'} 
+cr ccc 74 {admin='up'} 
+cr ccc 75 {admin='up'} 
+cr ccc 76 {admin='up'} 
+cr ccc 77 {admin='up'} 
+cr ccc 78 {admin='up'} 
+cr ccc 79 {admin='up'} 
+cr ccc 80 {admin='up'} 
+cr ccc 81 {admin='up'} 
+cr ccc 82 {admin='up'} 
+cr ccc 83 {admin='up'} 
+
+cr interfaces/pdh/e1.1.1 service {_='ccc',vpn='ccc/1'}
+cr interfaces/pdh/e1.1.3 service {_='ccc',vpn='ccc/1'}
+cr interfaces/pdh/e1.1.4 service {_='ccc',vpn='ccc/2'}
+cr interfaces/pdh/e1.1.5 service {_='ccc',vpn='ccc/2'}
+cr interfaces/pdh/e1.1.6 service {_='ccc',vpn='ccc/3'}
+cr interfaces/pdh/e1.1.7 service {_='ccc',vpn='ccc/3'}
+cr interfaces/pdh/e1.1.8 service {_='ccc',vpn='ccc/4'}
+cr interfaces/pdh/e1.1.9 service {_='ccc',vpn='ccc/4'}
+cr interfaces/pdh/e1.1.10 service {_='ccc',vpn='ccc/5'}
+cr interfaces/pdh/e1.1.11 service {_='ccc',vpn='ccc/5'}
+cr interfaces/pdh/e1.1.12 service {_='ccc',vpn='ccc/6'}
+cr interfaces/pdh/e1.1.13 service {_='ccc',vpn='ccc/6'}
+cr interfaces/pdh/e1.1.14 service {_='ccc',vpn='ccc/7'}
+cr interfaces/pdh/e1.1.15 service {_='ccc',vpn='ccc/7'}
+cr interfaces/pdh/e1.1.16 service {_='ccc',vpn='ccc/11'}
+cr interfaces/pdh/e1.2.1 service {_='ccc',vpn='ccc/11'}
+
+cr interfaces/pdh/e1.2.2 service {_='ccc',vpn='ccc/12'} 
+cr interfaces/pdh/e1.2.3 service {_='ccc',vpn='ccc/12'} 
+cr interfaces/pdh/e1.2.4 service {_='ccc',vpn='ccc/13'} 
+cr interfaces/pdh/e1.2.5 service {_='ccc',vpn='ccc/13'} 
+cr interfaces/pdh/e1.2.6 service {_='ccc',vpn='ccc/14'} 
+cr interfaces/pdh/e1.2.7 service {_='ccc',vpn='ccc/14'} 
+cr interfaces/pdh/e1.2.8 service {_='ccc',vpn='ccc/15'} 
+cr interfaces/pdh/e1.2.9 service {_='ccc',vpn='ccc/15'} 
+cr interfaces/pdh/e1.2.10 service {_='ccc',vpn='ccc/16'} 
+cr interfaces/pdh/e1.2.11 service {_='ccc',vpn='ccc/16'} 
+cr interfaces/pdh/e1.2.12 service {_='ccc',vpn='ccc/17'} 
+cr interfaces/pdh/e1.2.13 service {_='ccc',vpn='ccc/17'} 
+cr interfaces/pdh/e1.2.14 service {_='ccc',vpn='ccc/18'} 
+cr interfaces/pdh/e1.2.15 service {_='ccc',vpn='ccc/18'} 
+cr interfaces/pdh/e1.2.16 service {_='ccc',vpn='ccc/19'}
+create interfaces/sdh/stm1.1.1 1.0.1.1.3 {admin='up',service={_='ccc',vpn='ccc/19'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.1.3 {admin='up',service={_='ccc',vpn='ccc/20'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.1.4 {admin='up',service={_='ccc',vpn='ccc/20'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.1.4 {admin='up',service={_='ccc',vpn='ccc/21'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.1.5 {admin='up',service={_='ccc',vpn='ccc/21'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.1.5 {admin='up',service={_='ccc',vpn='ccc/22'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.2.3 {admin='up',service={_='ccc',vpn='ccc/22'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.2.3 {admin='up',service={_='ccc',vpn='ccc/23'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.2.4 {admin='up',service={_='ccc',vpn='ccc/23'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.2.4 {admin='up',service={_='ccc',vpn='ccc/24'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.2.5 {admin='up',service={_='ccc',vpn='ccc/24'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.2.5 {admin='up',service={_='ccc',vpn='ccc/25'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.3.3 {admin='up',service={_='ccc',vpn='ccc/25'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.3.3 {admin='up',service={_='ccc',vpn='ccc/26'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.3.4 {admin='up',service={_='ccc',vpn='ccc/26'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.3.4 {admin='up',service={_='ccc',vpn='ccc/27'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.3.5 {admin='up',service={_='ccc',vpn='ccc/27'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.3.5 {admin='up',service={_='ccc',vpn='ccc/28'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.4.3 {admin='up',service={_='ccc',vpn='ccc/28'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.4.3 {admin='up',service={_='ccc',vpn='ccc/29'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.4.4 {admin='up',service={_='ccc',vpn='ccc/29'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.4.4 {admin='up',service={_='ccc',vpn='ccc/30'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.4.5 {admin='up',service={_='ccc',vpn='ccc/30'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.4.5 {admin='up',service={_='ccc',vpn='ccc/31'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.5.3 {admin='up',service={_='ccc',vpn='ccc/31'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.5.3 {admin='up',service={_='ccc',vpn='ccc/32'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.5.4 {admin='up',service={_='ccc',vpn='ccc/32'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.5.4 {admin='up',service={_='ccc',vpn='ccc/33'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.5.5 {admin='up',service={_='ccc',vpn='ccc/33'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.5.5 {admin='up',service={_='ccc',vpn='ccc/34'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.6.3 {admin='up',service={_='ccc',vpn='ccc/34'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.6.3 {admin='up',service={_='ccc',vpn='ccc/35'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.6.4 {admin='up',service={_='ccc',vpn='ccc/35'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.6.4 {admin='up',service={_='ccc',vpn='ccc/36'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.6.5 {admin='up',service={_='ccc',vpn='ccc/36'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.6.5 {admin='up',service={_='ccc',vpn='ccc/37'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.7.3 {admin='up',service={_='ccc',vpn='ccc/37'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.7.3 {admin='up',service={_='ccc',vpn='ccc/38'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.7.4 {admin='up',service={_='ccc',vpn='ccc/38'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.7.4 {admin='up',service={_='ccc',vpn='ccc/39'}} 
+create interfaces/sdh/stm1.1.1 1.0.1.7.5 {admin='up',service={_='ccc',vpn='ccc/39'}} 
+create interfaces/sdh/stm1.2.1 1.0.1.7.5 {admin='up',service={_='ccc',vpn='ccc/40'}} 
+
+create interfaces/sdh/stm1.1.1 1.0.2.1.3 {admin='up',service={_='ccc',vpn='ccc/40'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.1.3 {admin='up',service={_='ccc',vpn='ccc/41'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.1.4 {admin='up',service={_='ccc',vpn='ccc/41'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.1.4 {admin='up',service={_='ccc',vpn='ccc/42'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.1.5 {admin='up',service={_='ccc',vpn='ccc/42'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.1.5 {admin='up',service={_='ccc',vpn='ccc/43'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.2.3 {admin='up',service={_='ccc',vpn='ccc/43'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.2.3 {admin='up',service={_='ccc',vpn='ccc/44'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.2.4 {admin='up',service={_='ccc',vpn='ccc/44'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.2.4 {admin='up',service={_='ccc',vpn='ccc/45'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.2.5 {admin='up',service={_='ccc',vpn='ccc/45'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.2.5 {admin='up',service={_='ccc',vpn='ccc/46'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.3.3 {admin='up',service={_='ccc',vpn='ccc/46'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.3.3 {admin='up',service={_='ccc',vpn='ccc/47'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.3.4 {admin='up',service={_='ccc',vpn='ccc/47'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.3.4 {admin='up',service={_='ccc',vpn='ccc/48'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.3.5 {admin='up',service={_='ccc',vpn='ccc/48'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.3.5 {admin='up',service={_='ccc',vpn='ccc/49'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.4.3 {admin='up',service={_='ccc',vpn='ccc/49'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.4.3 {admin='up',service={_='ccc',vpn='ccc/50'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.4.4 {admin='up',service={_='ccc',vpn='ccc/50'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.4.4 {admin='up',service={_='ccc',vpn='ccc/51'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.4.5 {admin='up',service={_='ccc',vpn='ccc/51'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.4.5 {admin='up',service={_='ccc',vpn='ccc/52'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.5.3 {admin='up',service={_='ccc',vpn='ccc/52'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.5.3 {admin='up',service={_='ccc',vpn='ccc/53'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.5.4 {admin='up',service={_='ccc',vpn='ccc/53'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.5.4 {admin='up',service={_='ccc',vpn='ccc/54'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.5.5 {admin='up',service={_='ccc',vpn='ccc/54'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.5.5 {admin='up',service={_='ccc',vpn='ccc/55'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.6.3 {admin='up',service={_='ccc',vpn='ccc/55'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.6.3 {admin='up',service={_='ccc',vpn='ccc/56'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.6.4 {admin='up',service={_='ccc',vpn='ccc/56'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.6.4 {admin='up',service={_='ccc',vpn='ccc/57'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.6.5 {admin='up',service={_='ccc',vpn='ccc/57'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.6.5 {admin='up',service={_='ccc',vpn='ccc/58'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.7.3 {admin='up',service={_='ccc',vpn='ccc/58'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.7.3 {admin='up',service={_='ccc',vpn='ccc/59'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.7.4 {admin='up',service={_='ccc',vpn='ccc/59'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.7.4 {admin='up',service={_='ccc',vpn='ccc/60'}} 
+create interfaces/sdh/stm1.1.1 1.0.2.7.5 {admin='up',service={_='ccc',vpn='ccc/60'}} 
+create interfaces/sdh/stm1.2.1 1.0.2.7.5 {admin='up',service={_='ccc',vpn='ccc/61'}} 
+
+create interfaces/sdh/stm1.1.1 1.0.3.1.3 {admin='up',service={_='ccc',vpn='ccc/61'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.1.3 {admin='up',service={_='ccc',vpn='ccc/62'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.1.4 {admin='up',service={_='ccc',vpn='ccc/62'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.1.4 {admin='up',service={_='ccc',vpn='ccc/63'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.1.5 {admin='up',service={_='ccc',vpn='ccc/63'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.1.5 {admin='up',service={_='ccc',vpn='ccc/64'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.2.3 {admin='up',service={_='ccc',vpn='ccc/64'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.2.3 {admin='up',service={_='ccc',vpn='ccc/65'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.2.4 {admin='up',service={_='ccc',vpn='ccc/65'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.2.4 {admin='up',service={_='ccc',vpn='ccc/66'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.2.5 {admin='up',service={_='ccc',vpn='ccc/66'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.2.5 {admin='up',service={_='ccc',vpn='ccc/67'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.3.3 {admin='up',service={_='ccc',vpn='ccc/67'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.3.3 {admin='up',service={_='ccc',vpn='ccc/68'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.3.4 {admin='up',service={_='ccc',vpn='ccc/68'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.3.4 {admin='up',service={_='ccc',vpn='ccc/69'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.3.5 {admin='up',service={_='ccc',vpn='ccc/69'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.3.5 {admin='up',service={_='ccc',vpn='ccc/70'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.4.3 {admin='up',service={_='ccc',vpn='ccc/70'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.4.3 {admin='up',service={_='ccc',vpn='ccc/71'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.4.4 {admin='up',service={_='ccc',vpn='ccc/71'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.4.4 {admin='up',service={_='ccc',vpn='ccc/72'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.4.5 {admin='up',service={_='ccc',vpn='ccc/72'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.4.5 {admin='up',service={_='ccc',vpn='ccc/73'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.5.3 {admin='up',service={_='ccc',vpn='ccc/73'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.5.3 {admin='up',service={_='ccc',vpn='ccc/74'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.5.4 {admin='up',service={_='ccc',vpn='ccc/74'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.5.4 {admin='up',service={_='ccc',vpn='ccc/75'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.5.5 {admin='up',service={_='ccc',vpn='ccc/75'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.5.5 {admin='up',service={_='ccc',vpn='ccc/76'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.6.3 {admin='up',service={_='ccc',vpn='ccc/76'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.6.3 {admin='up',service={_='ccc',vpn='ccc/77'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.6.4 {admin='up',service={_='ccc',vpn='ccc/77'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.6.4 {admin='up',service={_='ccc',vpn='ccc/78'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.6.5 {admin='up',service={_='ccc',vpn='ccc/78'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.6.5 {admin='up',service={_='ccc',vpn='ccc/79'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.7.3 {admin='up',service={_='ccc',vpn='ccc/79'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.7.3 {admin='up',service={_='ccc',vpn='ccc/81'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.7.4 {admin='up',service={_='ccc',vpn='ccc/81'}} 
+create interfaces/sdh/stm1.2.1 1.0.3.7.4 {admin='up',service={_='ccc',vpn='ccc/82'}} 
+create interfaces/sdh/stm1.1.1 1.0.3.7.5 {admin='up',service={_='ccc',vpn='ccc/82'}} 
+
+create interfaces/sdh/stm1.2.1 1.0.3.7.5 {admin='up',service={_='ccc',vpn='ccc/83'}} 
+cr interfaces/pdh/e1.1.2 service {_='ccc',vpn='ccc/83'}
+
+
+//-----------------------以太网接口测试------------------------------
+mse interfaces/eth fe.1.1 {admin='up',role='uni'}
+mse interfaces/eth fe.1.2 {admin='up',role='uni'}
+mse interfaces/eth fe.1.3 {admin='up',role='uni'}
+mse interfaces/eth fe.1.4 {admin='up',role='uni'}
+mse interfaces/eth fx.1.1 {admin='up',role='uni'}
+mse interfaces/eth fx.1.2 {admin='up',role='uni'}
+mse interfaces/eth fx.1.3 {admin='up',role='uni'}
+mse interfaces/eth fx.1.4 {admin='up',role='uni'}
+
+mse interfaces/eth fe.2.1 {admin='up',role='uni'}
+mse interfaces/eth fe.2.2 {admin='up',role='uni'}
+mse interfaces/eth fe.2.3 {admin='up',role='uni'}
+mse interfaces/eth fe.2.4 {admin='up',role='uni'}
+mse interfaces/eth fx.2.1 {admin='up',role='uni'}
+mse interfaces/eth fx.2.2 {admin='up',role='uni'}
+mse interfaces/eth fx.2.3 {admin='up',role='uni'}
+mse interfaces/eth fx.2.4 {admin='up',role='uni'}
+
+mse interfaces/eth ge.1.1 {admin='up',role='uni'}
+mse interfaces/eth ge.1.2 {admin='up',role='uni'}
+mse interfaces/eth ge.1.3 {admin='up',role='uni'}
+mse interfaces/eth ge.2.1 {admin='up',role='uni'}
+mse interfaces/eth ge.2.2 {admin='up',role='uni'}
+mse interfaces/eth ge.2.3 {admin='up',role='uni'}
+
+cr pmap/ethac l2acbe {default={cos='be',eir=99968}}
+
+cr l2vpn/elan 1 {admin='up'}
+cr l2vpn/elan 2 {admin='up'}
+cr l2vpn/elan 3 {admin='up'}
+cr l2vpn/elan 4 {admin='up'}
+cr l2vpn/elan 5 {admin='up'}
+cr l2vpn/elan 6 {admin='up'}
+cr l2vpn/elan 7 {admin='up'}
+cr l2vpn/elan 8 {admin='up'}
+cr l2vpn/elan 9 {admin='up'}
+cr l2vpn/elan 10 {admin='up'}
+cr l2vpn/elan 11 {admin='up'}
+
+cr interfaces/eth/fe.1.1 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/1'}}
+cr interfaces/eth/fe.1.2 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/2'}} 
+cr interfaces/eth/fe.1.3 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/2'}} 
+cr interfaces/eth/fe.1.4 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/3'}} 
+cr interfaces/eth/fx.1.1 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/3'}}
+cr interfaces/eth/fx.1.2 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/4'}} 
+cr interfaces/eth/fx.1.3 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/4'}}
+cr interfaces/eth/fx.1.4 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/5'}}  
+cr interfaces/eth/ge.1.1 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/1'}} 
+cr interfaces/eth/ge.1.2 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/11'}} 
+cr interfaces/eth/ge.1.3 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/5'}} 
+
+cr interfaces/eth/fe.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/7'}}
+cr interfaces/eth/fe.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/8'}} 
+cr interfaces/eth/fe.2.3 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/8'}} 
+cr interfaces/eth/fe.2.4 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/9'}} 
+cr interfaces/eth/fx.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/9'}}
+cr interfaces/eth/fx.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/10'}} 
+cr interfaces/eth/fx.2.3 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/10'}}
+cr interfaces/eth/fx.2.4 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/11'}}  
+cr interfaces/eth/ge.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/7'}} 
+cr interfaces/eth/ge.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/6'}} 
+cr interfaces/eth/ge.2.3 1 {admin='up',mode='port', qos='l2acbe',service={_='elan',vpn='elan/6'}}
+
+cr interfaces/eth/ge.1.1 clock
+cr interfaces/eth/ge.1.2 clock
+
+
+cr interfaces/eth/ge.2.1 clock
+cr interfaces/eth/ge.2.2 clock
+
+
+co
+

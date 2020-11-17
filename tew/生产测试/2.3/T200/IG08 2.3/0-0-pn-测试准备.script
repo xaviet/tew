@@ -1,0 +1,2 @@
+#module;IG08_Test;begin;
+#wait;60;将被测的单板安装到机框，设备上电;

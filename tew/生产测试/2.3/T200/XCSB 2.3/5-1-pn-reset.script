@@ -1,0 +1,13 @@
+#wait;;点击确认，然后按下slot1面板的rst按钮;
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+
+#wait;;点击确认,然后将风扇板上的拨码拨到另外右侧，使串口和slot2单板连接，按下slot2面板的rst按钮;
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_012EthMac2;1;17;
+
+#wait;;将风扇板上的拨码拨回;

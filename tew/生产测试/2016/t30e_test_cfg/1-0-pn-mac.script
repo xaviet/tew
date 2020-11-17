@@ -1,0 +1,20 @@
+#wait;2;连上串口线,注意单击确定后上电启动;
+##;Hit any key to stop autoboot;
+
+##;u-boot>;
+print
+##;u-boot>;
+set ethaddr $_006EthMac1
+##;u-boot>;
+save
+##;done;
+##;u-boot>;
+reset
+##;Hit any key to stop autoboot;
+
+##;u-boot>;
+print
+##;u-boot>;
+#cmp;ethaddr=;$_006EthMac1;1;17;
+run bootcmd
+#wait;64;等待单盘启动;

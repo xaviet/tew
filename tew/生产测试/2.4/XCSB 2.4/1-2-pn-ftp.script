@@ -1,0 +1,19 @@
+mkdir /appdisk/nepkg/
+
+#sftp;tx;D:\2.4.1\$_022appname.tar.gz;/appdisk/nepkg/$_022appname.tar.gz;
+##;;
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/$_022appname.tar.gz
+##;#;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/t80_62gv2.4.1/soft_ptn64/cxt80_62g/fpga/cxt3701v0201.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+echo -n $_022appname > /appdisk/nepkg/active
+
+reboot
+##;;

@@ -1,0 +1,25 @@
+//msg;check;test1;
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+show / all
+//cmp;type;cxt;1;5;
+//cmp;type;cxt;1;5;
+////;#;
+//systemcmd;cmd;dir;exit;
+//module;3;end;
+//saveconst;11;1;
+//saveconst;12;2;
+//count;1;<;2;
+//count;1;!=;2;
+//csv;1;
+//csv;2;
+//csv;n;
+//csv;1;
+//csv;2;
+//csv;n;
+show / all
+//csv;1;
+//msg;add;test2;
+//sleep;30;30;

@@ -1,0 +1,21 @@
+#wait;;点击确定，连上串口线,插入待测slot8的xct的debug接口,拔出slot9的xct;
+##;stop key:< >;
+
+print
+set eth1addr 00:00:00:00:00:00
+set ethaddr $_006EthMac1
+nand erase 0x2600000 0xd800000
+save
+#;done;
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+
+reset
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+boot
+#;;
+#sleep;30;等待单盘启动;
+#wait;;先连入待测XCT-1 nms,然后点击确定;

@@ -1,0 +1,41 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#sleep;10;等待10s时间;
+dmesg 
+##;/ #;
+#buffcut;*********************hwtest******************;; 
+#cmp;board type ;ACTS_B;1;15;
+#cmp;CPLD_ID 3502     version  ;1.1;1;5;
+#cmp;pcb version ;1;1;2;
+#cmp;board_type ;0;1;2;
+#cmp;FPGA RESET               ;ok;1;4;
+#cmp;INITIAL COMPLETE         ;ok;1;4;
+#cmp;CLOCK  LOCKED            ;ok;1;4;
+#cmp;PHY RESET                ;ok;1;4;
+#cmp;CPLD            ;ok;1;4; 
+#cmp;FPGA            ;ok;1;4; 
+#cmp;RTC ;ok;1;4;
+#save;temp : ;7;1;2;
+#saveconst;29;126;
+#saveconst;71;127;
+#count;126;<;7;
+#count;127;>;7; 
+#cmp;GE0:       ;sfp;1;4;  
+#cmp;GE1:       ;sfp;1;4;   
+#cmp;GE0 link         ;ok;1;4;      
+#cmp;GE1 link         ;ok;1;4;      
+#cmp;liu ;ok
+#cmp;CPU MDIO ;OK;1;4; 
+#cmp;FE MDIO         ;ok;1;4; 
+
+manu sysclear
+
+exit
+#module;105硬件信息查询;end;

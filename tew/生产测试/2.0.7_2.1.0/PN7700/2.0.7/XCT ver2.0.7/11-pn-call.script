@@ -1,0 +1,29 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+show slot/8/phy sub all
+//module;104确认软件版本;begin;
+//cmp;ver: SW:;2.0.7;1;
+//cmp;CPLD ;3004:04.06;1;
+//cmp;FPGA ;3005:03.0a;1;
+//cmp;PCB:;2;1;1;4;
+//module;104确认软件版本;end;
+////;#;
+
+call / showmanu 8
+//module;117rootfs($_008RootFS1);begin; 
+//cmp;rootfs: ;$_008RootFS1;1;
+//module;117rootfs($_008RootFS1);end; 
+//module;118sn($_003SN1$_004PN1);begin; 
+//cmp;SN: ;$_003SN1$_004PN1;1;
+//module;118sn($_003SN1$_004PN1);end; 
+//module;119uboot($_007UBoot1);begin; 
+//cmp;uboot: ;$_007UBoot1;1;
+//module;119uboot($_007UBoot1);end; 
+config
+
+dr
+
+////;#;

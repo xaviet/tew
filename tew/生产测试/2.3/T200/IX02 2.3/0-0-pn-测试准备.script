@@ -1,0 +1,2 @@
+#module;IX02_Test;begin;
+#wait;60;将2块待测单板（IX02）分别插在SLOT1、SLOT2的XCSB单板的SUB-SLOT2槽位;

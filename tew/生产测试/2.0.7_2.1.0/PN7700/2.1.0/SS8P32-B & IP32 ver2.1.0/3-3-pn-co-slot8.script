@@ -1,0 +1,25 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+
+show cfp/4
+//save;sel:;10;
+//save;card1:;11;
+//save;card2:;12;
+//wait;50;cfp/4主用为slot$__11,备用为slot$__12.当前状态工作在slot$__10,请拔插,并观察业务瞬断后恢复正常;
+
+set cfp/1 apscmd manualswitch::work
+set cfp/2 apscmd manualswitch::work
+co
+
+//sleep;10;init;
+
+//sleep;20;xct switch;
+
+exit
+//module;108slot9TDM业务测试;begin;
+//wait;;使用备xctTDM业务测试5分钟;
+//module;108slot9TDM业务测试;end;

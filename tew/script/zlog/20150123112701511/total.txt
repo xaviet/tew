@@ -1,0 +1,5 @@
+{0;ex.cfg;NG(2);;}
+  {1;telnet;NG(2);;}
+    {2;tew-1;NG(2);tew-1.script;}
+[line:13(NG)]2015-01-23 11:27:06.649 comment[#cmp;grep:\S;grep:vqqe;]
+[line:15(NG)]2015-01-23 11:27:10.739 comment[#cmp;tew;vqqe;]

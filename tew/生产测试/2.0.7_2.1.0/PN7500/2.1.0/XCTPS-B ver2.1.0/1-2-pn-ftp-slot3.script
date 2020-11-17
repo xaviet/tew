@@ -1,0 +1,26 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+##;/ #;
+#module;102ftp上传及cpld加载;begin;
+#systemcmd;ftp -n;open $_host;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\生产测试版本\V2.1.0\t100v2.1.1.tar.gz;ls -la;bye;
+
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/t100v2.1.1.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/t100v2.1.1/soft_ptn64/cxt100/fpga/cxt3202v0408.bin")
+#;> ;
+#cmp;cpu test is e0000000;the cpld download is start;
+#ctrld;
+echo -n t100v2.1.1 > /appdisk/nepkg/active
+reboot
+##;/ #;
+#module;102ftp上传及cpld加载;end;
+#module;100单板信息;end;
+#wait;240;延迟60秒插入slot4 XCTPS并将slot3xctps的nms口网线换到debug口,waiting start...;

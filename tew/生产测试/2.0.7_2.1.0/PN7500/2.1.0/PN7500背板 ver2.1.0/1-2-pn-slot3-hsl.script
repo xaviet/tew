@@ -1,0 +1,17 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+
+set slot/3/lg type XCTPS
+set slot/4/lg type XCTPS
+co
+
+exit
+
+debug
+hsl c=3,m=hwtest,a=1
+//;SUCCESS;
+exit

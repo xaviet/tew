@@ -1,0 +1,20 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#label;noready;
+show / all
+#save;readycfg:;10;
+#goto;noready;10;false;
+
+call slot/3/phy setmanu {sn="$_009SN2",pn="$_010PN2"}
+#sleep;2;...;
+
+call slot/3/phy getmanu
+#sleep;2;...;
+#cmp;sn=;$_009SN2;1;
+#cmp;pn=;$_010PN2;1;
+
+quit

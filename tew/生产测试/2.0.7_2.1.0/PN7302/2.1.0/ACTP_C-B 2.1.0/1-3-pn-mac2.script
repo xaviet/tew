@@ -1,0 +1,14 @@
+#wait;;连上slot2串口线,power on;
+##;stop key:< >;
+
+print
+set ethaddr $_012EthMac2
+set bootargs root=/dev/mtdblock3 rw rootfstype=jffs2 console=$consoledev,$baudrate $othbootargs uboot=$ubootver
+set bootcmd nand read \$loadaddr 0x200000 0x200000\;nand read \$fdtaddr 0x100000 0x100000\;bootm \$loadaddr - \$fdtaddr
+nand erase 0x2600000 0xd800000
+save
+print
+#cmp;ethaddr=;$_012EthMac2;1;17;
+
+reset
+#sleep;30;单板启动;

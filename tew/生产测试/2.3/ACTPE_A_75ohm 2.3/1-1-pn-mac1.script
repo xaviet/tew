@@ -1,0 +1,17 @@
+#wait;;点击确认按钮后，slot1上电,拔出slot2单板;
+##;stop key:< >;
+
+print
+set ethaddr $_006EthMac1
+nand erase 0x2600000 0xd800000
+save
+#;done;
+
+reset
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+boot
+#;;
+#sleep;30;...;

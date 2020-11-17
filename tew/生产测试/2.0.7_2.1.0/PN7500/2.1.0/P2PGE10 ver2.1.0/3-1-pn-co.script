@@ -1,0 +1,141 @@
+//module;102安装升级包并加载cpld;end;
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+config
+
+dr
+//module;106业务测试;begin;
+set slot/3/lg type XCTPS
+set slot/4/lg type XCTPS
+set slot/2/lg type PGE10
+set slot/5/lg type PGE10
+set slot/7/lg type FAN
+
+cr l2vpn/elan 1
+cr pmap/ethac l2elan {default={cos='be',eir=1000000}}
+cr interfaces/lag/102 1 {qos='l2elan',mode='port'}
+cr interfaces/lag/102/1 service {_='elan',vpn='elan/1'}
+cr interfaces/lag/103 1 {qos='l2elan',mode='port'}
+cr interfaces/lag/103/1 service {_='elan',vpn='elan/1'}
+co
+
+set interfaces/epon/gepon.2.3 admin up
+cr interfaces/epon/gepon.2.3 1 {admin='up'}
+cr interfaces/epon/gepon.2.3/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.2.1 admin up
+cr interfaces/epon/gepon.2.1 1 {admin='up'}
+cr interfaces/epon/gepon.2.1/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.2.2 admin up
+cr interfaces/epon/gepon.2.2 1 {admin='up'}
+cr interfaces/epon/gepon.2.2/1 onu {_='sfu-1'}
+
+
+set interfaces/epon/gepon.2.4 admin up
+cr interfaces/epon/gepon.2.4 1 {admin='up'}
+cr interfaces/epon/gepon.2.4/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.2.5 admin up
+cr interfaces/epon/gepon.2.5 1 {admin='up'}
+cr interfaces/epon/gepon.2.5/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.2.6 admin up
+cr interfaces/epon/gepon.2.6 1 {admin='up'}
+cr interfaces/epon/gepon.2.6/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.2.7 admin up
+cr interfaces/epon/gepon.2.7 1 {admin='up'}
+cr interfaces/epon/gepon.2.7/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.2.8 admin up
+cr interfaces/epon/gepon.2.8 1 {admin='up'}
+cr interfaces/epon/gepon.2.8/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.2.9 admin up
+cr interfaces/epon/gepon.2.9 1 {admin='up'}
+cr interfaces/epon/gepon.2.9/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.2.10 admin up
+cr interfaces/epon/gepon.2.10 1 {admin='up'}
+cr interfaces/epon/gepon.2.10/1 onu {_='sfu-1'}
+
+co
+cr pon/policy vlanpri1
+set pon/policy/vlanpri1/default cbs 511
+set pon/policy/vlanpri1/default cir 499968
+set pon/policy/vlanpri1/default ebs 511
+set pon/policy/vlanpri1/default eir 499968
+cr pon/sla onu1
+set pon/sla/onu1 dpolicy vlanpri1
+set pon/sla/onu1 ucir 1000000
+set pon/sla/onu1 ueir 0
+set pon/sla/onu1 ufir 0
+set interfaces/epon/gepon.2.3/1 sla onu1
+co
+set interfaces/epon/gepon.2.3 encap 1q
+set interfaces/epon/gepon.2.3/1 vlanmode access
+se interfaces/epon/gepon.2.3/1/onu/ge.1.1 IngressPolicing cir=1000000,cbs=1536,eir=1000000,ebs=1024
+se interfaces/epon/gepon.2.3/1/onu/ge.1.1 EgressPolicing cir=1000000,cbs=1536,eir=1000000,ebs=1024
+co
+
+cr bridge/vlan 1
+se bridge/vlan/1/untagged 1 gepon.2.3
+se bridge/vlan/1/untagged 2 gepon.5.2
+co
+
+set interfaces/epon/gepon.5.2 admin up
+cr interfaces/epon/gepon.5.2 1 {admin='up'}
+cr interfaces/epon/gepon.5.2/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.1 admin up
+cr interfaces/epon/gepon.5.1 1 {admin='up'}
+cr interfaces/epon/gepon.5.1/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.3 admin up
+cr interfaces/epon/gepon.5.3 1 {admin='up'}
+cr interfaces/epon/gepon.5.3/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.4 admin up
+cr interfaces/epon/gepon.5.4 1 {admin='up'}
+cr interfaces/epon/gepon.5.4/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.5 admin up
+cr interfaces/epon/gepon.5.5 1 {admin='up'}
+cr interfaces/epon/gepon.5.5/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.6 admin up
+cr interfaces/epon/gepon.5.6 1 {admin='up'}
+cr interfaces/epon/gepon.5.6/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.7 admin up
+cr interfaces/epon/gepon.5.7 1 {admin='up'}
+cr interfaces/epon/gepon.5.7/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.8 admin up
+cr interfaces/epon/gepon.5.8 1 {admin='up'}
+cr interfaces/epon/gepon.5.8/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.9 admin up
+cr interfaces/epon/gepon.5.9 1 {admin='up'}
+cr interfaces/epon/gepon.5.9/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.10 admin up
+cr interfaces/epon/gepon.5.10 1 {admin='up'}
+cr interfaces/epon/gepon.5.10/1 onu {_='sfu-1'}
+
+set interfaces/epon/gepon.5.2/1 sla onu1
+co
+set interfaces/epon/gepon.5.2 encap 1q
+set interfaces/epon/gepon.5.2/1 vlanmode access
+se interfaces/epon/gepon.5.2/1/onu/ge.1.1 IngressPolicing cir=1000000,cbs=1536,eir=1000000,ebs=1024
+se interfaces/epon/gepon.5.2/1/onu/ge.1.1 EgressPolicing cir=1000000,cbs=1536,eir=1000000,ebs=1024
+co
+
+exit
+//module;107业务测试;begin;
+//wait;;等待业务下发,等到P2PGE10相应PON口的绿灯点亮,检查业务传送正常.测试5分钟;拔插slot3XCTPS单板,出现少量丢包后业务恢复;在两块单板的10个PON口都插上光模块,并依次将ONU连到相应PON口下,相应PON口绿灯亮表示ONU注册上;都正常后,拔插slot4xctps；
+;
+//module;107业务测试;end;

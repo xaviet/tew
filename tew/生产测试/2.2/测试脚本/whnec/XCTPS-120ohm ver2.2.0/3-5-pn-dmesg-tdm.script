@@ -1,0 +1,21 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#sleep;10;µÈ´ý10sÊ±¼ä;
+
+dmesg 
+##;/ #;
+#buffcut;*********************hwtest******************;; 
+#cmp;IO_ONLINE ;ok;1;3;
+#cmp;e1;ok;1;3;
+
+manu sysclear
+
+exit
+##;$;

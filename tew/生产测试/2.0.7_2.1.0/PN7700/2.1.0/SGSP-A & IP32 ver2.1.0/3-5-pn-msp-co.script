@@ -1,0 +1,50 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+config
+
+dr
+
+set slot/8/lg type XCT
+set slot/9/lg type XCT
+set slot/2/lg type SGSP
+set slot/3/lg type SGSP
+set slot/1/lg type IP32
+
+comm
+
+set interfaces/pdh/e1.1.1 admin up
+set interfaces/pdh/e1.1.2 admin up
+
+set interfaces/sdh/stm1.2.1 admin up
+set interfaces/sdh/stm1.3.1 admin up
+set interfaces/sdh/stm1.2.2 admin up
+set interfaces/sdh/stm1.3.2 admin up
+
+cr ccc 1 {admin='up'}
+cr ccc 2 {admin='up'}
+
+cr interfaces/pdh/e1.1.1 service {_='ccc',vpn='ccc/1'}
+cr interfaces/pdh/e1.1.2 service {_='ccc',vpn='ccc/2'}
+create interfaces/sdh/stm1.2.1 1.0.1.1.3 {admin='up',service={_='ccc',vpn='ccc/1'}} 
+create interfaces/sdh/stm1.3.2 1.0.1.1.3 {admin='up',service={_='ccc',vpn='ccc/2'}} 
+create interfaces/sdh/stm1.2.2 1.0.1.1.3 {admin='up'} 
+create interfaces/sdh/stm1.3.1 1.0.1.1.3 {admin='up'} 
+
+set interfaces/sdh/stm1.2.1 checkc2 false
+set interfaces/sdh/stm1.2.2 checkc2 false
+
+set interfaces/sdh/stm1.3.1 checkc2 false
+
+set interfaces/sdh/stm1.3.2 checkc2 false
+
+set interfaces/sdh/stm1.2.1/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.2.2/1.0.1.1.3 checkv5 false
+
+set interfaces/sdh/stm1.3.1/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.3.2/1.0.1.1.3 checkv5 false
+
+co
+
+exit

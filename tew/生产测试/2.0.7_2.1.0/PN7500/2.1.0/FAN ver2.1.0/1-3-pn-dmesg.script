@@ -1,0 +1,124 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#msg;chkclr;step1;
+
+dmesg -c
+#;/ #;
+#saveconst;3400;10;
+#save;fan1 speed =;1;
+#save;fan2 speed  =;2;
+#save;fan3 speed  =;3;
+#save;fan4 speed  =;4
+#count;1;>;10;
+#count;2;>;10;
+#count;3;>;10;
+#count;4;>;10;
+#msg;add;step1rt;
+#msg;chkclr;step2;
+
+dmesg -c
+#;/ #;
+#saveconst;400;10;
+#save;fan1 speed =;1;
+#save;fan2 speed  =;2;
+#save;fan3 speed  =;3;
+#save;fan4 speed  =;4
+#count;1;>;10;
+#count;2;>;10;
+#count;3;>;10;
+#count;4;>;10;
+#msg;add;step2rt;
+#msg;chkclr;step3;
+
+dmesg -c
+#;/ #;
+#saveconst;400;10;
+#save;fan1 speed =;1;
+#save;fan2 speed  =;2;
+#save;fan3 speed  =;3;
+#save;fan4 speed  =;4
+#count;1;>;10;
+#count;2;>;10;
+#count;3;>;10;
+#count;4;>;10;
+#msg;add;step3rt;
+#msg;chkclr;step4;
+
+dmesg -c
+#;/ #;
+#saveconst;800;10;
+#save;fan1 speed =;1;
+#save;fan2 speed  =;2;
+#save;fan3 speed  =;3;
+#save;fan4 speed  =;4
+#count;1;>;10;
+#count;2;>;10;
+#count;3;>;10;
+#count;4;>;10;
+#msg;add;step4rt;
+#msg;chkclr;step5;
+
+dmesg -c
+#;/ #;
+#saveconst;1500;10;
+#save;fan1 speed =;1;
+#save;fan2 speed  =;2;
+#save;fan3 speed  =;3;
+#save;fan4 speed  =;4
+#count;1;>;10;
+#count;2;>;10;
+#count;3;>;10;
+#count;4;>;10;
+#msg;add;step5rt;
+#msg;chkclr;step6;
+
+dmesg -c
+#;/ #;
+#saveconst;2200;10;
+#save;fan1 speed =;1;
+#save;fan2 speed  =;2;
+#save;fan3 speed  =;3;
+#save;fan4 speed  =;4
+#count;1;>;10;
+#count;2;>;10;
+#count;3;>;10;
+#count;4;>;10;
+#msg;add;step6rt;
+#msg;chkclr;step7;
+
+dmesg -c
+#;/ #;
+#saveconst;2800;10;
+#save;fan1 speed =;1;
+#save;fan2 speed  =;2;
+#save;fan3 speed  =;3;
+#save;fan4 speed  =;4
+#count;1;>;10;
+#count;2;>;10;
+#count;3;>;10;
+#count;4;>;10;
+#msg;add;step7rt;
+#msg;chkclr;step8;
+
+dmesg -c
+#;/ #;
+#saveconst;3400;10;
+#save;fan1 speed =;1;
+#save;fan2 speed  =;2;
+#save;fan3 speed  =;3;
+#save;fan4 speed  =;4
+#count;1;>;10;
+#count;2;>;10;
+#count;3;>;10;
+#count;4;>;10;
+#msg;add;step8rt;
+
+exit
+##;$;

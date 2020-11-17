@@ -1,0 +1,14 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+luacmd.lua
+##;> ;
+m(0x8,0x40)
+##;> ;
+#wait;;E1业务测试5分钟;
+##module;110业务测试;end;

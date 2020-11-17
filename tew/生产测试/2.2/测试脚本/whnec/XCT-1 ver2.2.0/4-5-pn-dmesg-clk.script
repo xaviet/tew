@@ -1,0 +1,19 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#sleep;20;µÈ´ý20sÊ±¼ä;
+dmesg
+##;/ #;
+#cmp;2nd EXT_CLK_hz ;ok;1;2;
+#cmp;2nd EXT_CLK_bit ;ok;1;2;
+
+manu sysclear
+
+exit
+##;$;

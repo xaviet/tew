@@ -1,0 +1,2 @@
+#module;ACTS_B_Test;begin;
+#wait;60;将被测的ACTPS_B单板插在1号槽位,串口线连接到slot1 的ACTPE_B单板的NMS口,将误码表调整到配置界面;

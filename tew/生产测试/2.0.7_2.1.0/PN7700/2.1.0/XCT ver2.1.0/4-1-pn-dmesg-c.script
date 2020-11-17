@@ -1,0 +1,14 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+#module;300硬件信息检查;begin;
+#module;301xct系统灯检查;begin;
+#module;302机架告警灯检查;begin;
+dmesg -c
+#;#;
+exit

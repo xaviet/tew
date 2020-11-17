@@ -1,0 +1,79 @@
+ifconfig eth0
+#cmp;HWaddr ;$_006EthMac1;
+#cmp;inet addr:;192.168.1.201;
+ifconfig eth1
+#cmp;HWaddr ;00:00:00:00:00:01;
+#cmp;inet addr:;192.168.100.1;
+
+#sleep;10;等待10s时间;
+
+dmesg
+##;#;
+#buffcut;*********************hwtest******************;; 
+#cmp;board type ;XCTE-480G;1;16;1;
+#cmp;grep:CPLD_ID(\s+)3007(\s+);grep:version(\s+)1.7;
+#cmp;grep:FPGA1_ID(\s+)3006(\s+);grep:version(\s+)4.4;
+#cmp;grep:pcb_version=;grep:0(\s+)BkpType:CXT500_A0; 
+#cmp;grep:CPLD(\s+);ok;1;2;
+#cmp;grep:FPGA1(\s+);ok;1;2;
+#cmp;IDT3380 ;ok;1;2;
+#cmp;AD9518  ;ok;1;2;
+#cmp;oam ddr ;ok;1;2;
+#cmp;alm test ;ok;1;2;
+#save;grep:Card(\s+)temp(\s+):(\s*);7;grep:(\d+);
+#saveconst;19;126;
+#saveconst;71;127;
+#count;126;<;7;
+#count;127;>;7;
+#save;grep:BCM(\s+)average(\s+)current(\s+)temperature(\s+)is(\s+);7;grep:(\d+\.\d*)|(\d+);
+#saveconst;39;126;
+#saveconst;75;127;
+#count;126;<;7;
+#count;127;>;7;
+#cmp;grep:FAN_IIC(\s+);ok;1;2;
+#cmp;grep:RTC(\s+);ok;1;2;
+#cmp;slot 17 PSU online ;ok;1;2;
+#cmp;slot 19 PSU online ;ok;1;2;
+#cmp;Power1 ;ok     Power2 ok;
+#cmp;grep:slot(\s+)1:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 0:up;
+#cmp;grep:slot(\s+)2:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 1:up;
+#cmp;grep:slot(\s+)3:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 2:up;
+#cmp;grep:slot(\s+)4:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 3:up;
+#cmp;grep:slot(\s+)5:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 4:up;
+#cmp;grep:slot(\s+)6:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 5:up;
+#cmp;grep:slot(\s+)7:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 6:up;
+#cmp;grep:slot(\s+)10:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 7:up;
+#cmp;grep:slot(\s+)11:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 8:up;
+#cmp;grep:slot(\s+)12:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 9:up;
+#cmp;grep:slot(\s+)13:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 10:up;
+#cmp;grep:slot(\s+)14:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 11:up;
+#cmp;grep:slot(\s+)15:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 12:up;
+#cmp;grep:slot(\s+)16:;grep:fe:ok(\s+)com:grep:ok(\s+)hg 13:up; 
+#cmp;grep:MATE(\s+):(\s+);grep:fe:ok(\s+)com:ok;
+#cmp;Oam port: ;hg14:up;
+#cmp;Debug fe:;ok;1;2;
+#cmp;RACK_ACO_0 ;ok;1;2;  
+#cmp;ACO_1 ;ok;1;2;
+#cmp;EXT/TOD MODE:;TOD;1;3;
+#cmp;1st EXT_CLK_hz ;ok;1;2;
+#cmp;1st EXT_CLK_bit ;ok;1;2;
+#cmp;1pps ;ok;1;2;
+#cmp;tod  ;ok;1;2;
+#cmp;IDT3380 IN3 ;ok  IDT3380 IN4 ok;
+#cmp;IDT3380 IN6 ;ok  IDT3380 IN7 ok;
+#cmp;IDT3380 IN8 ;ok  IDT3380 IN9 ok;
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+demsg -c
+
+#wait;;将XCT-1单板上的拨码开关 S21的1&2&3拨置OFF位置,插回slot8槽位;
+#sleep;360;...;

@@ -1,0 +1,26 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+show slot/8/phy sub all
+#;#;
+#cmp;ver: SW:;2.3.0;1;
+#cmp;CPLD ;3007:01.07;1;
+#cmp;FPGA ;3006:04.04;1;
+#cmp;PCB:;0;1;1;4;
+
+call / testmode 1
+##;SUCCESS;
+
+d
+hsl c=8,m=hwtest,a=0
+#sleep;30;...;
+#wait;;XCT指示灯灭;
+
+hsl c=8,m=hwtest,a=1
+#sleep;30;...;
+#wait;;分别按一下机架告警测试电缆上的按钮和面板的ACO按钮，点亮XCT-1的所有灯，查看面板指示灯状态及红绿位置及机架告警测试电缆灯，面板指示灯为左绿右红，机架告警测试电缆灯要全亮;
+
+exit

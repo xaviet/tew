@@ -1,0 +1,30 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+//msg;chkclr;cxmready;
+
+co
+set interfaces/eth/xg.7.1 xgwan true
+set interfaces/eth/xg.7.2 xgwan true
+set interfaces/eth/xg.10.1 xgwan true
+set interfaces/eth/xg.10.2 xgwan true
+co
+
+//sleep;2;...;
+//msg;add;switchtowan;
+
+//msg;chkclr;testwanover;
+//msg;chkclr;cxmready;
+
+set interfaces/eth/xg.7.1 xgwan false
+set interfaces/eth/xg.7.2 xgwan false
+set interfaces/eth/xg.10.1 xgwan false
+set interfaces/eth/xg.10.2 xgwan false
+co
+
+//sleep;2;...;
+//msg;add;switchtolan;
+
+exit

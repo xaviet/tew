@@ -1,0 +1,8 @@
+#tcptx;1;
+#sleep;16;...;
+#tcptx;d;
+#rxbuffclear;
+#sleep;1;“µŒÒ≤‚ ‘1∑÷÷”;
+#tcprx;0A0A0A0A0B0B03DE32;ffffffff;ff00ff00;2;60;100;
+#tcptx;c;
+#tcptx;7;

@@ -1,0 +1,15 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+d
+hsl c=2,m=hwtest,a=0
+#wait;30;slot2灯是否全灭?;
+
+hsl c=3,m=hwtest,a=0
+#wait;30;slot3灯是否全灭?;
+
+exit
+#wait;;拔插slot2和slot3的SGSP板卡,等待启动完成;

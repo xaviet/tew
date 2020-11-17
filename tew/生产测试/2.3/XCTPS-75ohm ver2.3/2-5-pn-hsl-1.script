@@ -1,0 +1,23 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+show slot/3/phy all sub
+#cmp;ver: ;2.2.2,CPLD 3202:04.0a,FPGA 3201:04.0e,3204:01.06,PCB:2;
+#cmp;type: ;XCTPS;
+
+call / testmode 1
+##;SUCCESS;
+##;;
+
+d
+#wait;;按下aco及机架告警灯上按钮;
+hsl c=3,m=hwtest,a=1
+#sleep;30;...;
+#wait;;LED现象：点亮XCTPS和机架告警的所有灯。系统灯和XFP灯位置是上红下绿，SFP的灯的位置颜色是左绿右红;
+
+exit
+
+ 

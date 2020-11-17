@@ -1,0 +1,25 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#module;102ftp上传及cpld加载;begin;
+#systemcmd;ftp -n;open $_host;user root root;bin;mkdir /appdisk/nepkg;cd /appdisk/nepkg;send D:\生产测试版本\V2.1.0\t21av2.1.0_p13.tar.gz;ls -la;bye;
+##;;
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/t21av2.1.0_p13.tar.gz
+##;/ #;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/t21av2.1.0_p13/soft_ptn64/cxt21a/fpga/cxt3502v0108.bin")
+#;> ;
+#cmp;cpu test is e0000000;the cpld download is start;
+#ctrld;
+echo -n t21av2.1.0_p13 > /appdisk/nepkg/active
+
+reboot
+#sleep;50;startup;
+#module;102ftp上传及cpld加载;end;

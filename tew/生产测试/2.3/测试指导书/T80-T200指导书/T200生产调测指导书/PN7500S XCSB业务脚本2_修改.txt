@@ -1,0 +1,175 @@
+set slot/1/lg type XCSB
+set slot/2/lg type XCSB
+
+set slot/1/1/lg type IP16
+set slot/1/2/lg type IX02
+set slot/1/3/lg type IG06S02
+set slot/2/1/lg type IP16
+set slot/2/2/lg type IX02
+set slot/2/3/lg type IG06S02
+
+
+mse interfaces/eth ge.1.1 {admin='up',role='uni'}
+mse interfaces/eth ge.1.2 {admin='up',role='uni'}
+mse interfaces/eth ge.1.3 {admin='up',role='uni'}
+mse interfaces/eth ge.1.4 {admin='up',role='uni'}
+mse interfaces/eth ge.1.5 {admin='up',role='uni'}
+mse interfaces/eth ge.1.6 {admin='up',role='uni'}
+mse interfaces/eth ge.1.7 {admin='up',role='uni'}
+mse interfaces/eth ge.1.8 {admin='up',role='uni'}
+mse interfaces/eth ge.1.9 {admin='up',role='uni'}
+mse interfaces/eth ge.1.10 {admin='up',role='uni'}
+mse interfaces/eth ge.1.11 {admin='up',role='uni'}
+mse interfaces/eth ge.1.12 {admin='up',role='uni'}
+mse interfaces/eth ge.1.13 {admin='up',role='uni'}
+mse interfaces/eth ge.1.14 {admin='up',role='uni'}
+mse interfaces/eth ge.1.15 {admin='up',role='uni'}
+mse interfaces/eth ge.1.16 {admin='up',role='uni'}
+mse interfaces/eth ge.1.3.1 {admin='up',role='uni'}
+mse interfaces/eth ge.1.3.2 {admin='up',role='uni'}
+mse interfaces/eth ge.1.3.3 {admin='up',role='uni'}
+mse interfaces/eth ge.1.3.4 {admin='up',role='uni'}
+mse interfaces/eth ge.1.3.5 {admin='up',role='uni'}
+mse interfaces/eth ge.1.3.6 {admin='up',role='uni'}
+mse interfaces/eth xg.1.2.1 {admin='up',role='uni'}
+mse interfaces/eth xg.1.2.2 {admin='up',role='uni'}
+
+mse interfaces/eth ge.2.1 {admin='up',role='uni'}
+mse interfaces/eth ge.2.2 {admin='up',role='uni'}
+mse interfaces/eth ge.2.3 {admin='up',role='uni'}
+mse interfaces/eth ge.2.4 {admin='up',role='uni'}
+mse interfaces/eth ge.2.5 {admin='up',role='uni'}
+mse interfaces/eth ge.2.6 {admin='up',role='uni'}
+mse interfaces/eth ge.2.7 {admin='up',role='uni'}
+mse interfaces/eth ge.2.8 {admin='up',role='uni'}
+mse interfaces/eth ge.2.9 {admin='up',role='uni'}
+mse interfaces/eth ge.2.10 {admin='up',role='uni'}
+mse interfaces/eth ge.2.11 {admin='up',role='uni'}
+mse interfaces/eth ge.2.12 {admin='up',role='uni'}
+mse interfaces/eth ge.2.13 {admin='up',role='uni'}
+mse interfaces/eth ge.2.14 {admin='up',role='uni'}
+mse interfaces/eth ge.2.15 {admin='up',role='uni'}
+mse interfaces/eth ge.2.16 {admin='up',role='uni'}
+mse interfaces/eth ge.2.3.1 {admin='up',role='uni'}
+mse interfaces/eth ge.2.3.2 {admin='up',role='uni'}
+mse interfaces/eth ge.2.3.3 {admin='up',role='uni'}
+mse interfaces/eth ge.2.3.4 {admin='up',role='uni'}
+mse interfaces/eth ge.2.3.5 {admin='up',role='uni'}
+mse interfaces/eth ge.2.3.6 {admin='up',role='uni'}
+mse interfaces/eth xg.2.2.1 {admin='up',role='uni'}
+mse interfaces/eth xg.2.2.2 {admin='up',role='uni'}
+
+set interfaces/sdh/stm1.1.3.1 admin up
+set interfaces/sdh/stm1.1.3.2 admin up
+set interfaces/sdh/stm1.2.3.1 admin up
+set interfaces/sdh/stm1.2.3.2 admin up
+
+cr pmap/ethac l2acbe {default={cos='be',eir=1000000}}
+
+cr ccc 1 {admin='up'}
+cr ccc 2 {admin='up'}
+cr ccc 3 {admin='up'}
+cr ccc 4 {admin='up'}
+cr ccc 5 {admin='up'}
+cr ccc 6 {admin='up'}
+cr ccc 7 {admin='up'}
+cr ccc 8 {admin='up'}
+cr ccc 9 {admin='up'}
+cr ccc 10 {admin='up'}
+cr ccc 11 {admin='up'}
+cr ccc 12 {admin='up'}
+cr ccc 13 {admin='up'}
+cr ccc 14 {admin='up'}
+cr ccc 15 {admin='up'}
+cr ccc 16 {admin='up'}
+cr ccc 17 {admin='up'}
+cr ccc 18 {admin='up'}
+cr ccc 19 {admin='up'}
+cr ccc 20 {admin='up'}
+cr ccc 21 {admin='up'}
+cr ccc 22 {admin='up'}
+cr ccc 23 {admin='up'}
+cr ccc 24 {admin='up'}
+
+
+cr interfaces/sdh/stm1.1.3.1  1.0.1.1.3 {admin='up'}
+cr interfaces/sdh/stm1.1.3.2  1.0.1.1.3 {admin='up'}
+cr interfaces/sdh/stm1.2.3.1  1.0.1.1.3 {admin='up'}
+cr interfaces/sdh/stm1.2.3.2  1.0.1.1.3 {admin='up'}
+
+cr interfaces/eth/ge.1.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/1'}}
+cr interfaces/eth/ge.1.3 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/1'}}
+cr interfaces/eth/ge.1.4 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/2'}}
+cr interfaces/eth/ge.1.6 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/2'}}
+cr interfaces/eth/ge.1.5 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/3'}}
+cr interfaces/eth/ge.1.7 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/3'}}
+cr interfaces/eth/ge.1.8 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/4'}}
+cr interfaces/eth/ge.1.10 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/4'}}
+cr interfaces/eth/ge.1.9 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/5'}}
+cr interfaces/eth/ge.1.11 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/5'}}
+cr interfaces/eth/ge.1.12 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/6'}}
+cr interfaces/eth/ge.1.14 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/6'}}
+cr interfaces/eth/ge.1.13 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/7'}}
+cr interfaces/eth/ge.1.15 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/7'}}
+cr interfaces/eth/ge.1.16 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/8'}}
+cr interfaces/eth/xg.1.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/8'}}
+cr interfaces/eth/xg.1.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/9'}}
+cr interfaces/eth/ge.1.3.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/9'}}
+cr interfaces/eth/ge.1.3.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/10'}}
+cr interfaces/eth/ge.1.3.4 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/10'}}
+cr interfaces/eth/ge.1.3.3 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/11'}}
+cr interfaces/eth/ge.1.3.5 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/11'}}
+
+cr interfaces/eth/ge.1.3.6 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/12'}}
+cr interfaces/eth/ge.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/12'}}
+cr interfaces/eth/ge.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/13'}}
+cr interfaces/eth/ge.2.4 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/13'}}
+cr interfaces/eth/ge.2.3 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/14'}}
+cr interfaces/eth/ge.2.5 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/14'}}
+cr interfaces/eth/ge.2.6 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/15'}}
+cr interfaces/eth/ge.2.8 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/15'}}
+cr interfaces/eth/ge.2.7 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/16'}}
+cr interfaces/eth/ge.2.9 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/16'}}
+cr interfaces/eth/ge.2.10 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/17'}}
+cr interfaces/eth/ge.2.12 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/17'}}
+cr interfaces/eth/ge.2.11 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/18'}}
+cr interfaces/eth/ge.2.13 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/18'}}
+cr interfaces/eth/ge.2.14 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/19'}}
+cr interfaces/eth/ge.2.16 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/19'}}
+cr interfaces/eth/ge.2.15 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/20'}}
+cr interfaces/eth/xg.2.2.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/20'}}
+cr interfaces/eth/xg.2.2.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/21'}}
+cr interfaces/eth/ge.2.3.1 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/21'}}
+cr interfaces/eth/ge.2.3.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/22'}}
+cr interfaces/eth/ge.2.3.4 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/22'}}
+cr interfaces/eth/ge.2.3.3 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/23'}}
+cr interfaces/eth/ge.2.3.5 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/23'}}
+cr interfaces/eth/ge.2.3.6 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/24'}}
+cr interfaces/eth/ge.1.2 1 {admin='up',mode='port', qos='l2acbe',service={_='ccc',vpn='ccc/24'}}
+
+set interfaces/pdh/e1.1.1.1 admin up
+set interfaces/pdh/e1.1.1.2 admin up
+set interfaces/pdh/e1.2.1.1 admin up
+set interfaces/pdh/e1.2.1.2 admin up
+
+cr ccc 100 {admin='up'}
+cr ccc 101 {admin='up'}
+cr ccc 102 {admin='up'}
+cr ccc 103 {admin='up'}
+
+cr interfaces/pdh/e1.1.1.1 service {_='ccc',vpn='ccc/100'}
+cr interfaces/pdh/e1.1.1.2 service {_='ccc',vpn='ccc/101'}
+cr interfaces/sdh/stm1.1.3.1/1.0.1.1.3 service {_='ccc',vpn='ccc/101'}
+cr interfaces/sdh/stm1.1.3.2/1.0.1.1.3 service {_='ccc',vpn='ccc/102'}
+cr interfaces/sdh/stm1.2.3.1/1.0.1.1.3 service {_='ccc',vpn='ccc/102'}
+cr interfaces/sdh/stm1.2.3.2/1.0.1.1.3 service {_='ccc',vpn='ccc/103'}
+cr interfaces/pdh/e1.2.1.2 service {_='ccc',vpn='ccc/103'}
+cr interfaces/pdh/e1.2.1.1 service {_='ccc',vpn='ccc/100'}
+
+
+cr interfaces/eth/xg.1.2.1 clock
+cr interfaces/eth/xg.1.2.2 clock
+cr interfaces/eth/xg.2.2.1 clock
+cr interfaces/eth/xg.2.2.2 clock
+
+co

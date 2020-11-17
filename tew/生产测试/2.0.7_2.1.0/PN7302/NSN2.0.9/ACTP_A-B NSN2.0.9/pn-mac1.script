@@ -1,0 +1,16 @@
+#wait;;^t;
+##;stop ;
+\r
+#wait;2;...;
+#module;101mac设置及CPLD加载;begin;
+print
+set eth1addr 00:00:00:00:00:00
+set ethaddr $_006EthMac1
+set bootargs root=/dev/mtdblock3 rw rootfstype=jffs2 console=$consoledev,$baudrate $othbootargs uboot=$ubootver
+set bootcmd nand read \$loadaddr 0x200000 0x200000\;nand read \$fdtaddr 0x100000 0x100000\;bootm \$loadaddr - \$fdtaddr
+nand erase 0x2600000 0xd800000
+save
+print
+boot
+#sleep;30;单板启动;
+#systemcmd;arp -d;

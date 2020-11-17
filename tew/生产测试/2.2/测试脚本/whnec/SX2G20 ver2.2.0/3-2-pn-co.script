@@ -1,0 +1,22 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+
+//msg;chkclr;test1over;
+//msg;chkclr;xctswitch;
+
+set cfp/2 apscmd manualswitch::work
+co
+//sleep;2;...;
+//msg;add;xctswitchdone;
+
+//msg;chkclr;xctreswitch;
+
+set cfp/2 apscmd manualswitch::protection
+co
+//sleep;2;...;
+
+exit

@@ -1,0 +1,19 @@
+mkdir /appdisk/nepkg/
+
+#sftp;tx;D:\生产测试版本\V2.3.0\$_022appname.tar.gz;/appdisk/nepkg/$_022appname.tar.gz;
+##;;
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/$_022appname.tar.gz
+##;#;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt100/fpga/cxt3202v040b.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+echo -n $_022appname > /appdisk/nepkg/active
+reboot
+#sleep;120;...;
+#wait;;延迟60秒插入slot4 XCTPS并将slot3xctps的nms口网线换到debug口,点击确定后等待板卡重启;

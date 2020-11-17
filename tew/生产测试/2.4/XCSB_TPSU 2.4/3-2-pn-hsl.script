@@ -1,0 +1,18 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+show slot/3/phy all sub
+#cmp;ver: ;CPLD 3702:01.08,PCB:1;
+
+call / testmode 1
+
+debug
+
+hsl c=1,m=hwtest,a=1
+#sleep;20;...;
+#wait;;等待slot1所有灯亮起,CSTA为绿色，XALM为红色;
+
+exit

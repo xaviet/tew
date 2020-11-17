@@ -1,0 +1,134 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#label;slave1;
+
+#cmpn;;SLAVE;;;10;
+#goto;slave1;10;NG;
+
+#label;noready1;
+show / all
+#save;readycfg:;10;
+#goto;noready1;10;false;
+
+d
+hsl c=8,m=hwtest,a=1
+hsl c=9,m=hwtest,a=1
+hsl c=7,m=hwtest,a=1
+#sleep;30;...;
+#wait;;slot7灯是否全亮?面板灯为左绿右红，接口灯颜色为上绿下红;
+
+#msg;add;slot7ledbegin;
+
+#msg;chkclr;slot7ledend;
+
+hsl c=7,m=hwtest,a=0
+#sleep;30;...;
+#wait;;slot7灯是否全灭?;
+
+hsl c=8,m=hwtest,a=1
+hsl c=9,m=hwtest,a=1
+hsl c=10,m=hwtest,a=1
+#sleep;30;...;
+#wait;;slot10灯是否全亮?面板灯为左绿右红，接口灯颜色为上绿下红;
+
+#msg;add;slot10ledbegin;
+
+#msg;chkclr;slot10ledend;
+
+
+hsl c=10,m=hwtest,a=0
+#sleep;;...;
+#wait;30;slot10灯是否全灭?;
+
+exit
+
+co
+set cfp/1 apscmd manualswitch::work
+co
+#sleep;10;...;
+
+exit
+
+quit
+
+telnet 192.168.100.3 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#label;slave2;
+
+#cmpn;;SLAVE;;;10;
+#goto;slave2;10;NG;
+
+#label;noready2;
+show / all
+#save;readycfg:;10;
+#goto;noready2;10;false;
+
+co
+set cfp/1 apscmd clear
+co
+
+exit
+
+debug
+hsl c=8,m=hwtest,a=1
+hsl c=9,m=hwtest,a=1
+hsl c=7,m=hwtest,a=1
+#sleep;40;...;
+
+#msg;add;slot7ledbegin;
+
+#msg;chkclr;slot7ledend;
+
+hsl c=7,m=hwtest,a=0
+
+hsl c=8,m=hwtest,a=1
+hsl c=9,m=hwtest,a=1
+hsl c=10,m=hwtest,a=1
+#sleep;40;...;
+
+#msg;add;slot10ledbegin;
+
+#msg;chkclr;slot10ledend;
+
+hsl c=10,m=hwtest,a=0
+#sleep;5;...;
+
+exit
+
+co
+set cfp/1 apscmd manualswitch::protection
+co
+#sleep;20;...;
+
+exit
+
+quit
+
+telnet 192.168.100.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#label;slave3;
+
+#cmpn;;SLAVE;;;10;
+#goto;slave3;10;NG;
+
+#label;noready3;
+show / all
+#save;readycfg:;10;
+#goto;noready3;10;false;
+
+exit
+
+quit
+#sleep;1;...;

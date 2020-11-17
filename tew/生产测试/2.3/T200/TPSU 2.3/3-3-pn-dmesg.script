@@ -1,0 +1,30 @@
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+dmesg 
+##;#;
+#cmp;grep:TPSU_card1(-+)(\s*);grep:TPSU1_CPLD_ID(\s*)3702(\s*)version=1.5(\s*)BkpType:CXT200_A0(\s*)board_type=0(\s*)pcb(\s*)version=1(\s*)Tpsu(\s*)cpld(\s*)ok(\s*)com1(\s*)OK(\s*)com2(\s*)OK(\s*)com3(\s*)OK(\s*)IDT3380_board1_check(\s*)OK(\s*)power(\s*)a(\s*)online(\s*)TMOV(\s*)a(\s*)ok(\s*)EXT_CLK_bit(\s*)ok(\s*)1pps(\s*)ok(\s*)clock output ok;
+#cmp;grep:TPSU_card2(-+)(\s*);grep:TPSU1_CPLD_ID(\s*)3702(\s*)version=1.5(\s*)BkpType:CXT200_A0(\s*)board_type=0(\s*)pcb(\s*)version=1(\s*)Tpsu(\s*)cpld(\s*)ok(\s*)com1(\s*)OK(\s*)com2(\s*)OK(\s*)com3(\s*)OK(\s*)IDT3380_board2_check(\s*)OK(\s*)power(\s*)a(\s*)online(\s*)TMOV(\s*)a(\s*)ok(\s*)EXT_CLK_bit(\s*)ok(\s*)1pps(\s*)ok(\s*)clock output ok;
+
+exit
+
+exit
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+exit

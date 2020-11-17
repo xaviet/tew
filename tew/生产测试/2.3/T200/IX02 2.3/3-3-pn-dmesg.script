@@ -1,0 +1,33 @@
+dmesg 
+##;#;
+#cmp;grep:subchss2;grep:type:(\s+)IX02(\s+)key(\s+)ok(\s+)xg1(\s*):sfp+(\s+)xg2(\s*):sfp+;
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+dmesg 
+##;#;
+#cmp;grep:subchss2;grep:type:(\s+)IX02(\s+)key(\s+)ok(\s+)xg1(\s*):sfp+(\s+)xg2(\s*):sfp+;
+
+exit
+
+exit
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+exit

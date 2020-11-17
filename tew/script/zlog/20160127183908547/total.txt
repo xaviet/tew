@@ -1,0 +1,4 @@
+{0;ex.cfg;NG(0);;}
+  {1;com;NG(0);;}
+    {2;com1;NG(0);1-pn.script;}
+com1

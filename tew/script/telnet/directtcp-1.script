@@ -1,0 +1,17 @@
+#msg;add;12341;
+#tcptx;1;
+#tcptx;d;
+#wait;2;...;
+#rxbuffclear;
+#tcprx;0A0A0A0A0B0B03DE32;ffffffff;ff00ff00;2;5;100;
+#tcptx;c;
+#tcptx;1;
+#tcptx;d;
+#wait;2;...;
+#rxbuffclear;
+#msg;check;12341;
+#tcprx;0A0A0A0A0B0B03DE32;ffffffff;ff00ff00;2;4;101;
+#tcprx;0A0A0A0A0B0B03DE32;ffffffff;ff00ff00;2;4;0;
+#tcprx;0A0A0A0A0B0B03DE32;ffffffff;ff00ff00;2;4;127;
+#tcprx;0A0A0A0A0B0B03DE32;ffffffff;ff00ff00;2;4;;
+#tcptx;c;

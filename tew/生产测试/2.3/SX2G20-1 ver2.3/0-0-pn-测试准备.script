@@ -1,0 +1,3 @@
+#module;SX2G20-1_test;begin;
+#wait;;板卡插到slot7和slot10,并确认slot8xct处于主用并连接网线，然后点击确定。slot9xct处于备用,注意：SX2G20-1功耗较高，上框以后确保3个风扇都在转，具体转速设置参考XCTE的调测指导书,插板后单击确定;
+#sleep;30;startup;

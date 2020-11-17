@@ -1,0 +1,293 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+telnet 192.168.100.24
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+telnet 192.168.100.4
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+telnet 192.168.100.20
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+telnet 192.168.100.12
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+telnet 192.168.100.2
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+
+telnet 192.168.100.18
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+
+
+telnet 192.168.100.10
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+mod PORT 29 1 CML_FLAGS_MOVE=0
+##;BCM.0> ;  
+mod PORT 29 1 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 3 1 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 3 1 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 3 2 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 3 2 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 3 3 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 3 3 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 14 1 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 14 1 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 14 2 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 14 2 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 14 3 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 14 3 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 18 1 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 18 1 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 18 2 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 18 2 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 18 3 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 18 3 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 20 1 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 20 1 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 20 2 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 20 2 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 22 1 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 22 1 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod PORT 22 2 CML_FLAGS_MOVE=0 
+##;BCM.0> ;
+mod PORT 22 2 CML_FLAGS_NEW=0
+##;BCM.0> ;
+mod l2_entry 2360 1 valid=0   
+##;BCM.0> ;
+mod l2_entry 16944 1 valid=0
+##;BCM.0> ;
+mod l2_entry 3920 1 valid=0
+##;BCM.0> ;
+mod l2_entry 5432 1 valid=0
+##;BCM.0> ;
+mod l2_entry 24104 1 valid=0
+##;BCM.0> ;
+mod l2_entry 24112 1 valid=0
+##;BCM.0> ;
+mod l2_entry 4040 1 valid=0  
+##;BCM.0> ;
+mod l2_entry 11680 1 valid=0
+##;BCM.0> ;
+mod l2_entry 14888 1 valid=0
+##;BCM.0> ;
+mod l2_entry 17600 1 valid=0 
+##;BCM.0> ;
+mod l2_entry 26280 1 valid=0 
+##;BCM.0> ;
+mod l2_entry 28960 1 valid=0 
+##;BCM.0> ;
+mod l2_entry 16232 1 valid=0  
+##;BCM.0> ;
+mod l2_entry 29792 1 valid=0
+##;BCM.0> ;
+mod l2_entry 2360 1 valid=0   
+##;BCM.0> ;
+mod l2_entry 16944 1 valid=0
+##;BCM.0> ;
+mod l2_entry 24112 1 valid=0 
+##;BCM.0> ;
+d l2_entry
+##;BCM.0> ;
+exit
+
+exit
+##;$;
+exit
+##;;
+
+exit
+##;$;
+exit
+##;;
+#wait;;SDH业务GE业务各跑10分钟;
+#module;106ge业务测试;end;
+#module;107stm1业务测试;end;

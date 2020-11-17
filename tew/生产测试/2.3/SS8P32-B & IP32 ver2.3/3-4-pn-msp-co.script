@@ -1,0 +1,84 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+option page off
+secu
+idletime admin 9999999
+exit
+
+config
+
+#label;noready1;
+show / all
+#save;readycfg:;10;
+#goto;noready1;10;false;
+
+co
+
+dr
+
+#label;noready2;
+show / all
+#save;readycfg:;10;
+#goto;noready2;10;false;
+
+co
+
+set slot/8/lg type XCT
+set slot/9/lg type XCT
+set slot/14/lg type SS8P32
+set slot/15/lg type SS8P32
+set slot/16/lg type IP32
+
+co
+
+#label;noready3;
+show / all
+#save;readycfg:;10;
+#goto;noready3;10;false;
+
+co
+
+set interfaces/pdh/e1.16.1 admin up
+set interfaces/pdh/e1.16.2 admin up
+
+set interfaces/sdh/stm1.14.2 admin up
+set interfaces/sdh/stm1.15.2 admin up
+set interfaces/sdh/stm1.14.3 admin up
+set interfaces/sdh/stm1.15.3 admin up
+
+cr ccc 1 {admin='up'}
+cr ccc 2 {admin='up'}
+
+cr interfaces/pdh/e1.16.1 service {_='ccc',vpn='ccc/1'}
+cr interfaces/pdh/e1.16.2 service {_='ccc',vpn='ccc/2'}
+create interfaces/sdh/stm1.14.2 1.0.1.1.3 {admin='up',service={_='ccc',vpn='ccc/1'}} 
+create interfaces/sdh/stm1.15.3 1.0.1.1.3 {admin='up',service={_='ccc',vpn='ccc/2'}} 
+create interfaces/sdh/stm1.14.3 1.0.1.1.3 {admin='up'} 
+create interfaces/sdh/stm1.15.2 1.0.1.1.3 {admin='up'} 
+
+set interfaces/sdh/stm1.14.2 checkc2 false
+set interfaces/sdh/stm1.14.3 checkc2 false
+
+set interfaces/sdh/stm1.15.2 checkc2 false
+
+set interfaces/sdh/stm1.15.3 checkc2 false
+
+set interfaces/sdh/stm1.14.2/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.14.3/1.0.1.1.3 checkv5 false
+
+set interfaces/sdh/stm1.15.2/1.0.1.1.3 checkv5 false
+set interfaces/sdh/stm1.15.3/1.0.1.1.3 checkv5 false
+
+cr interfaces/pdh/e1.16.1 clock
+cr interfaces/sdh/stm1.14.2 clock
+cr interfaces/sdh/stm1.15.2 clock
+
+co
+##;#;
+#cmpn;;ERROR;
+
+exit

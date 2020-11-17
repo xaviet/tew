@@ -1,0 +1,20 @@
+mkdir /appdisk/nepkg/
+
+#sftp;tx;D:\生产测试结果\$_022appname.tar.gz;/appdisk/nepkg/$_022appname.tar.gz;
+##;;
+tar -C /appdisk/nepkg -zxvf /appdisk/nepkg/$_022appname.tar.gz
+##;#;
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/nepkg/$_022appname/soft_ptn/cxt30e/fpga/cxt3403v0107.bin")
+#sleep;4;delay 4s;
+#cmp;cpu test;cpu=0x;
+#sleep;8;delay 8s;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+echo -n $_022appname > /appdisk/nepkg/active
+
+reboot
+##;;

@@ -1,0 +1,2 @@
+#module;T200_XCSB_Test;begin;
+#wait;60;将被测的单板安装到机框slot1，设备上电，请注意$_012EthMac2填入将首先插入单板MAC，$_006EthMac1填入后插入的单板MAC;

@@ -1,0 +1,2 @@
+#module;XCT-1_Test;begin;
+#wait;;确保机框掉电情况下,插被测XCT-1单板。插8槽位。插好单板后，网元上电（先接slot8，再接上slot9）;

@@ -1,0 +1,42 @@
+#msg;chkclr;slot3ledbegin;
+
+#sleep;10;等待10s时间;
+
+dmesg 
+##;#;
+#buffcut;*********************hwtest******************;; 
+#cmpn;;fail;
+#cmpn;;Fail;
+#cmpn;;FAIL;
+#cmpn;;error;
+#cmpn;;none;
+#cmpn;;down;
+#cmpn;;Down;
+#cmpn;;DOWN;
+#cmp;board type ;SGSP-A;1;8;1;
+#cmp;CPLD_ID ;3003     version  4.d;
+#save;Card temp : ;7;0;5;
+#saveconst;29;125;
+#saveconst;71;126;
+#count;125;<;7;
+#count;126;>;7;
+#cmp;FPGA1_ID  ;3001   version  2.7;
+#cmp;FPGA2_ID  ;3002   version  3.3;
+#cmp;;grep:FE\sT0\sslot\s[8-9]\sOK[^.][^.]FE\sT0\sslot\s[8-9]\sOK[^.][^.]FE\sT0\sslot\s[8-9]\sOK[^.][^.]FE\sT0\sslot\s[8-9]\sOK;
+
+#msg;add;slot3ledend;
+
+dmesg -c
+
+#msg;chkclr;slot3ledbegin;
+
+#sleep;10;等待10s时间;
+
+dmesg 
+##;#;
+#cmp;;grep:FE\sT0\sslot\s[8-9]\sOK[^.][^.]FE\sT0\sslot\s[8-9]\sOK[^.][^.]FE\sT0\sslot\s[8-9]\sOK[^.][^.]FE\sT0\sslot\s[8-9]\sOK;
+
+#msg;add;slot3ledend;
+
+manu sysclear
+

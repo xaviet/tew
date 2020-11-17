@@ -1,0 +1,28 @@
+dmesg 
+##;#;
+#cmp;grep:TPSU1_CPLD_ID(\s+)3702(\s+)version=(\s*);1.5;1;5;
+#cmp;grep:BkpType:(\s*);CXT80_A0;1;5; 
+#cmp;grep:board_type=(\s*);0;1;5; 
+#cmp;grep:pcb(\s+)version=(\s*);1;1;5; 
+#cmp;grep:Tpsu(\s+)cpld(\s+);ok;1;5; 
+#cmp;grep:com1(\s+);OK;1;5; 
+#cmp;grep:IDT3380_board1_check(\s+);OK;1;5; 
+#cmp;grep:power(\s+)a(\s+);online;1;10;     
+#cmp;grep:power(\s+)b(\s+);online;1;10;      
+#cmp;grep:TMOV(\s+)a(\s+);ok;1;5; 
+#cmp;grep:TMOV(\s+)b(\s+);ok;1;5; 
+#cmp;grep:EXT_CLK_bit(\s+);ok;1;5; 
+#cmp;grep:1pps(\s+);ok;1;5;      
+#cmp;grep:clock(\s+)output(\s+);ok;1;5; 
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+exit

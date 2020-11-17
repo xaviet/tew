@@ -1,0 +1,6 @@
+#wait;;点击确定，按下面板的rst按钮;
+##;stop key:< >;
+#wait;2;...;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;

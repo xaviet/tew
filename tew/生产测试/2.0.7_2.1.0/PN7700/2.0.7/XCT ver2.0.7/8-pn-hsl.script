@@ -1,0 +1,20 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+call / testmode 1
+////;SUCCESS;
+////;;
+
+d
+hsl c=8,m=hwtest,a=1
+//wait;30;按下机架告警灯与ACO按钮;
+hsl c=8,m=hwtest,a=0
+//wait;30;等待XCT指示灯灭;
+hsl c=8,m=hwtest,a=1
+//wait;30;等待XCT指示灯亮;
+
+exit
+#module;109xct系统灯检查;end;
+#module;110机架告警灯检查;end;

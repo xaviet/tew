@@ -1,0 +1,105 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+
+set slot/3/lg type XCTPS
+set slot/7/lg type FAN
+co
+//sleep;5;wait 5s;
+
+show slot/3/lg all sub
+//cmp;type;XCTPS;
+show slot/3/phy all sub
+//cmp;type;XCTPS;
+show slot/7/lg all sub
+//cmp;type;FAN;
+show slot/7/phy all sub
+//cmp;type;FAN;
+
+exit
+
+debug
+
+//msg;clear;
+
+hsl c=3,m=setfan,a=0
+
+//wait;30;FAN的所有灯会全部点亮,并且风扇高速运转;
+//sleep;5;wait 5s;
+hsl c=3,m=readfan,a=0
+
+//sleep;5;wait 5s;
+//msg;add;step1;
+//msg;chkclr;step1rt;
+
+hsl c=3,m=setfan,a=0
+
+//wait;30;FAN的所有灯会全部灭掉，并且风扇低速运转;
+//sleep;5;wait 5s;
+hsl c=3,m=readfan,a=0
+
+//sleep;5;wait 5s;
+//msg;add;step2;
+//msg;chkclr;step2rt;
+
+hsl c=3,m=setfan,a=1
+
+//sleep;10;wait 10s;
+hsl c=3,m=readfan,a=1
+
+//sleep;5;wait 5s;
+//msg;add;step3;
+//msg;chkclr;step3rt;
+
+hsl c=3,m=setfan,a=2 
+
+//sleep;10;wait 10s;
+hsl c=3,m=readfan,a=2
+
+//sleep;5;wait 5s;
+//msg;add;step4;
+//msg;chkclr;step4rt;
+
+hsl c=3,m=setfan,a=3 
+
+//sleep;10;wait 10s;
+hsl c=3,m=readfan,a=3
+
+//sleep;5;wait 5s;
+//msg;add;step5;
+//msg;chkclr;step5rt;
+
+hsl c=3,m=setfan,a=4 
+
+//sleep;10;wait 10s;
+hsl c=3,m=readfan,a=4
+
+//sleep;5;wait 5s;
+//msg;add;step6;
+//msg;chkclr;step6rt;
+
+hsl c=3,m=setfan,a=5 
+
+//sleep;10;wait 10s;
+hsl c=3,m=readfan,a=5
+
+//sleep;5;wait 5s;
+//msg;add;step7;
+//msg;chkclr;step7rt;
+
+hsl c=3,m=setfan,a=6 
+
+//sleep;10;wait 10s;
+hsl c=3,m=readfan,a=6
+
+//sleep;5;wait 5s;
+//msg;add;step8;
+//msg;chkclr;step8rt;
+
+hsl c=3,m=setfan,a=0
+
+//sleep;5;wait 5s;
+exit

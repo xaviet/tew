@@ -1,0 +1,16 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+co
+show slot/1/phy sub all 
+//cmp;ver: SW:;2.0.7;1;5;
+call / showmanu 1
+//;SUCCESS!;
+//cmp;rootfs: ;$_008RootFS1;
+//cmp;SN: ;$_003SN1$_004PN1;
+//cmp;uboot: ;$_007UBoot1;
+//module;104生产信息录入;end;
+dr
+exit
+//;#;

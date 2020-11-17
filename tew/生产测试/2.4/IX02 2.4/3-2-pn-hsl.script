@@ -1,0 +1,21 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 1
+
+debug
+
+hsl c=1,m=hwtest,a=0
+#sleep;16;...;
+#wait;1;等待slot1所有灯熄灭;
+
+hsl c=1,m=hwtest,a=1
+#sleep;16;...;
+#wait;1;等待所有灯亮起;
+
+exit
+
+exit

@@ -1,0 +1,2 @@
+#module;T80_TPSU_Test;begin;
+#wait;60;请确保设备active文件已被删除。将单板插在SLOT3槽位上，插好单板后，网元上电。两个电源接口上都接-48V电源;

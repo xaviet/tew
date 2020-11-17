@@ -1,0 +1,15 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+//module;201stm1业务测试;end; 
+co
+
+//module;202stm1 msp1+1倒换测试;end; 
+//module;203stm1 msp1:1倒换测试;begin; 
+set protocals/msp/1 type 1to1
+set protocals/msp/2 type 1to1
+co
+
+exit
+//wait;;拔出stm1.4.5和stm1.4.6光纤，观察stm1业务瞬断并且能够恢复,测试1分钟,;

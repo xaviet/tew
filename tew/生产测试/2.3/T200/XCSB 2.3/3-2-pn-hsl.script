@@ -1,0 +1,37 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#label;noready;
+show / all
+#save;readycfg:;10;
+#goto;noready;10;false;
+
+show slot/1/phy sub all
+#cmp;ver: ;SW:7090 2.0 10.00.00 Build 2.3.0_p30,CPLD 3701:01.0f,FPGA 3801:02.04,PCB:1;
+show slot/2/phy sub all
+#cmp;ver: ;SW:7090 2.0 10.00.00 Build 2.3.0_p30,CPLD 3701:01.0f,FPGA 3801:02.04,PCB:1;
+
+call / testmode 1
+
+debug
+
+hsl c=1,m=hwtest,a=0
+#sleep;20;...;
+#wait;;等待slot1所有灯熄灭;
+
+hsl c=1,m=hwtest,a=1
+#sleep;20;...;
+#wait;;等待slot1所有灯亮起,CSTA为绿色，XALM为红色;
+
+hsl c=2,m=hwtest,a=0
+#sleep;20;...;
+#wait;;等待slot2所有灯熄灭;
+
+hsl c=2,m=hwtest,a=1
+#sleep;20;...;
+#wait;;等待slot2所有灯亮起,CSTA为绿色，XALM为红色;
+
+exit

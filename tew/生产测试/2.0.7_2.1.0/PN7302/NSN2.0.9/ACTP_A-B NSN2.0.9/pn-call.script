@@ -1,0 +1,26 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+co
+set slot/1/lg type ACTP_A
+set slot/2/lg type ACTP_A
+co
+//sleep;10;...;
+show slot/1/phy sub all 
+//cmp;SW:;hiT 7090 1.0 00.00.00 Build 2.0.9;
+show slot/2/phy sub all 
+//cmp;SW:;hiT 7090 1.0 00.00.00 Build 2.0.9;
+call / showmanu 1
+//;SUCCESS!;
+//cmp;rootfs: ;$_008RootFS1;
+//cmp;SN: ;$_004PN1$_003SN1;
+//cmp;uboot: ;$_007UBoot1;
+call / showmanu 2
+//cmp;rootfs: ;$_014RootFS2;
+//cmp;SN: ;$_010PN2$_009SN2;
+//cmp;uboot: ;$_013UBoot2;
+//module;104生产信息录入;end;
+dr
+exit
+//;#;

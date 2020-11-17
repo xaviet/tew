@@ -1,0 +1,19 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+
+set cfp/1 apscmd manualswitch::work
+set cfp/2 apscmd manualswitch::work
+co
+
+//sleep;10;init;
+
+//sleep;30;xct switch;
+
+exit
+//module;108备xct以太网业务测试;begin;
+//wait;;使用备xct测试5分钟;
+//module;108备xct以太网业务测试;end;

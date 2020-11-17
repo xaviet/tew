@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\tew.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\tew.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\helpdoc.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\opendir.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\openfile.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\pause.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\start.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\stop.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\completewithfault.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\completewithnormal.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\disable.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\runningwithfault.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\runningwithnormal.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\treeiconready.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\treeiconwaitting.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sound1.bin">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Error.wav">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tew.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tewDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="initfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ni488.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="aboutdlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="nodepropertydlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scripteditdlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="trmdlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="trmthread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgwaiting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgsystemcmd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgdutmsg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgproductresult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgprocessing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tcpserver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dlgconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mysql.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="my_list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mysql_com.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mysql_time.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mysql_version.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="typelib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="my_alloc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="udp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CWorkbooks.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CWorksheets.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CRange.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CApplication.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CWorkbook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CWorksheet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ssh2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libssh2_config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libssh2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libssh2_publickey.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libssh2_sftp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="trmthreaddirecttcp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tew.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="tewDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="aboutdlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="nodepropertydlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="scripteditdlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="trmdlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="trmthread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgwaiting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgsystemcmd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgdutmsg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgproductresult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgprocessing.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="tcpserver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dlgconfig.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="udp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="trmthreaddirecttcp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="tew.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="gpib-32.obj">
+      <Filter>资源文件</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libmysql.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+    <Library Include="libssh2.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

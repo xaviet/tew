@@ -1,0 +1,3 @@
+{0;ex.cfg;NG(1);;}
+  {1;telnet;NG(1);;}
+    {2;tew-1;NG(1);tew-1.script;}

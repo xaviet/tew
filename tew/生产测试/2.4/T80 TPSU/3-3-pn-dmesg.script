@@ -1,0 +1,5 @@
+#sleep;2;...;
+
+dmesg 
+##;#;
+#cmp;grep:TPSU1_CPLD_ID;grep:(\s+)3702(\s+)version=1.8(\s+)BkpType:CXT80_A0(\s+)board_type=0(\s+)pcb(\s+)version=1(\s+)Tpsu(\s+)cpld(\s+)ok(\s+)com1(\s+)OK(\s+)IDT3380_board1_check(\s+)OK (\s+)power(\s+)a(\s+)online(\s+)power(\s+)b(\s+)online(\s+)TMOV(\s+)a(\s+)ok(\s+)TMOV(\s+)b(\s+)ok(\s+)EXT_CLK_bit(\s+)ok(\s+)1pps(\s+)ok(\s+)clock(\s+)output(\s+)ok

@@ -1,0 +1,58 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#wait;20;µÈ´ý20sÊ±¼ä;
+dmesg
+##;/ #;
+#buffcut;*********************hwtest******************;; 
+#cmp;board type ;XCT;
+#cmp;CPLD_ID ;3004     version  4.a;
+#cmp;FPGA1_ID  ;3009   version  3.d;
+#cmp;pcb_version=;2   BkpType:CXT500_A0;
+#cmp;CPLD            ;ok;1;2; 
+#cmp;FPGA1 ;ok;1;2;
+#cmp;IDT3380 ;ok      AD9518  ok;
+#cmp;oam ddr ;ok;1;2;
+#cmp;alm test ;ok;1;2;
+#save;temp : ;7;1;2;
+#saveconst;29;126;
+#saveconst;71;127;
+#count;126;<;7;
+#count;127;>;7;
+#cmp;FAN_IIC_RW ;ok;1;2;
+#cmp;RTC ;ok;1;2;
+#cmp;slot 17 PSU online ;ok ;1;2;
+#cmp;slot 19 PSU online ;ok;1;2;
+#cmp;slot 1 IP32 online ;ok ;1;2;
+#cmp;slot 16 IP32 online ;ok;1;2; 
+#cmp;Power1 ;OK      Power2 OK;
+#cmp;slot  2:        ;fe:ok         com:ok        hg0:up;
+#cmp;slot  3:        ;fe:ok         com:ok        hg3:up;
+#cmp;slot  4:        ;fe:ok         com:ok        hg5:up;
+#cmp;slot  5:        ;fe:ok         com:ok        hg7:up;
+#cmp;slot  6:        ;fe:ok         com:ok        hg11:up       hg9:up;
+#cmp;slot  7:        ;fe:ok         com:ok        hg15:up       hg13:up;
+#cmp;slot 10:        ;fe:ok         com:ok        hg12:up       hg14:up;
+#cmp;slot 11:        ;fe:ok         com:ok        hg10:up       hg8:up;  
+#cmp;slot 12:        ;fe:ok         com:ok        hg6:up;
+#cmp;slot 13:        ;fe:ok         com:ok        hg4:up;
+#cmp;slot 14:        ;fe:ok         com:ok        hg2:up;  
+#cmp;slot 15:        ;fe:ok         com:ok        hg1:up;
+#cmp;mate :         ;fe:ok         com:ok;
+#cmp;Debug fe:;ok;1;2;     
+#cmp;RACK_ACO_0 ;ok        ACO_1 ok;
+#cmp;EXT_CLK_hz ;ok;1;2;   
+#cmp;EXT_CLK_bit ;ok;1;2;  
+#cmp;1pps ok tod  ;ok;1;2;        
+#cmp;IDT3380 IN3 ;ok        IDT3380 IN4 ok;
+#cmp;IDT3380 IN6 ;ok        IDT3380 IN7 ok;
+#cmp;IDT3380 IN8 ;ok        IDT3380 IN9 ok;
+
+exit
+##;$;

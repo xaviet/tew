@@ -1,0 +1,330 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+config
+
+dr
+set slot/8/lg type XCT
+set slot/9/lg type XCT
+set slot/12/lg type SX2G20
+set slot/16/lg type IP32
+set slot/14/lg type SS8P32
+set slot/15/lg type SS8P32
+
+
+set interfaces/eth/ge.14.1 admin up
+set interfaces/eth/ge.14.2 admin up
+set interfaces/eth/ge.14.3 admin up
+
+set interfaces/eth/ge.15.1 admin up
+set interfaces/eth/ge.15.2 admin up
+set interfaces/eth/ge.15.3 admin up
+
+set interfaces/eth/ge.12.5 role nni
+set interfaces/eth/ge.12.5 admin up
+set interfaces/eth/ge.12.5/ef cir 64000
+set interfaces/eth/ge.12.5/be yellowwredstart 20
+
+set interfaces/eth/ge.12.4 role nni
+set interfaces/eth/ge.12.4 admin up
+set interfaces/eth/ge.12.4/ef cir 64000
+set interfaces/eth/ge.12.4/be yellowwredstart 20
+
+
+
+create ces 2018
+create interfaces/pwpdh 2 {carrierif="ge.12.5",inlabel=20000,outlabel=20001,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/2 admin up
+create interfaces/pdh/e1.16.2 service {_='ces',vpn='ces/2018'}
+set interfaces/pdh/e1.16.2 admin up
+set interfaces/pdh/e1.16.2 linecode hdb3
+create interfaces/pwpdh/2 service {_='ces',vpn='ces/2018'}
+set ces/2018 admin up
+create ces 2019
+create interfaces/pwpdh 3 {carrierif="ge.12.4",inlabel=20001,outlabel=20000,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/3 admin up
+create interfaces/pdh/e1.16.3 service {_='ces',vpn='ces/2019'}
+set interfaces/pdh/e1.16.3 admin up
+set interfaces/pdh/e1.16.3 linecode hdb3
+create interfaces/pwpdh/3 service {_='ces',vpn='ces/2019'}
+set ces/2019 admin up
+
+
+create ces 2020
+create interfaces/pwpdh 4 {carrierif="ge.12.5",inlabel=20002,outlabel=20003,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/4 admin up
+create interfaces/pdh/e1.16.4 service {_='ces',vpn='ces/2020'}
+set interfaces/pdh/e1.16.4 admin up
+set interfaces/pdh/e1.16.4 linecode hdb3
+create interfaces/pwpdh/4 service {_='ces',vpn='ces/2020'}
+set ces/2020 admin up
+create ces 2021
+create interfaces/pwpdh 5 {carrierif="ge.12.4",inlabel=20003,outlabel=20002,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/5 admin up
+create interfaces/pdh/e1.16.5 service {_='ces',vpn='ces/2021'}
+set interfaces/pdh/e1.16.5 admin up
+set interfaces/pdh/e1.16.5 linecode hdb3
+create interfaces/pwpdh/5 service {_='ces',vpn='ces/2021'}
+set ces/2021 admin up
+
+
+create ces 2022
+create interfaces/pwpdh 6 {carrierif="ge.12.5",inlabel=20016,outlabel=20017,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/6 admin up
+create interfaces/pdh/e1.16.6 service {_='ces',vpn='ces/2022'}
+set interfaces/pdh/e1.16.6 admin up
+set interfaces/pdh/e1.16.6 linecode hdb3
+create interfaces/pwpdh/6 service {_='ces',vpn='ces/2022'}
+set ces/2022 admin up
+create ces 2023
+create interfaces/pwpdh 7 {carrierif="ge.12.4",inlabel=20017,outlabel=20016,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/7 admin up
+create interfaces/pdh/e1.16.7 service {_='ces',vpn='ces/2023'}
+set interfaces/pdh/e1.16.7 admin up
+set interfaces/pdh/e1.16.7 linecode hdb3
+create interfaces/pwpdh/7 service {_='ces',vpn='ces/2023'}
+set ces/2023 admin up
+
+
+create ces 2024
+create interfaces/pwpdh 8 {carrierif="ge.12.5",inlabel=20024,outlabel=20025,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/8 admin up
+create interfaces/pdh/e1.16.8 service {_='ces',vpn='ces/2024'}
+set interfaces/pdh/e1.16.8 admin up
+set interfaces/pdh/e1.16.8 linecode hdb3
+create interfaces/pwpdh/8 service {_='ces',vpn='ces/2024'}
+set ces/2024 admin up
+create ces 2025
+create interfaces/pwpdh 9 {carrierif="ge.12.4",inlabel=20025,outlabel=20024,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/9 admin up
+create interfaces/pdh/e1.16.9 service {_='ces',vpn='ces/2025'}
+set interfaces/pdh/e1.16.9 admin up
+set interfaces/pdh/e1.16.9 linecode hdb3
+create interfaces/pwpdh/9 service {_='ces',vpn='ces/2025'}
+set ces/2025 admin up
+
+
+create ces 2026
+create interfaces/pwpdh 10 {carrierif="ge.12.5",inlabel=20032,outlabel=20033,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/10 admin up
+create interfaces/pdh/e1.16.10 service {_='ces',vpn='ces/2026'}
+set interfaces/pdh/e1.16.10 admin up
+set interfaces/pdh/e1.16.10 linecode hdb3
+create interfaces/pwpdh/10 service {_='ces',vpn='ces/2026'}
+set ces/2026 admin up
+create ces 2027
+create interfaces/pwpdh 11 {carrierif="ge.12.4",inlabel=20033,outlabel=20032,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/11 admin up
+create interfaces/pdh/e1.16.11 service {_='ces',vpn='ces/2027'}
+set interfaces/pdh/e1.16.11 admin up
+set interfaces/pdh/e1.16.11 linecode hdb3
+create interfaces/pwpdh/11 service {_='ces',vpn='ces/2027'}
+set ces/2027 admin up
+
+
+create ces 2028
+create interfaces/pwpdh 12 {carrierif="ge.12.5",inlabel=20040,outlabel=20041,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/12 admin up
+create interfaces/pdh/e1.16.12 service {_='ces',vpn='ces/2028'}
+set interfaces/pdh/e1.16.12 admin up
+set interfaces/pdh/e1.16.12 linecode hdb3
+create interfaces/pwpdh/12 service {_='ces',vpn='ces/2028'}
+set ces/2028 admin up
+create ces 2029
+create interfaces/pwpdh 13 {carrierif="ge.12.4",inlabel=20041,outlabel=20040,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/13 admin up
+create interfaces/pdh/e1.16.13 service {_='ces',vpn='ces/2029'}
+set interfaces/pdh/e1.16.13 admin up
+set interfaces/pdh/e1.16.13 linecode hdb3
+create interfaces/pwpdh/13 service {_='ces',vpn='ces/2029'}
+set ces/2029 admin up
+
+
+create ces 2030
+create interfaces/pwpdh 14 {carrierif="ge.12.5",inlabel=20048,outlabel=20049,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/14 admin up
+create interfaces/pdh/e1.16.14 service {_='ces',vpn='ces/2030'}
+set interfaces/pdh/e1.16.14 admin up
+set interfaces/pdh/e1.16.14 linecode hdb3
+create interfaces/pwpdh/14 service {_='ces',vpn='ces/2030'}
+set ces/2030 admin up
+create ces 2031
+create interfaces/pwpdh 15 {carrierif="ge.12.4",inlabel=20049,outlabel=20048,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/15 admin up
+create interfaces/pdh/e1.16.15 service {_='ces',vpn='ces/2031'}
+set interfaces/pdh/e1.16.15 admin up
+set interfaces/pdh/e1.16.15 linecode hdb3
+create interfaces/pwpdh/15 service {_='ces',vpn='ces/2031'}
+set ces/2031 admin up
+
+
+create ces 2032
+create interfaces/pwpdh 16 {carrierif="ge.12.5",inlabel=20056,outlabel=20057,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/16 admin up
+create interfaces/pdh/e1.16.16 service {_='ces',vpn='ces/2032'}
+set interfaces/pdh/e1.16.16 admin up
+set interfaces/pdh/e1.16.16 linecode hdb3
+create interfaces/pwpdh/16 service {_='ces',vpn='ces/2032'}
+set ces/2032 admin up
+create ces 2033
+create interfaces/pwpdh 17 {carrierif="ge.12.4",inlabel=20057,outlabel=20056,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/17 admin up
+create interfaces/pdh/e1.16.17 service {_='ces',vpn='ces/2033'}
+set interfaces/pdh/e1.16.17 admin up
+set interfaces/pdh/e1.16.17 linecode hdb3
+create interfaces/pwpdh/17 service {_='ces',vpn='ces/2033'}
+set ces/2033 admin up
+
+
+create ces 2034
+create interfaces/pwpdh 18 {carrierif="ge.12.5",inlabel=20064,outlabel=20065,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/18 admin up
+create interfaces/pdh/e1.16.18 service {_='ces',vpn='ces/2034'}
+set interfaces/pdh/e1.16.18 admin up
+set interfaces/pdh/e1.16.18 linecode hdb3
+create interfaces/pwpdh/18 service {_='ces',vpn='ces/2034'}
+set ces/2034 admin up
+create ces 2035
+create interfaces/pwpdh 19 {carrierif="ge.12.4",inlabel=20065,outlabel=20064,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/19 admin up
+create interfaces/pdh/e1.16.19 service {_='ces',vpn='ces/2035'}
+set interfaces/pdh/e1.16.19 admin up
+set interfaces/pdh/e1.16.19 linecode hdb3
+create interfaces/pwpdh/19 service {_='ces',vpn='ces/2035'}
+set ces/2035 admin up
+
+
+create ces 2036
+create interfaces/pwpdh 20 {carrierif="ge.12.5",inlabel=20072,outlabel=20073,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/20 admin up
+create interfaces/pdh/e1.16.20 service {_='ces',vpn='ces/2036'}
+set interfaces/pdh/e1.16.20 admin up
+set interfaces/pdh/e1.16.20 linecode hdb3
+create interfaces/pwpdh/20 service {_='ces',vpn='ces/2036'}
+set ces/2036 admin up
+create ces 2037
+create interfaces/pwpdh 21 {carrierif="ge.12.4",inlabel=20073,outlabel=20072,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/21 admin up
+create interfaces/pdh/e1.16.21 service {_='ces',vpn='ces/2037'}
+set interfaces/pdh/e1.16.21 admin up
+set interfaces/pdh/e1.16.21 linecode hdb3
+create interfaces/pwpdh/21 service {_='ces',vpn='ces/2037'}
+set ces/2037 admin up
+
+
+create ces 2038
+create interfaces/pwpdh 22 {carrierif="ge.12.5",inlabel=20080,outlabel=20081,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/22 admin up
+create interfaces/pdh/e1.16.22 service {_='ces',vpn='ces/2038'}
+set interfaces/pdh/e1.16.22 admin up
+set interfaces/pdh/e1.16.22 linecode hdb3
+create interfaces/pwpdh/22 service {_='ces',vpn='ces/2038'}
+set ces/2038 admin up
+create ces 2039
+create interfaces/pwpdh 23 {carrierif="ge.12.4",inlabel=20081,outlabel=20080,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/23 admin up
+create interfaces/pdh/e1.16.23 service {_='ces',vpn='ces/2039'}
+set interfaces/pdh/e1.16.23 admin up
+set interfaces/pdh/e1.16.23 linecode hdb3
+create interfaces/pwpdh/23 service {_='ces',vpn='ces/2039'}
+set ces/2039 admin up
+
+
+create ces 2040
+create interfaces/pwpdh 24 {carrierif="ge.12.5",inlabel=20088,outlabel=20089,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/24 admin up
+create interfaces/pdh/e1.16.24 service {_='ces',vpn='ces/2040'}
+set interfaces/pdh/e1.16.24 admin up
+set interfaces/pdh/e1.16.24 linecode hdb3
+create interfaces/pwpdh/24 service {_='ces',vpn='ces/2040'}
+set ces/2040 admin up
+create ces 2041
+create interfaces/pwpdh 25 {carrierif="ge.12.4",inlabel=20089,outlabel=20088,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/25 admin up
+create interfaces/pdh/e1.16.25 service {_='ces',vpn='ces/2041'}
+set interfaces/pdh/e1.16.25 admin up
+set interfaces/pdh/e1.16.25 linecode hdb3
+create interfaces/pwpdh/25 service {_='ces',vpn='ces/2041'}
+set ces/2041 admin up
+
+
+create ces 2042
+create interfaces/pwpdh 26 {carrierif="ge.12.5",inlabel=20096,outlabel=20097,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/26 admin up
+create interfaces/pdh/e1.16.26 service {_='ces',vpn='ces/2042'}
+set interfaces/pdh/e1.16.26 admin up
+set interfaces/pdh/e1.16.26 linecode hdb3
+create interfaces/pwpdh/26 service {_='ces',vpn='ces/2042'}
+set ces/2042 admin up
+create ces 2043
+create interfaces/pwpdh 27 {carrierif="ge.12.4",inlabel=20097,outlabel=20096,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/27 admin up
+create interfaces/pdh/e1.16.27 service {_='ces',vpn='ces/2043'}
+set interfaces/pdh/e1.16.27 admin up
+set interfaces/pdh/e1.16.27 linecode hdb3
+create interfaces/pwpdh/27 service {_='ces',vpn='ces/2043'}
+set ces/2043 admin up
+
+
+create ces 2044
+create interfaces/pwpdh 28 {carrierif="ge.12.5",inlabel=20104,outlabel=20105,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/28 admin up
+create interfaces/pdh/e1.16.28 service {_='ces',vpn='ces/2044'}
+set interfaces/pdh/e1.16.28 admin up
+set interfaces/pdh/e1.16.28 linecode hdb3
+create interfaces/pwpdh/28 service {_='ces',vpn='ces/2044'}
+set ces/2044 admin up
+create ces 2045
+create interfaces/pwpdh 29 {carrierif="ge.12.4",inlabel=20105,outlabel=20104,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/29 admin up
+create interfaces/pdh/e1.16.29 service {_='ces',vpn='ces/2045'}
+set interfaces/pdh/e1.16.29 admin up
+set interfaces/pdh/e1.16.29 linecode hdb3
+create interfaces/pwpdh/29 service {_='ces',vpn='ces/2045'}
+set ces/2045 admin up
+
+
+create ces 2046
+create interfaces/pwpdh 30 {carrierif="ge.12.5",inlabel=20112,outlabel=20113,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/30 admin up
+create interfaces/pdh/e1.16.30 service {_='ces',vpn='ces/2046'}
+set interfaces/pdh/e1.16.30 admin up
+set interfaces/pdh/e1.16.30 linecode hdb3
+create interfaces/pwpdh/30 service {_='ces',vpn='ces/2046'}
+set ces/2046 admin up
+create ces 2047
+create interfaces/pwpdh 31 {carrierif="ge.12.4",inlabel=20113,outlabel=20112,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/31 admin up
+create interfaces/pdh/e1.16.31 service {_='ces',vpn='ces/2047'}
+set interfaces/pdh/e1.16.31 admin up
+set interfaces/pdh/e1.16.31 linecode hdb3
+create interfaces/pwpdh/31 service {_='ces',vpn='ces/2047'}
+set ces/2047 admin up
+
+
+create ces 2048
+create interfaces/pwpdh 32 {carrierif="ge.12.5",inlabel=20120,outlabel=20121,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/32 admin up
+create interfaces/pdh/e1.16.32 service {_='ces',vpn='ces/2048'}
+set interfaces/pdh/e1.16.32 admin up
+set interfaces/pdh/e1.16.32 linecode hdb3
+create interfaces/pwpdh/32 service {_='ces',vpn='ces/2048'}
+set ces/2048 admin up
+create ces 2017
+create interfaces/pwpdh 1 {carrierif="ge.12.4",inlabel=20121,outlabel=20120,peer="20.20.20.20",rtphdr=false,cos='ef'}
+set interfaces/pwpdh/1 admin up
+create interfaces/pdh/e1.16.1 service {_='ces',vpn='ces/2017'}
+set interfaces/pdh/e1.16.1 admin up
+set interfaces/pdh/e1.16.1 linecode hdb3
+create interfaces/pwpdh/1 service {_='ces',vpn='ces/2017'}
+set ces/2017 admin up
+commit
+
+//module;101slot16类型(IP32);begin;
+show slot/16/phy sub all
+//cmp;type: ;IP32;
+//cmp;online: ;true;
+//module;101slot16类型(IP32);end;
+
+exit

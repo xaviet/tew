@@ -1,0 +1,17 @@
+#wait;;连上slot2串口线,power on;
+##;stop key:< >;
+
+print
+set ethaddr $_012EthMac2
+nand erase 0x2600000 0xd800000
+save
+#;done;
+
+reset
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_012EthMac2;1;17;
+
+boot
+#sleep;30;单板启动;

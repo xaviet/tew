@@ -1,0 +1,34 @@
+
+luacmd.lua
+##;> ;
+pga._progsubcpld(1,0,"/appdisk/nepkg/7090_80Mv2.3.1/soft_ptn64/cxt200_50g/fpga/cxt3702v0107.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot;
+##;> ;
+pga._progsubcpld(1,1,"/appdisk/nepkg/7090_80Mv2.3.1/soft_ptn64/cxt200_50g/fpga/cxt3702v0107.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot;
+##;> ;
+#ctrld;
+
+echo -n $_022appname > /appdisk/nepkg/active
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+echo -n $_022appname > /appdisk/nepkg/active
+
+exit
+
+exit
+
+#sleep;120;startup;

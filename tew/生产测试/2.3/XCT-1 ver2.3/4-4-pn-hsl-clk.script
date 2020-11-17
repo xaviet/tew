@@ -1,0 +1,10 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+d
+hsl c=8,m=hwtest,a=1
+
+exit

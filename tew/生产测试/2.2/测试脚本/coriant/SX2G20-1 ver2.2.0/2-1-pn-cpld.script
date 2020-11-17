@@ -1,0 +1,22 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+#sleep;120;startup;
+
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/cardpkg/$_022appname/soft_ptn64/cxt500e/fpga/cxt3008v0103.bin") 
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+reboot
+##;/ #;

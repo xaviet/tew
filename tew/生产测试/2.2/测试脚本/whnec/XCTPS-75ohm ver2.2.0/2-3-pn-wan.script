@@ -1,0 +1,12 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+co
+//wait;5;观察5秒后GE业务是否瞬断;
+set interfaces/eth/xg.3.1 xgwan true
+co
+
+exit
+//wait;30;GE业务是否瞬断;

@@ -1,0 +1,27 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+luacmd.lua
+##;> ;
+pga._progcpld(1,"/appdisk/cardpkg/t500v2.1.1/soft_ptn64/cxt500/fpga/cxt3003v040c.bin") 
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;> ;
+#ctrld;
+##;/ # ;
+#module;105确认mac地址(slot15);begin;
+ifconfig eth0
+#cmp;eth0;00:00:00:00:00:16;
+#module;105确认mac地址(slot15);end;
+#module;106确认ip地址(slot15);begin;
+ifconfig eth0
+#cmp;eth0;192.168.100.22;
+#module;106确认ip地址(slot15);end;
+reboot
+##;/ #;

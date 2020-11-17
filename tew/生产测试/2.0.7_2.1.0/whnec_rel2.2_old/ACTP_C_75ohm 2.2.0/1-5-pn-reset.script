@@ -1,0 +1,15 @@
+#wait;;请点击确定，然后连上slot1串口线,按slot1 reset按钮;
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_006EthMac1;1;17;
+boot
+#wait;;请点击确定，然后连上slot2串口线,按slot2 reset按钮;
+##;stop key:< >;
+
+print
+#cmp;ethaddr=;$_012EthMac2;1;17;
+boot
+##;;
+#sleep;360;然后连上slot1 nms,等待重启完成;
+#wait;;连上slot1 nms后,请点击确定;

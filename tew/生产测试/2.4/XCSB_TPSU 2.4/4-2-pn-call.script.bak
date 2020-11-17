@@ -1,0 +1,30 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#label;noready;
+show / all
+#save;readycfg:;10;
+#goto;noready;10;false;
+
+call / showmanu 1
+#sleep;2;...;
+#;SUCCESS!;
+#cmp;mac: ;macformat$_006EthMac1;1;
+#cmp;sn: ;$_003SN1;1;
+#cmp;pn: ;$_004PN1;1;
+#cmp;boot: ;$_015boot;1;
+##cmp;vendor ;CORIANT;1;
+#;#;
+
+call slot/2/phy setmanu {sn="A01606270034",pn="1610005602"}
+#sleep;2;...;
+
+call slot/2/phy getmanu
+#sleep;2;...;
+#cmp;sn=;A01606270034;1;
+#cmp;pn=;1610005602;1;
+
+quit

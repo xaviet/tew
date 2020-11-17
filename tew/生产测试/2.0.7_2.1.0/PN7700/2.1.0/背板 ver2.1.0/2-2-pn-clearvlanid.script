@@ -1,0 +1,21 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+chmod 777 workspace/bcm/bcm.user.proxy
+
+./workspace/bcm/bcm.user.proxy
+##;;
+
+##;BCM.0> ;
+l2 clear vlanid=1
+##;BCM.0> ;
+exit
+
+exit
+##;$;

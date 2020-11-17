@@ -1,0 +1,16 @@
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#msg;chkclr;slot2ready;
+#msg;chkclr;slot3ready;
+
+call / reboot 2 comm 
+call / setreadycfg true
+call / reboot 3 comm
+
+#msg;add;slot2reboot;
+#msg;add;slot3reboot;
+
+quit

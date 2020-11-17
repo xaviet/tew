@@ -1,0 +1,12 @@
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+luacmd.lua
+##;> ;
+m(0xa,0x42)
+##;> ;

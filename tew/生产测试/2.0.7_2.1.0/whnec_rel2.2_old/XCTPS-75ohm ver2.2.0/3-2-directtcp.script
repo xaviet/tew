@@ -1,0 +1,9 @@
+#msg;chkclr;testbegin;
+#tcptx;1;
+#tcptx;d;
+#sleep;2;...;
+#rxbuffclear;
+#tcprx;0A0A0A0A0B0B03DE32;ffffffff;ff00ff00;2;300;100;
+#tcptx;c;
+#tcptx;7;
+#msg;add;testend;

@@ -1,0 +1,37 @@
+dmesg 
+##;#;
+#cmp;grep:subchss1(-+);grep:type:(\s+)IP16(\s+)key(\s+)ok;1;32;
+#cmp;grep:subchss2(-+);grep:type:(\s+)IP16(\s+)key(\s+)ok;1;32;
+#cmp;grep:subchss3(-+);grep:type:(\s+)IP16(\s+)key(\s+)ok;1;32;
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+dmesg 
+##;#;
+#cmp;grep:subchss1(-+);grep:type:(\s+)IP16(\s+)key(\s+)ok;1;32;
+#cmp;grep:subchss2(-+);grep:type:(\s+)IP16(\s+)key(\s+)ok;1;32;
+#cmp;grep:subchss3(-+);grep:type:(\s+)IP16(\s+)key(\s+)ok;1;32;
+
+exit
+
+exit
+
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+call / testmode 0
+
+quit
+
+exit

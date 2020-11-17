@@ -1,0 +1,24 @@
+////;User:;
+admin
+////;Password:;
+cMPC_pxn
+
+call / showmanu 1
+//;SUCCESS!;
+//module;401mac(macformat$_006EthMac1);begin; 
+//cmp;mac: ;macformat$_006EthMac1;1;
+//module;401mac(macformat$_006EthMac1);end; 
+//module;402sn($_003SN1$_004PN1);begin; 
+//cmp;sn: ;$_003SN1$_004PN1;1;
+//module;402sn($_003SN1$_004PN1);end; 
+//module;403boot($_015boot);begin; 
+//cmp;boot: ;$_015boot;1;
+//module;403boot($_015boot);end; 
+//module;404vendor($_016vendor);begin; 
+//cmp;vendor: ;$_016vendor;1;
+//module;404vendor($_016vendor);end; 
+
+co
+
+exit
+//module;106product–≈œ¢¬º»Î;end;

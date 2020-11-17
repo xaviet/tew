@@ -1,0 +1,30 @@
+telnet 127.0.0.1 3000
+##;User:;
+admin
+##;Password:;
+cMPC_pxn
+
+#call slot/1/1/phy setmanu {sn="$_003SN1",pn="$_004PN1",vendor="$_016vendor"}
+call slot/1/1/phy setmanu {sn="$_003SN1",pn="$_004PN1"}
+
+call slot/1/1/phy getmanu 
+#sleep;2;...;
+#;SUCCESS;
+#cmp;sn=;$_003SN1;1;
+#cmp;pn=;$_004PN1;1;
+###cmp;vendor=;$_016vendor;1; 
+#;#;
+
+#call slot/1/2/phy setmanu {sn="$_009SN2",pn="$_010PN2",vendor="$_016vendor"}
+call slot/1/2/phy setmanu {sn="$_009SN2",pn="$_010PN2"}
+
+call slot/1/2/phy getmanu
+#sleep;2;...; 
+#;SUCCESS;
+#cmp;sn=;$_009SN2;1;
+#cmp;pn=;$_010PN2;1;
+###cmp;vendor=;$_016vendor;1; 
+#;#;
+
+#module;IX02_Test;end;
+quit

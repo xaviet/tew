@@ -1,0 +1,54 @@
+luacmd.lua
+##;> ;
+pga._progsubcpld(0,1,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt200_50g/fpga/cxt3802.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+pga._progsubcpld(0,2,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt200_50g/fpga/cxt3802.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+pga._progsubcpld(0,3,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt200_50g/fpga/cxt3802.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+telnet 192.168.100.3
+##;login:;
+a
+##;Password:;
+a
+##;$;
+su
+##;Password:;
+root
+
+luacmd.lua
+##;> ;
+pga._progsubcpld(0,1,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt200_50g/fpga/cxt3802.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+pga._progsubcpld(0,2,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt200_50g/fpga/cxt3802.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+pga._progsubcpld(0,3,"/appdisk/nepkg/$_022appname/soft_ptn64/cxt200_50g/fpga/cxt3802.bin")
+#sleep;2;delay 2s;
+#cmp;cpu test is e0000000;the cpld download is start;
+##;now reboot the system;
+##;> ;
+#ctrld;
+
+exit
+exit
+
+echo -n $_022appname > /appdisk/nepkg/active
+
+exit

@@ -1,0 +1,18 @@
+#sleep;60;...;
+#module;IX02_Test;begin;
+luacmd.lua
+##;> ;
+pga._progsucard(1,1,"/appdisk/nepkg/7090_60CEMv2.4.0_p20/soft_ptn64/cxt80_62g/fpga/cxt3704v0003.jed")
+#sleep;2;delay 2s;
+#cmp;the cpld download;is start;
+##;prog finish;
+##;> ;
+pga._progsucard(1,2,"/appdisk/nepkg/7090_60CEMv2.4.0_p20/soft_ptn64/cxt80_62g/fpga/cxt3704v0003.jed")
+#sleep;2;delay 2s;
+#cmp;the cpld download;is start;
+##;prog finish;
+##;> ;
+#ctrld;
+
+reboot
+##;;
